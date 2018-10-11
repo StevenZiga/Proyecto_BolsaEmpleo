@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registro Oferente - CUC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilo.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html #page-top">Bolsa de empleo</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Registro</a>
+                <ul class="sub-nav-list" 
+                  <li class="sub-nav-item mx-0 mx-lg-1">
+                    <a class="sub-nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_empresa.html">Empleadores</a>
+                  </li>
+                  <li class="sub-nav-item mx-0 mx-lg-1">
+                    <a class="sub-nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_oferente.html">Oferentes</a>
+                 </li>
+                </ul>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vista_puestos.html">Ver puestos</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_puestos.html">Puesto Nuevo</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="inicio_sesion.html">Ingresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Header -->
+    <header class="masthead bg-oferente text-orange text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/logo_cuc.png" alt="">
+        <h1 class="text-uppercase mb-0">Registro de Oferente</h1>
+        <h2 class="font-weight-light mb-0">Estas a un paso de empezar con la busqueda de empleo</h2><br><p>Por favor completa la información que se le solicita a continuación</p>
+      </div>
+    </header>
+
+    <!-- principal Grid Section -->
+    <section class="principal" id="principal">
+      <!-- <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Oferente</h2><br><br>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+          <form action="" method="get">
+            <div class="float-div"><label for="cedula">Identificación</label></div>
+            <div class="float-div"><input id="cedula" type="text" name="cedula"></div>  
+            <div class="float-div"><label for="first-name">Nombre </label></div>
+            <div class="float-div"><input id="first-name" type="text" name="firstname"></div>
+            <div class="float-div"><label for="last-name">Apellidos </label></div>
+            <div class="float-div"><input id="last-name" type="text" name="lastname"></div>  
+          </form>    
+          </div>
+          <div class="col-md-6 col-lg-4">
+          <form action="" method="get">
+            <div class="float-div"><label for="sexo">Sexo</label></div>
+            <div class="float-div"><input id="sexo" type="text" name="sexo"></div>
+            <div class="float-div"><label for="birth">Fecha de nacimiento</label></div>
+            <div class="float-div"><input id="birth" type="date" name="birth"></div>
+            <div class="float-div"><label for="estado">Estado Civil</label></div>
+            <div class="float-div"><input id="estado" type="text" name="estado"></div>  
+          </form>  
+          </div>
+          <div class="col-md-6 col-lg-4">
+          <form action="" method="get">
+            <div class="float-div"><label for="telf">Teléfono</label></div>
+            <div class="float-div"><input id="telf" type="text" name="telf"></div>
+            <div class="float-div"><label for="email">Correo Electrónico</label></div>
+            <div class="float-div"><input id="email" type="text" name="email"></div>  
+            <div class="float-div"><label for="place">Lugar de residencia</label></div>
+            <div class="float-div"><input id="place" type="text" name="place"></div>             
+          </form>
+          </div>
+          <div class="col-md-6 col-lg-4">  
+          <div><label for="curriculum">Subir curriculum</label></div>           
+          <div><input class="btn-env" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/></div>  
+          </div>         
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <input class="btn" type="submit" value="ENVIAR">
+          </div>
+        </div>
+      </div> -->
+
+    <div class="container contenedor-registro">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Oferente</h2><br><br>
+      <!--<form class="registro-oferente" method="POST" id="formulario">-->
+        <!-- Lista de campos -->
+          <div class="fila">
+            <!-- text -->
+            <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+            <label for="nombre" class="propiedad">Nombre Completo</label>
+          <!--hidden -->
+          <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+          </div>
+          <!-- password -->
+          <div class="fila">
+            <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
+            <label for="password" class="propiedad">Contraseña</label>
+          </div>
+          <!-- email -->
+          <div class="fila">
+            <input class="registro-oferente" type="email" id="email" name="email" maxlength="30" size="30" />
+            <label for="email" class="propiedad">Email</label>
+          </div>
+          <!-- tel -->
+          <div class="fila">
+            <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <label for="telefono" class="propiedad">Teléfono</label>
+          </div>
+          <!-- date -->
+          <div class="fila">
+            <input class="registro-oferente" type="date" id="fecha" name="birthdate" />
+            <label for="fecha" class="propiedad">Fecha de nacimiento</label>
+          </div>
+          <!-- readonly disabled -->
+          <div class="fila">
+            <input class="registro-oferente" type="number" id="edad" name="age" class="small" value="18" readonly="readonly" disabled="disabled" />
+            <label for="edad" class="propiedad">Edad</label>
+          </div>
+          <!-- number -->
+          <div class="fila">
+            <input type="number" id="hermanos" name="siblings" class="small registro-oferente"" min="1" max="50" value="1" />
+            <label for="hermanos" class="propiedad">Número de hermanos</label>
+          </div>
+          <!-- range -->
+          <div class="fila">
+            <input type="range" id="salario" name="earnings" min="200000" max="1000000" step="100000" value="1000" list="valores-salario" onchange="document.querySelector('#salario-output').value = value;">
+            <label for="salario" class="propiedad">Salario deseado</label>
+            <p>₡</p>
+            <output for="salario" id="salario-output">500000</output>
+            <datalist id="valores-salario">
+              <option>₡200.000</option>
+              <option>₡300.000</option>
+              <option>₡400.000</option>
+              <option>₡500.000</option>
+              <option>₡600.000</option>
+              <option>₡700.000</option>
+              <option>₡800.000</option>
+              <option>₡900.000</option>
+              <option>₡1.000.000</option>
+            </datalist>
+          </div>          
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="radioOne" name="account" checked/>
+              <label for="radioOne" class="radio" chec>Hombre</label>
+              <input type="radio" value="None" id="radioTwo" name="account" />
+              <label for="radioTwo" class="radio">Mujer</label>
+            </div>
+            <label for="genero" class="propiedad">Género</label>
+          </div>          
+          <!-- select combo -->
+          <div class="fila">
+            <select id="estudios" name="studies" required="required">
+              <option value="">- Seleccione -</option>
+              <option value="eso">Primaria</option>
+              <option value="bachillerato">Secundaria</option>
+              <option value="cfgm">Diplomado</option>
+              <option value="cfgs">Bachillerato</option>
+              <option value="grado">Licenciatura</option>
+              <option value="master">Master</option>
+            </select>
+            <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
+          </div>
+          <!-- select multiple -->
+          <div class="fila">
+            <select id="idiomas" name="languages" size="4" multiple="multiple" required="required" >
+              <option value="spanish">Español</option>
+              <option value="english">Inglés</option>
+              <option value="french">Francés</option>
+              <option value="german">Alemán</option>
+            </select>
+            <label for="idiomas" class="propiedad">Idiomas</label>
+          </div>
+          <!-- meter -->
+          <div class="fila">
+            <meter id="experiencia" name="experience" value="24" min="0" max="100" low="25" medium="50" high="75" /></meter>
+            <label for="experiencia" class="propiedad">Nivel de experiencia</label>
+          </div>
+          <!-- progress -->
+          <div class="fila">
+            <progress id="formacion" name="training" value="75" min="0" max="100" /></progress>
+            <label for="formacion" class="propiedad">Nivel de formación</label>
+          </div>
+          <div class="fila botonera">
+            <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
+            <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
+          </div>
+          <div class="fila botonera">
+            <button class="registro-oferente" type="submit">Registrarse</button>
+            <button class="registro-oferente" type="reset">Borrar Campos</button>   
+          </div>
+    </div>
+    </section>    
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Administración y Programación de Sitios Web</h4>     
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Grupo 02</h4>
+            <p class="lead mb-0">Jose Manuel Altamirano<br>Brayan Brenes<br>Steven Zúñiga</p>
+          </div>
+          <div class="col-md-4">
+            <img class="img-fluid" src="img/logo_cuc_footer.png" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; JBS 2018</small>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>

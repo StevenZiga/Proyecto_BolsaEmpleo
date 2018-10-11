@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registro Empresa - CUC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilo.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html #page-top">Bolsa de empleo</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Registro</a>
+                <ul class="sub-nav-list" 
+                  <li class="sub-nav-item mx-0 mx-lg-1">
+                    <a class="sub-nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_empresa.html">Empleadores</a>
+                  </li>
+                  <li class="sub-nav-item mx-0 mx-lg-1">
+                    <a class="sub-nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_oferente.html">Oferentes</a>
+                 </li>
+                </ul>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vista_puestos.html">Ver puestos</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="registro_puestos.html">Puesto Nuevo</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="inicio_sesion.html">Ingresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-empleador text-green text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/logo_cuc.png" alt="">
+        <h1 class="text-uppercase mb-0">Registro de empresas</h1>
+        <h2 class="font-weight-light mb-0">Se recibe con una cálida bienvenida a las nuevas empresas.</h2>
+      </div>
+    </header>
+
+    <!-- Datos iniciales -->
+    <section class="empresa" id="empresa">
+      <!--<div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Datos de la empresa</h2><br><br>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+      <input type="text" size="35" placeholder="Cédula jurídica"/>
+          </div>
+          <div class="col-md-6 col-lg-4">   
+            <input type="text" size="35" placeholder="Nombre de la empresa"/>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <input type="text" size="35" placeholder="Teléfono"/>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <input type="text" size="35" placeholder="Nombre del contacto"/>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <input type="text" size="35" placeholder="Correo electrónico"/>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <input type="text" size="35" placeholder="Nombre comercial"/>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="container contenedor-registro">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Datos de la Empresa</h2><br>
+      <hr class="star-dark mb-5">
+      <!--<form class="registro-oferente" method="POST" id="formulario">-->
+        <!-- Lista de campos -->
+            <!-- text -->
+          <div class="fila">
+            <input class="registro-oferente" type="ced" id="cedula" name="cedula" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <label for="cedula" class="propiedad">Cédula Jurídica</label>
+          </div> 
+          <div class="fila">
+            <input class="registro-oferente" type="ced" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+            <label for="nombre" class="propiedad">Nombre Empresa</label>            
+            <!--hidden -->
+            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+          </div>
+          <!-- password -->
+          <div class="fila">
+            <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
+            <label for="password" class="propiedad">Contraseña</label>
+          </div>
+          <!-- email -->
+          <div class="fila">
+            <input class="registro-oferente" type="email" id="email" name="email" maxlength="30" size="30" />
+            <label for="email" class="propiedad">Email del contacto</label>
+          </div>
+          <!-- tel -->
+          <div class="fila">
+            <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <label for="telefono" class="propiedad">Teléfono del contacto</label>
+          </div>  
+          <!-- select combo -->
+          <div class="fila">
+            <select id="estudios" name="studies" required="required">
+              <option value="">- Seleccione -</option>
+              <option value="eso">Primaria</option>
+              <option value="bachillerato">Secundaria</option>
+              <option value="cfgm">Diplomado</option>
+              <option value="cfgs">Bachillerato</option>
+              <option value="grado">Licenciatura</option>
+              <option value="master">Master</option>
+            </select>
+            <label for="estudios" class="propiedad">Nivel mínimo de estudios por buscar</label>
+          </div>
+          <!-- select multiple -->
+          <div class="fila">
+            <select id="idiomas" name="languages" size="4" multiple="multiple" required="required" >
+              <option value="spanish">Español</option>
+              <option value="english">Inglés</option>
+              <option value="french">Francés</option>
+              <option value="german">Alemán</option>
+            </select>
+            <label for="idiomas" class="propiedad">Idiomas necesarios</label>
+          </div>
+          <hr class="star-dark mb-5">
+          <h2 class="text-center text-uppercase text-secondary mb-0">Ubicación</h2><br>
+          <hr class="star-dark mb-5">
+          <!-- select combo -->
+          <div class="fila">
+            <select id="estudios" name="studies" required="required">
+              <option value="">- Seleccione -</option>
+              <option value="1">Cartago</option>
+              <option value="2">San Jose</option>
+              <option value="3">Alajuela</option>
+              <option value="4">Heredia</option>
+              <option value="5">Limón</option>
+              <option value="6">Guanacaste</option>
+              <option value="7">Puntarenas</option>
+            </select>
+            <label for="estudios" class="propiedad">Provincia</label>
+          </div>
+          <!-- canton -->
+          <div class="fila">
+            <input class="registro-oferente" type="ced" id="nombre" name="canton" size="11" />
+            <label for="canton" class="propiedad">Cantón</label>
+          </div>  
+          <!-- distrito -->
+          <div class="fila">
+            <input class="registro-oferente" type="ced" id="nombre" name="distrito" size="11" />
+            <label for="distrito" class="propiedad">Distrito</label>
+          </div>  
+          <!-- progress -->
+          <div class="fila">
+            <progress id="formacion" name="training" value="75" min="0" max="100" /></progress>
+            <label for="formacion" class="propiedad">Nivel de formación</label>
+          </div>
+          <div class="fila botonera">
+            <button class="registro-oferente" type="submit">Registrar</button>
+            <button class="registro-oferente" type="reset">Borrar Campos</button>   
+          </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Administración y Programación de Sitios Web</h4>     
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Grupo 02</h4>
+            <p class="lead mb-0">Jose Manuel Altamirano<br>Brayan Brenes<br>Steven Zúñiga</p>
+          </div>
+          <div class="col-md-4">
+            <img class="img-fluid" src="img/logo_cuc_footer.png" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; JBS 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
+
+
