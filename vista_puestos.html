@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,9 +43,9 @@
     <!-- Búsqueda de puesto -->
     <section class="select-puesto" id="empresa">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Seleccione:</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">Filtrar busqueda</h2>
         <hr class="star-dark mb-5">
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-6 col-lg-4">
             <input type="text" size="30" id="especialidad" placeholder="Especialidad"/>
           </div>
@@ -76,7 +77,21 @@
           <div class="col-md-6 col-lg-4">
             <input type="button" id="btnbuscar" size="35" value="Buscar"/>
           </div>
-        </div>
+        </div> -->
+        <center><div class="container-vista-puesto">
+              <span class="icon-vista-puesto"><i class="fa fa-search"></i></span>
+              <input type="search" id="search" placeholder="Buscar..." />
+        </div></center>
+
+        <div class="fila puesto">
+            <label for="genero" class="propiedad">Tiempo</label>
+          <div>
+              <input type="radio" value="None" id="radioOne" name="account" checked/>
+              <label for="radioOne" class="radio" chec>Completo</label>
+              <input type="radio" value="None" id="radioTwo" name="account" />
+              <label for="radioTwo" class="radio">Parcial</label>            
+          </div>
+        </div>   
       </div>
     </section>
 
@@ -228,5 +243,3 @@ $(document).ready(function(){
     ;
 });
 </script>
-
-
