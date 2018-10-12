@@ -178,14 +178,12 @@ a:active,a:focus,a:hover{
 }
 
 .img-cuc{
-  width: 300px;
-  height: 300px;
   margin: 0 auto;
 }
 
 .bg-inicio .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
@@ -193,7 +191,7 @@ a:active,a:focus,a:hover{
 
 .bg-empleador .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
@@ -201,7 +199,7 @@ a:active,a:focus,a:hover{
 
 .bg-oferente .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
@@ -209,7 +207,7 @@ a:active,a:focus,a:hover{
 
 .bg_vistaPuestos .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
@@ -217,7 +215,7 @@ a:active,a:focus,a:hover{
 
 .bg-inicio-sesion .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
@@ -225,7 +223,7 @@ a:active,a:focus,a:hover{
 
 .bg-registro-puesto .container .img-cuc{
   background-position: center;
-  background-image: url("../img/logo_cuc.png");
+  background-image: url("../img/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   background-size: 70%;
   padding-bottom: 20px;
