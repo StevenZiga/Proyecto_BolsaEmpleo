@@ -294,31 +294,45 @@ a:active,a:focus,a:hover{
 
   .bg-inicio{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 2px black;
+
   }
   .bg-empleador{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 2px black;
   }
 
   .bg-oferente{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 2px black;
   }
 
   .bg_vistaPuestos{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 2px black;
   }
 
   .bg-inicio-sesion{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 2px black;
   }
 
   .bg-registro-puesto{
     background-image: none;
-    background-color: #00A4BC;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+  }
+
+  .container img{
+    background: url("../img/logo cuc negro.png");
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
   }
 
 }
