@@ -177,6 +177,18 @@ a:active,a:focus,a:hover{
   background-image: url("../img/puestos.jpeg");
 }
 
+.img-cuc{
+  width: 200px;
+  height: 200px;
+}
+
+  .bg_vistaPuestos .container .img-cuc{
+    background-image: url("../img/logo_cuc.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+  }
+
+
 /*-----------Formato para caracter RESPONSIVO Y ADAPTABLE del sitio-----------------*/
 
 @media (min-width:1000px){
@@ -245,6 +257,8 @@ a:active,a:focus,a:hover{
   header.masthead h2{
     font-size:1.75em
   }
+
+
 }
 
 @media (min-width:770px){
@@ -295,37 +309,66 @@ a:active,a:focus,a:hover{
   .bg-inicio{
     background-image: none;
     background-color: #fff;
+<<<<<<< HEAD
+    border-bottom: solid 3px #003162;
+=======
     border-bottom: solid 2px black;
 
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
   .bg-empleador{
     background-image: none;
     background-color: #fff;
+<<<<<<< HEAD
+    border-bottom: solid 3px #003162;
+=======
     border-bottom: solid 2px black;
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg-oferente{
     background-image: none;
     background-color: #fff;
+<<<<<<< HEAD
+    border-bottom: solid 3px #003162;
+=======
     border-bottom: solid 2px black;
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg_vistaPuestos{
     background-image: none;
     background-color: #fff;
+<<<<<<< HEAD
+    border-bottom: solid 3px #003162;
+  }
+
+   .bg_vistaPuestos .container .img-cuc{
+    background-image: url("../img/logo cuc negro.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    align-content: center;
+=======
     border-bottom: solid 2px black;
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg-inicio-sesion{
     background-image: none;
     background-color: #fff;
+<<<<<<< HEAD
+    border-bottom: solid 3px #003162;
+=======
     border-bottom: solid 2px black;
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg-registro-puesto{
     background-image: none;
     background-color: #fff;
     border-bottom: solid 3px #003162;
+<<<<<<< HEAD
+=======
   }
 
   .container img{
@@ -333,6 +376,7 @@ a:active,a:focus,a:hover{
     background-repeat: no-repeat;
     max-width: 100%;
     height: auto;
+>>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
 }
@@ -358,6 +402,7 @@ a:active,a:focus,a:hover{
 }
 
 /*-----------------Formato de MENUS y SUB-MENUS de Navegacion para el sitio--------------------*/
+
 
 #mainNav{
   padding-top:1rem;
@@ -1264,3 +1309,4 @@ input.registro-oferente:hover, progress, meter{
   padding-top: 100px;
   float: center;
 }
+
