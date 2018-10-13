@@ -304,6 +304,56 @@ a:active,a:focus,a:hover{
 
 @media screen and (max-width:895px){
 
+  .bg-inicio{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+    border-bottom: solid 2px black;
+  }
+
+  .bg-empleador{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+    border-bottom: solid 2px black;
+  }
+
+  .bg-oferente{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+    border-bottom: solid 2px black;
+  }
+
+  .bg_vistaPuestos{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+  }
+
+   .bg_vistaPuestos .container .img-cuc{
+    background-image: url("../img/logo cuc negro.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    align-content: center;
+    border-bottom: solid 2px black;
+  }
+
+  .bg-inicio-sesion{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+    border-bottom: solid 2px black;
+
+  }
+
+  .bg-registro-puesto{
+    background-image: none;
+    background-color: #fff;
+    border-bottom: solid 3px #003162;
+
+  }
+
   .bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto{
     background-image: none;
     background-color: #0798FF;
@@ -320,6 +370,8 @@ a:active,a:focus,a:hover{
   .img-cuc{
     background-image: url("../img/logo-cuc-color-peq.png");
     background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
     padding-bottom: 20px;
   }
 
