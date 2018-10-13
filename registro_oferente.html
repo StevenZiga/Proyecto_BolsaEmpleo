@@ -41,54 +41,27 @@
 
     <!-- principal Grid Section -->
     <section class="principal" id="principal">
-      <!-- <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Oferente</h2><br><br>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-          <form action="" method="get">
-            <div class="float-div"><label for="cedula">Identificación</label></div>
-            <div class="float-div"><input id="cedula" type="text" name="cedula"></div>  
-            <div class="float-div"><label for="first-name">Nombre </label></div>
-            <div class="float-div"><input id="first-name" type="text" name="firstname"></div>
-            <div class="float-div"><label for="last-name">Apellidos </label></div>
-            <div class="float-div"><input id="last-name" type="text" name="lastname"></div>  
-          </form>    
-          </div>
-          <div class="col-md-6 col-lg-4">
-          <form action="" method="get">
-            <div class="float-div"><label for="sexo">Sexo</label></div>
-            <div class="float-div"><input id="sexo" type="text" name="sexo"></div>
-            <div class="float-div"><label for="birth">Fecha de nacimiento</label></div>
-            <div class="float-div"><input id="birth" type="date" name="birth"></div>
-            <div class="float-div"><label for="estado">Estado Civil</label></div>
-            <div class="float-div"><input id="estado" type="text" name="estado"></div>  
-          </form>  
-          </div>
-          <div class="col-md-6 col-lg-4">
-          <form action="" method="get">
-            <div class="float-div"><label for="telf">Teléfono</label></div>
-            <div class="float-div"><input id="telf" type="text" name="telf"></div>
-            <div class="float-div"><label for="email">Correo Electrónico</label></div>
-            <div class="float-div"><input id="email" type="text" name="email"></div>  
-            <div class="float-div"><label for="place">Lugar de residencia</label></div>
-            <div class="float-div"><input id="place" type="text" name="place"></div>             
-          </form>
-          </div>
-          <div class="col-md-6 col-lg-4">  
-          <div><label for="curriculum">Subir curriculum</label></div>           
-          <div><input class="btn-env" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/></div>  
-          </div>         
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <input class="btn" type="submit" value="ENVIAR">
-          </div>
-        </div>
-      </div> -->
 
     <div class="container contenedor-registro">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Oferente</h2><br><br>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Usuario</h2><br><br>
+      <center><img src="img/equipo.png"></center>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+
+                                    <!-- PARTE DESPLEGABLE 1-->      
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
+              </a>
+            </h5>
+          </div>
+      
       <!--<form class="registro-oferente" method="POST" id="formulario">-->
         <!-- Lista de campos -->
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+          <div class="card-block">
+          
           <div class="fila">
             <!-- text -->
             <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
@@ -116,16 +89,175 @@
             <input class="registro-oferente" type="date" id="fecha" name="birthdate" />
             <label for="fecha" class="propiedad">Fecha de nacimiento</label>
           </div>
+
+          <div class="fila">
+            <!-- nacionalidad -->
+            <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+            <label for="nombre" class="propiedad">Nacionalidad</label>
+            <!--hidden -->
+            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+          </div>
+
           <!-- readonly disabled -->
           <div class="fila">
             <input class="registro-oferente" type="number" id="edad" name="age" class="small" value="18" readonly="readonly" disabled="disabled" />
             <label for="edad" class="propiedad">Edad</label>
           </div>
-          <!-- number -->
+          
           <div class="fila">
-            <input type="number" id="hermanos" name="siblings" class="small registro-oferente"" min="1" max="50" value="1" />
-            <label for="hermanos" class="propiedad">Número de hermanos</label>
+            <!-- Residencia -->
+            <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+            <label for="nombre" class="propiedad">Lugar de residencia</label>
+            <!--hidden -->
+            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
           </div>
+
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="radioOne" name="account" checked/>
+              <label for="radioOne" class="radio" chec>Hombre</label>
+              <input type="radio" value="None" id="radioTwo" name="account" />
+              <label for="radioTwo" class="radio">Mujer</label>
+            </div>
+            <label for="genero" class="propiedad">Género</label>
+          </div> 
+
+          </div>
+        </div>
+        </div>         
+
+                                        <!-- PARTE DESPLEGABLE 2-->
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Educativos</h3><br><br>
+                </a>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="card-block">         
+
+          <!-- select combo -->
+          <div class="fila">
+            <select id="estudios" name="studies" required="required">
+              <option value="">- Seleccione -</option>
+              <option value="eso">Primaria</option>
+              <option value="bachillerato">Secundaria</option>
+              <option value="cfgm">Diplomado</option>
+              <option value="cfgs">Bachillerato</option>
+              <option value="grado">Licenciatura</option>
+              <option value="master">Master</option>
+            </select>
+            <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
+          </div>
+
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="estOne" name="estOne" checked/>
+              <label for="estOne" class="radio" chec>Sí</label>
+              <input type="radio" value="None" id="estTwo" name="estOne" />
+              <label for="estTwo" class="radio">No</label>
+            </div>
+            <label for="estudio" class="propiedad">Estudia actualmente</label>
+          </div>   
+
+          <!-- select multiple -->
+          <div class="fila">
+            <select id="idiomas" name="languages" required="required" >
+              <option value="">- Seleccione</option>
+              <option value="spanish">Español</option>
+              <option value="english">Inglés</option>
+              <option value="french">Francés</option>
+              <option value="german">Alemán</option>
+            </select>
+            <label for="idiomas" class="propiedad">Idiomas</label>
+          </div> 
+
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="infoOne" name="infoOne" checked/>
+              <label for="infoOne" class="radio" chec>Sí</label>
+              <input type="radio" value="None" id="infoTwo" name="infoOne" />
+              <label for="infoTwo" class="radio">No</label>
+            </div>
+            <label for="herramienta" class="propiedad">Maneja herramientas informáticas</label>
+          </div> 
+
+          <!-- range -->
+          <div class="fila">
+            <input type="range" id="salario" name="earnings" min="0" max="100" step="10" value="50" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
+            <label for="salario" class="propiedad">Nivel de conocimiento</label>
+            <p>%</p>
+            <output for="salario" id="cono-output">50</output>
+            <datalist id="valores-cono">         
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+              <option>60</option>
+              <option>70</option>
+              <option>80</option>
+              <option>90</option>
+              <option>100</option>
+            </datalist>
+          </div>  
+              </div>
+            </div>
+          </div>
+
+                                          <!-- PARTE DESPLEGABLE 3-->
+
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Laborales</h3><br><br> 
+                </a>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="card-block">                                        
+
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="licOne" name="licOne" checked/>
+              <label for="licOne" class="radio" chec>Sí</label>
+              <input type="radio" value="None" id="licTwo" name="licOne" />
+              <label for="licTwo" class="radio">No</label>
+            </div>
+            <label for="licencia" class="propiedad">Posee licencia</label>
+          </div>   
+
+          <!-- radio -->
+          <div class="fila">
+            <div class="accounttype">
+              <input type="radio" value="None" id="vehOne" name="vehOne" checked/>
+              <label for="vehOne" class="radio" chec>Sí</label>
+              <input type="radio" value="None" id="vehTwo" name="vehOne" />
+              <label for="vehTwo" class="radio">No</label>
+            </div>
+            <label for="vehiculo" class="propiedad">Posee vehículo</label>
+          </div>  
+
+          <!-- select multiple -->
+          <div class="fila">
+            <select id="idiomas" name="languages" required="required" >
+              <option value="">- Seleccione</option>
+              <option value="diurno">Diurno</option>
+              <option value="nocturno">Nocturno</option>
+              <option value="ambos">Completo</option>
+              <option value="ambos">Parcial</option>
+              <option value="ambos">Todos</option>
+            </select>
+            <label for="idiomas" class="propiedad">Horario preferido</label>
+          </div> 
+
           <!-- range -->
           <div class="fila">
             <input type="range" id="salario" name="earnings" min="200000" max="1000000" step="100000" value="1000" list="valores-salario" onchange="document.querySelector('#salario-output').value = value;">
@@ -143,57 +275,32 @@
               <option>₡900.000</option>
               <option>₡1.000.000</option>
             </datalist>
-          </div>          
+          </div>    
+
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="None" id="radioOne" name="account" checked/>
-              <label for="radioOne" class="radio" chec>Hombre</label>
-              <input type="radio" value="None" id="radioTwo" name="account" />
-              <label for="radioTwo" class="radio">Mujer</label>
+              <input type="radio" value="None" id="disOne" name="disOne" checked/>
+              <label for="disOne" class="radio" chec>Sí</label>
+              <input type="radio" value="None" id="disTwo" name="disOne" />
+              <label for="disTwo" class="radio">No</label>
             </div>
-            <label for="genero" class="propiedad">Género</label>
-          </div>          
-          <!-- select combo -->
-          <div class="fila">
-            <select id="estudios" name="studies" required="required">
-              <option value="">- Seleccione -</option>
-              <option value="eso">Primaria</option>
-              <option value="bachillerato">Secundaria</option>
-              <option value="cfgm">Diplomado</option>
-              <option value="cfgs">Bachillerato</option>
-              <option value="grado">Licenciatura</option>
-              <option value="master">Master</option>
-            </select>
-            <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
-          </div>
-          <!-- select multiple -->
-          <div class="fila">
-            <select id="idiomas" name="languages" size="4" multiple="multiple" required="required" >
-              <option value="spanish">Español</option>
-              <option value="english">Inglés</option>
-              <option value="french">Francés</option>
-              <option value="german">Alemán</option>
-            </select>
-            <label for="idiomas" class="propiedad">Idiomas</label>
-          </div>
-          <!-- meter -->
-          <div class="fila">
-            <meter id="experiencia" name="experience" value="24" min="0" max="100" low="25" medium="50" high="75" /></meter>
-            <label for="experiencia" class="propiedad">Nivel de experiencia</label>
-          </div>
-          <!-- progress -->
-          <div class="fila">
-            <progress id="formacion" name="training" value="75" min="0" max="100" /></progress>
-            <label for="formacion" class="propiedad">Nivel de formación</label>
-          </div>
-          <div class="fila botonera">
-            <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
-            <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
-          </div>
+            <label for="discapacidad" class="propiedad">Posee alguna discapacidad</label>
+          </div>  
+
+              </div>
+            </div>
+          </div>   
+
+        <div class="fila botonera">
+          <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
+          <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
+        </div>
+
+        </div>
           <div class="fila botonera">
             <button class="registro-oferente" type="submit">Registrarse</button>
-            <button class="registro-oferente" type="reset">Borrar Campos</button>   
+            <button class="registro-oferente" type="reset">Borrar Campos</button>  
           </div>
     </div>
     </section>    
