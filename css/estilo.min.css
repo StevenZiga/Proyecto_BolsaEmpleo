@@ -309,37 +309,27 @@ a:active,a:focus,a:hover{
   .bg-inicio{
     background-image: none;
     background-color: #fff;
-<<<<<<< HEAD
     border-bottom: solid 3px #003162;
-=======
     border-bottom: solid 2px black;
-
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
+
   .bg-empleador{
     background-image: none;
     background-color: #fff;
-<<<<<<< HEAD
     border-bottom: solid 3px #003162;
-=======
     border-bottom: solid 2px black;
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg-oferente{
     background-image: none;
     background-color: #fff;
-<<<<<<< HEAD
     border-bottom: solid 3px #003162;
-=======
     border-bottom: solid 2px black;
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg_vistaPuestos{
     background-image: none;
     background-color: #fff;
-<<<<<<< HEAD
     border-bottom: solid 3px #003162;
   }
 
@@ -348,27 +338,22 @@ a:active,a:focus,a:hover{
     background-repeat: no-repeat;
     background-size: 75%;
     align-content: center;
-=======
     border-bottom: solid 2px black;
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
   .bg-inicio-sesion{
     background-image: none;
     background-color: #fff;
-<<<<<<< HEAD
     border-bottom: solid 3px #003162;
-=======
     border-bottom: solid 2px black;
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
+
   }
 
   .bg-registro-puesto{
     background-image: none;
     background-color: #fff;
     border-bottom: solid 3px #003162;
-<<<<<<< HEAD
-=======
+
   }
 
   .container img{
@@ -376,7 +361,6 @@ a:active,a:focus,a:hover{
     background-repeat: no-repeat;
     max-width: 100%;
     height: auto;
->>>>>>> 3dea9f2da3b7c5cbf78143973a24e4c6497255b3
   }
 
 }
