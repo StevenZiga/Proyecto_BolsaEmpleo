@@ -152,17 +152,15 @@ a:active,a:focus,a:hover{
 
 .bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto{
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment:fixed; 
-  background-size: 100%;
+  background-repeat: no-repeat; 
   padding: 80px;
 }
 
 .bg-inicio{
-  background-image: url("../img/top1.jpg");
+  background-image: url("../img/top1.jpeg");
 }
 .bg-empleador{
-  background-image: url("../img/top4.jpeg");
+  background-image: url("../img/puestos.jpeg");
 }
 
 .bg-oferente{
@@ -174,7 +172,7 @@ a:active,a:focus,a:hover{
 }
 
 .bg-inicio-sesion{
-  background-image: url("../img/top6.jpg");
+  background-image: url("../img/top9.jpg");
 }
 
 .bg-registro-puesto{
@@ -190,6 +188,7 @@ a:active,a:focus,a:hover{
   background-repeat: no-repeat;
   padding-bottom: 20px;
 }
+
 
 /*-----------Formato para caracter RESPONSIVO Y ADAPTABLE del sitio-----------------*/
 
@@ -308,74 +307,41 @@ a:active,a:focus,a:hover{
 
 @media screen and (max-width:895px){
 
+  .bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto{
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .bg-inicio{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-    border-bottom: solid 2px black;
+    background-image: url("../img/top1.jpeg");
   }
 
   .bg-empleador{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-    border-bottom: solid 2px black;
+    background-image: url("../img/puestos.jpeg");
   }
 
   .bg-oferente{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-    border-bottom: solid 2px black;
+    background-image: url("../img/top5.jpg");
   }
 
   .bg_vistaPuestos{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-  }
-
-   .bg_vistaPuestos .container .img-cuc{
-    background-image: url("../img/logo cuc negro.png");
-    background-repeat: no-repeat;
-    background-size: 75%;
-    align-content: center;
-    border-bottom: solid 2px black;
+    background-image: url("../img/top2.jpg");
   }
 
   .bg-inicio-sesion{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-    border-bottom: solid 2px black;
-
+    background-image: url("../img/top9.jpg");
   }
 
   .bg-registro-puesto{
-    background-image: none;
-    background-color: #fff;
-    border-bottom: solid 3px #003162;
-
+    background-image: url("../img/puestos.jpeg");
   }
-
-  .bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto{
-    background-image: none;
-    background-color: #0798FF;
-    border-bottom: solid 3px #003162;
-    border-bottom: solid 2px black;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .bg-inicio{
-  background-image: url("../img/top1.jpg");
-}
 
   .img-cuc{
-    background-image: url("../img/logo-cuc-color-peq.png");
+    width: 300px;
+    height: 300px;
+    background-image: url("../img/logo-cuc-blan-md.png");
+    background-position: center;
     background-repeat: no-repeat;
-    max-width: 100%;
-    height: auto;
     padding-bottom: 20px;
   }
 
