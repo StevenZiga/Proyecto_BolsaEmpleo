@@ -190,7 +190,7 @@ a:active,a:focus,a:hover{
   height: 300px;
   margin: 0 auto;
   background-position: center;
-  background-image: url("../img/Logos/logo_cuc_blan_peq.png");
+  background-image: url("../img/logos/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   padding-bottom: 20px;
 }
@@ -362,7 +362,7 @@ a:active,a:focus,a:hover{
   .img-cuc{
     width: 300px;
     height: 300px;
-    background-image: url("../img/Logos/logo-cuc-blan-md.png");
+    background-image: url("../img/logos/logo-cuc-blan-md.png");
     background-position: center;
     background-repeat: no-repeat;
     padding-bottom: 20px;
