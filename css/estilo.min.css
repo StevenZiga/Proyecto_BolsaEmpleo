@@ -137,6 +137,7 @@ a:active,a:focus,a:hover{
 
 #registerOne, #registerTwo{
   height: 200px;
+  padding: 1%;
 }
 
 #principal{
