@@ -212,7 +212,7 @@ a:active,a:focus,a:hover{
   }
 
   #mainNav .navbar-brand{
-    font-size:2em;
+    font-size:1.5em;
     -webkit-transition:font-size .3s;
     transition:font-size .3s
   }
