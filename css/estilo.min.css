@@ -1121,3 +1121,10 @@ section{
   .w-400{
     width: 400px!important;
   }
+
+  img.img-margin{
+    margin-top: 15px;
+  }
+  a.img-margin{
+    margin-bottom: 20px;
+  }
