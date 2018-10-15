@@ -130,6 +130,10 @@ a:active,a:focus,a:hover{
   background-color: #00A4BC; 
 }
 
+#principal{
+  margin-bottom:-15px;
+}
+
 /*-------------------------------Formato de FONDOS---------------------------------*/
 
 .bg-primary{
@@ -212,7 +216,7 @@ a:active,a:focus,a:hover{
   }
 
   #mainNav .navbar-brand{
-    font-size:1.5em;
+    font-size:1.5Fem;
     -webkit-transition:font-size .3s;
     transition:font-size .3s
   }
@@ -268,16 +272,6 @@ a:active,a:focus,a:hover{
 }
 
 @media (min-width:770px){
-  .principal-modal .principal-modal-dialog{
-    min-height:100vh;
-    padding:5rem;
-    margin:3rem calc(3rem - 8px)
-  }
-
-  .principal-modal .principal-modal-dialog h2{
-    font-size:3rem
-  }
-
   #registerOne{
     width:50%;
     float:left;
@@ -331,42 +325,6 @@ a:active,a:focus,a:hover{
     background-repeat: no-repeat;
   }
 
-  .bg-inicio{
-    background-image: url("../img/tops/top1.jpeg");
-  }
-
-  .bg-empleador{
-    background-image: url("../img/tops/puestos.jpeg");
-  }
-
-  .bg-oferente{
-    background-image: url("../img/tops/top5.jpg");
-  }
-
-  .bg_vistaPuestos{
-    background-image: url("../img/tops/top2.jpg");
-  }
-
-  .bg-inicio-sesion{
-    background-image: url("../img/tops/top10.jpg");
-  }
-
-  .bg-registro-puesto{
-    background-image: url("../img/tops/puestos.jpeg");
-  }
-
-  .bg-ayuda{
-    background-image: url("../img/tops/top11.jpg");
-  }
-
-  .img-cuc{
-    width: 300px;
-    height: 300px;
-    background-image: url("../img/logos/logo-cuc-blan-md.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-bottom: 20px;
-  }
 
   #btn_plazas, #btn_ayuda{
     font-size: 1em;
@@ -379,11 +337,6 @@ a:active,a:focus,a:hover{
     margin-bottom:-30px
   }
 
-  .principal .principal-item{
-    margin-bottom:30px
-  }
-
- 
   #register{
     display: inline-block;
   }
@@ -395,7 +348,6 @@ a:active,a:focus,a:hover{
 }
 
 /*-----------------Formato de MENUS y SUB-MENUS de Navegacion para el sitio--------------------*/
-
 
 #mainNav{
   padding-top:1rem;
@@ -440,7 +392,6 @@ ul.sub-nav-list{
   padding: 0;
   margin: 0;
 }
-
 
 #mainNav .navbar-nav li.nav-item > ul.sub-nav-list{
   height: 8em;
@@ -489,558 +440,7 @@ header.masthead h2{
   font-family:Lato
 }
 
-/*---------------Formato del apartado principal del contenido del sitio--------------------*/
-
-#principal{
-  margin-bottom:-15px;
-}
-
-.principal .principal-item{
-  position:relative;
-  display:block;
-  max-width:25rem;
-  margin-bottom:15px
-}
-
-.principal .principal-item .principal-item-caption{
-  -webkit-transition:all ease .5s;
-  transition:all ease .5s;
-  opacity:0;
-  background-color:rgba(24,188,156,.9)
-}
-
-.principal .principal-item .principal-item-caption:hover{
-  opacity:1
-}
-
-.principal .principal-item .principal-item-caption .principal-item-caption-content{
-  font-size:1.5rem
-}
-
-.principal-modal .principal-modal-dialog{
-  padding:3rem 1rem;
-  min-height:calc(100vh - 2rem);
-  margin:1rem calc(1rem - 8px);
-  position:relative;z-index:2;
-  -webkit-box-shadow:0 0 3rem 1rem rgba(0,0,0,.5);
-  box-shadow:0 0 3rem 1rem rgba(0,0,0,.5)
-}
-
-.principal-modal .principal-modal-dialog .close-button{
-  position:absolute;
-  top:2rem;
-  right:2rem
-}
-
-.principal-modal .principal-modal-dialog .close-button i{
-  line-height:38px
-}
-
-.principal-modal .principal-modal-dialog h2{
-  font-size:2rem
-}
-
-
-.floating-label-form-group{
-  position:relative;
-  border-bottom:1px solid #e9ecef
-}
-
-.floating-label-form-group input,.floating-label-form-group textarea{
-  font-size:1.5em;
-  position:relative;
-  z-index:1;
-  padding-right:0;
-  padding-left:0;
-  resize:none;
-  border:none;
-  border-radius:0;
-  background:0 0;
-  -webkit-box-shadow:none!important;
-  box-shadow:none!important
-}
-
-.floating-label-form-group label{
-  font-size:.85em;
-  line-height:1.764705882em;
-  position:relative;
-  z-index:0;
-  top:2em;
-  display:block;
-  margin:0;
-  -webkit-transition:top .3s ease,opacity .3s ease;transition:top .3s ease,opacity .3s ease;
-  vertical-align:middle;
-  vertical-align:baseline;
-  opacity:0
-}
-
-.floating-label-form-group:not(:first-child){
-  padding-left:14px;
-  border-left:1px solid #e9ecef
-}
-
-.floating-label-form-group-with-value label{
-  top:0;
-  opacity:1
-}
-
-.floating-label-form-group-with-focus label{
-  color:#18bc9c
-}
-
-
 /*---------------------Formato de seccion de Registro de OFERENTES del sitio--------------------*/
-
-div.float-div{
-  margin: 0 auto;
-  padding: 5px;
-  align-content: center;  
-}
-
-form{  
-  float: left;
-  font-family:Montserrat;
-}
-
-input {
-  /*background: linear-gradient(21deg, #003162, #064F79);*/
-  padding: 3px;
-  border-radius: 9999em;
-  color: white;
-}
-
-.btn{
-  width: 50%;
-  margin: 15px;
-  float:inherit;
-}
-
-input:hover{
-  background: linear-gradient(21deg, #fff, #fff);
-  padding: 3px;
-  border-radius: 9999em;
-  color: black;
-}
-
-.btn-env{
-  width: 120%;
-  margin: 20px;
-  float:inherit;
-  background-color: white;
-}
-
-/*---------------------Formato de seccion de Registro de EMPLEADORES del sitio-----------------*/
-
-.empresa input[type=text]{
-  background: #00A4BC;
-  color: #fff;
-  opacity: 1;
-  border: 0px solid white;
-}
-
-.bg-terciary input[type=text], textarea{
-  background: #fff;
-  color: #00A4BC;
-  opacity: 1;
-  border: 0px solid white;
-}
-
-.select-puesto #especialidad{
-  background: #F68B1F;
-  color: #000000;
-  opacity: 1;
-  border: 1px solid black;
-}
-
-.select-puesto #lugar{
-  background: #00A4BC;
-  color: #000000;
-  width: 250px;
-}
-
-.select-puesto #tiempo{
-  background: #B5C627;
-  color: #000000;
-  width: 250px;
-}
-
-#empresa ::placeholder{
-  color: #fff;
-  opacity: 1;
-}
-
-.bg-terciary ::placeholder{
-  color: #00A4BC;
-  opacity: 1;
-}
-
-.select-puesto ::placeholder{
-  color: #000000;
-  opacity: 1;
-}
-
-/*--------------------Formato de seccion de Visualizacion de PUESTOS del sitio-------------------*/
-
-.select-puesto select, input[type=text]{
-  margin-bottom: 10px;
-}
-
-.bg-terciary input[type=text], textarea{
-  background: #fff;
-  color: #00A4BC;
-  opacity: 1;
-  border: 0px solid white;
-  margin-bottom: 10px;
-}
-
-.select-puesto #btnbuscar{
-  background-color: #00A4BC;
-  color: #fff;
-  width: 100px;
-  cursor: pointer;
-}
-
-.bg-terciary table{
-  width: 400px;
-  margin-top: 10%;
-}
-
-.bg-terciary th{
-  height: 75px;
-  padding: 7%;
-}
-
-.bg-terciary td{
-  height: 50px;
-  text-align: justify;
-  padding: 7%;
-}
-
-.bg-terciary tfoot td{
-  height: 100px;
-}
-
-.bg-terciary .row #table-puestos #head-puestos{
-  background-color: #04538A;
-  color: #fff;
-}
-
-.bg-terciary .row #table-puestos #body-puestos{
-  background-color: #fff;
-  color: #000000;
-  border-bottom: 2px solid #F68B1F;
-}
-
-.bg-terciary .row #table-puestos #foot-puestos{
-  background-color: #fff;
-  color: #000000;
-}
-
-/*-------------------------Formato de seccion de Inicio de SESION del sitio----------------------*/
-
-.btn-inicio{
-    width: 250px;
-    height: 40px;
-    border-radius: 7px;    
-    border-color: black;
-    border-style: solid;
-    font-size: 12;
-    margin: 20px auto;
-    padding: 10px; 
-}
-
-.btn-inicio:hover{
-    font-size: 12;
-    margin: 20px auto;
-    padding: 10px; 
-    border-radius: 1em;
-    border-color: #FF1000;
-    border-style: solid;
-    color: #FF1000; 
-}
-
-.inicio{
-  background: linear-gradient(21deg, #F1543F, #F1543F);
-  margin: 20px;
-  border-radius: 1em;
-  color: black;
-  border-color: black;
-  border-style: solid;
-}
-
-.inicio:hover{
-  background: linear-gradient(21deg, #fff, #fff);
-  padding: 4px;
-  border-radius: 1em;
-  border-color: #FF1000;
-  border-style: solid;
-  margin: 20px;
-  color: black;  
-}
-
-
-/*---------------------Formato de seccion de Registro de PUESTOS del sitio-----------------*/
-
-textarea {
-  background: linear-gradient(21deg, #003162, #064F79);
-  padding: 3px;
-  border-radius: 1em;
-  color: white;
-}
-
-textarea:hover{
-  background: linear-gradient(21deg, #fff, #fff);
-  padding: 3px;
-  border-color: black;
-  border-style: solid;
-  color: black;
-}
-
-.bg-div1, .bg-div2{
-  background-color: #04538A;
-  text-align: center;
-  align-content: center;
-  align-items: center;
-  padding: 15px; 
-}
-
-.bg-div1{ 
-  width: 500%;
-  height: 500%;
-  float: left;
-}
-
-.bg-div2{
-  width: 100%;
-  height: 50%;
-  float: right; 
-}
-
-.position{
-  display: table-cell;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 50px;
-}
-
-.away{
-  margin: 5px auto;
-  padding-right: 15px;
-  color: white
-}
-
-#puesto{
-  background: linear-gradient(21deg, #fff, #fff);
-  padding: 3px;
-  border-radius: 1em;
-  color: black;
-  border-style: solid;
-  border-color: #F68B1F;
-}
-
-#puesto:hover{
-  border-color: black;
-}
-
-.bg-div1:hover{
-  background-color: #003162;
-  width: 500%;
-  height: 500%;
-  color: white; 
-}
-
-.bg-div2:hover{
-  background-color: #003162;
-  width: 100%;
-  height: 50%;
-  padding: 15px; 
-}
-
-/* ---------------------- >>> PARTE NUEVA (Inicio Sesion) <<< - By: Steven ---------------------- */
-
-form, textarea, p { 
-  padding:0;
-  margin:0;
-}
-
-fieldset, img {
-  border:0
-}
-
-:focus {
-  outline:none
-}
-
-input.log-in, textarea.log-in, select.log-in{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color: #4c4c4c;
-}
-
-h1.log-in{
-  font-size: 32px;
-  font-weight: 300;
-  color: #4c4c4c;
-  text-align: center;
-  padding-top: 30px;
-  margin-bottom: 10px;
-}
-
-.testbox {
-  margin: 20px auto;
-  width: 343px; 
-  height: 464px; 
-  -webkit-border-radius: 8px/7px; 
-  -moz-border-radius: 8px/7px; 
-  border-radius: 8px/7px; 
-  background-color: #ebebeb; 
-  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  border: solid 2px #003162;
-}
-
-input[type=radio]{
-  visibility: hidden;
-}
-
-form{
-  margin: 0 30px;
-}
-
-label.radio {
-  cursor: pointer;
-  text-indent: 35px;
-  overflow: visible;
-  display: inline-block;
-  position: relative;
-  margin-bottom: 15px;
-}
-
-label.radio:before {
-  background: #F68B1F;
-  content:'';
-  position: absolute;
-  top:2px;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-}
-
-label.radio:after {
-  opacity: 0;
-  content: '';
-  position: absolute;
-  width: 0.5em;
-  height: 0.25em;
-  background: transparent;
-  top: 7.5px;
-  left: 4.5px;
-  border: 3px solid #ffffff;
-  border-top: none;
-  border-right: none;
-
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-input[type=radio]:checked + label:after {
-  opacity: 1;
-}
-
-hr{
-  color: #a9a9a9;
-  opacity: 0.3;
-}
-
-input.log-in[type=text] {
-  background-color: white;
-  border: solid 1px black;
-}
-
-input.log-in:hover {
-  background-color: #fff;
-  border: solid 2px black;
-}
-
-input[type=text], input[type=password]{
-  width: 200px; 
-  height: 39px; 
-  -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
-  -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
-  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
-  background-color: #fff; 
-  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-  border: solid 1px #cbc9c9;
-  margin-left: -5px;
-  margin-top: 13px; 
-  padding-left: 10px;
-}
-
-input[type=password] {
-  margin-bottom: 25px;
-}
-
-#icon {
-  display: inline-block;
-  width: 40px;
-  background-color: #003162;
-  padding: 8px 0px 8px 15px;
-  margin-left: 10px;
-  -webkit-border-radius: 4px 0px 0px 4px; 
-  -moz-border-radius: 4px 0px 0px 4px; 
-  border-radius: 4px 0px 0px 4px;
-  color: white;
-  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
-  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-  border: solid 0px #003162;
-}
-
-.accounttype{
-  margin-left: 8px;
-  margin-top: 20px;
-}
-
-a.button {
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  padding: 6px 25px 0px 20px;
-  margin: 10px 8px 20px 0px;
-  display: inline-block;
-  text-align: center;
-  float: center;
-  text-decoration: none;
-  width: 95px; height: 30px; 
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
-  background-color: #04538A; 
-  -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
-  -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
-  box-shadow: 0 3px rgba(58,87,175,.75);
-  transition: all 0.1s linear 0s; 
-  top: 0px;
-  position: relative;
-}
-
-a.button:hover {
-  top: 3px;
-  background-color:#003162;
-  -webkit-box-shadow: none; 
-  -moz-box-shadow: none; 
-  box-shadow: none;  
-}
-
-/* ---------------------- >>> PARTE NUEVA (Registro Oferente) <<< - By: Steven ---------------------- */
 
 *:before,*:after {
   margin: 0;
@@ -1241,7 +641,57 @@ input.registro-oferente:hover, progress, meter{
   }
 }
 
-/* ---------------------- >>> PARTE NUEVA (Vista de Puestos) <<< - By: Steven ---------------------- */
+/*---------------------Formato de seccion de Registro de EMPLEADORES del sitio-----------------*/
+
+.empresa input[type=text]{
+  background: #00A4BC;
+  color: #fff;
+  opacity: 1;
+  border: 0px solid white;
+}
+
+.bg-terciary input[type=text], textarea{
+  background: #fff;
+  color: #00A4BC;
+  opacity: 1;
+  border: 0px solid white;
+}
+
+.select-puesto #especialidad{
+  background: #F68B1F;
+  color: #000000;
+  opacity: 1;
+  border: 1px solid black;
+}
+
+.select-puesto #lugar{
+  background: #00A4BC;
+  color: #000000;
+  width: 250px;
+}
+
+.select-puesto #tiempo{
+  background: #B5C627;
+  color: #000000;
+  width: 250px;
+}
+
+#empresa ::placeholder{
+  color: #fff;
+  opacity: 1;
+}
+
+.bg-terciary ::placeholder{
+  color: #00A4BC;
+  opacity: 1;
+}
+
+.select-puesto ::placeholder{
+  color: #000000;
+  opacity: 1;
+}
+
+/*--------------------Formato de seccion de Visualizacion de PUESTOS del sitio-------------------*/
 
 .container-vista-puesto{
   width: 300px;
@@ -1303,3 +753,299 @@ input.registro-oferente:hover, progress, meter{
   float: center;
 }
 
+.bg-terciary table{
+  width: 400px;
+  margin-top: 10%;
+}
+
+.bg-terciary th{
+  height: 75px;
+  padding: 7%;
+}
+
+.bg-terciary td{
+  height: 50px;
+  text-align: justify;
+  padding: 7%;
+}
+
+.bg-terciary tfoot td{
+  height: 100px;
+}
+
+.bg-terciary .row #table-puestos #head-puestos{
+  background-color: #04538A;
+  color: #fff;
+}
+
+.bg-terciary .row #table-puestos #body-puestos{
+  background-color: #fff;
+  color: #000000;
+  border-bottom: 2px solid #F68B1F;
+}
+
+.bg-terciary .row #table-puestos #foot-puestos{
+  background-color: #fff;
+  color: #000000;
+}
+
+/*-------------------------Formato de seccion de Inicio de SESION del sitio----------------------*/
+
+form, textarea, p { 
+  padding:0;
+  margin:0;
+}
+
+fieldset, img {
+  border:0
+}
+
+:focus {
+  outline:none
+}
+
+input.log-in, textarea.log-in, select.log-in{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #4c4c4c;
+}
+
+h1.log-in{
+  font-size: 32px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.testbox {
+  margin: 20px auto;
+  width: 343px; 
+  height: 464px; 
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  background-color: #ebebeb; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 2px #003162;
+}
+
+input[type=radio]{
+  visibility: hidden;
+}
+
+form{
+  margin: 0 30px;
+}
+
+label.radio {
+  cursor: pointer;
+  text-indent: 35px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+label.radio:before {
+  background: #F68B1F;
+  content:'';
+  position: absolute;
+  top:2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+label.radio:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 0.5em;
+  height: 0.25em;
+  background: transparent;
+  top: 7.5px;
+  left: 4.5px;
+  border: 3px solid #ffffff;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+
+hr{
+  color: #a9a9a9;
+  opacity: 0.3;
+}
+
+input.log-in[type=text] {
+  background-color: white;
+  border: solid 1px black;
+}
+
+input.log-in:hover {
+  background-color: #fff;
+  border: solid 2px black;
+}
+
+input[type=text], input[type=password]{
+  width: 200px; 
+  height: 39px; 
+  -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  background-color: #fff; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px; 
+  padding-left: 10px;
+}
+
+input[type=password] {
+  margin-bottom: 25px;
+}
+
+#icon {
+  display: inline-block;
+  width: 40px;
+  background-color: #003162;
+  padding: 8px 0px 8px 15px;
+  margin-left: 10px;
+  -webkit-border-radius: 4px 0px 0px 4px; 
+  -moz-border-radius: 4px 0px 0px 4px; 
+  border-radius: 4px 0px 0px 4px;
+  color: white;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 0px #003162;
+}
+
+.accounttype{
+  margin-left: 8px;
+  margin-top: 20px;
+}
+
+a.button {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+  text-align: center;
+  float: center;
+  text-decoration: none;
+  width: 95px; height: 30px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #04538A; 
+  -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
+  -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
+  box-shadow: 0 3px rgba(58,87,175,.75);
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+}
+
+a.button:hover {
+  top: 3px;
+  background-color:#003162;
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none; 
+  box-shadow: none;  
+}
+
+/*---------------------Formato de seccion de Registro de PUESTOS del sitio-----------------*/
+
+textarea {
+  background: linear-gradient(21deg, #003162, #064F79);
+  padding: 3px;
+  border-radius: 1em;
+  color: white;
+}
+
+textarea:hover{
+  background: linear-gradient(21deg, #fff, #fff);
+  padding: 3px;
+  border-color: black;
+  border-style: solid;
+  color: black;
+}
+
+.bg-div1, .bg-div2{
+  background-color: #04538A;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  padding: 15px; 
+}
+
+.bg-div1{ 
+  width: 500%;
+  height: 500%;
+  float: left;
+}
+
+.bg-div2{
+  width: 100%;
+  height: 50%;
+  float: right; 
+}
+
+.position{
+  display: table-cell;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.away{
+  margin: 5px auto;
+  padding-right: 15px;
+  color: white
+}
+
+#puesto{
+  background: linear-gradient(21deg, #fff, #fff);
+  padding: 3px;
+  border-radius: 1em;
+  color: black;
+  border-style: solid;
+  border-color: #F68B1F;
+}
+
+#puesto:hover{
+  border-color: black;
+}
+
+.bg-div1:hover{
+  background-color: #003162;
+  width: 500%;
+  height: 500%;
+  color: white; 
+}
+
+.bg-div2:hover{
+  background-color: #003162;
+  width: 100%;
+  height: 50%;
+  padding: 15px; 
+}
