@@ -273,13 +273,15 @@ a:active,a:focus,a:hover{
 
 @media (min-width:770px){
   #registerOne{
-    width:50%;
+    width:47%;
     float:left;
+    margin: 1%;
   }
 
   #registerTwo{
-    width:50%;
+    width:47%;
     float: right;
+    margin: 1%;
   }
 
   textarea{
@@ -289,14 +291,9 @@ a:active,a:focus,a:hover{
 }
 
 @media screen and (max-width:580px){
- #registerOne{
-    width:100%;
-    padding: 5%;
-  }
-
-  #registerTwo{
-    width:100%;
-    padding: 5%;
+  #registerOne, #registerTwo{
+    width:95%;
+    margin: 2.5%;
   }
 
  #register a{
@@ -337,8 +334,13 @@ a:active,a:focus,a:hover{
     margin-bottom:-30px
   }
 
-  #register{
+   #register{
     display: inline-block;
+    margin: 1%; 
+  }
+
+   #registerOne, #registerTwo{
+    margin: 1%;
   }
 
   textarea{
