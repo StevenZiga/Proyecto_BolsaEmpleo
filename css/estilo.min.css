@@ -753,7 +753,11 @@ input.registro-oferente:hover, progress, meter{
 .puesto{
   width: 100%;
   padding-top: 100px;
-  float: center;
+  margin: 0 auto;
+}
+
+.puesto h5{
+  padding: 20px;
 }
 
 .bg-terciary table{
