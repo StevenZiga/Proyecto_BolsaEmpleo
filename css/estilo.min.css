@@ -143,6 +143,9 @@ a:active,a:focus,a:hover{
   margin-bottom:-15px;
 }
 
+#steps{
+  margin-top: 15px; 
+}
 /*-------------------------------Formato de FONDOS---------------------------------*/
 
 .bg-primary{
@@ -229,6 +232,7 @@ a:active,a:focus,a:hover{
   }
 
   #mainNav .navbar-brand{
+    margin-left: 15px;
     font-size:1.5Fem;
     -webkit-transition:font-size .3s;
     transition:font-size .3s
