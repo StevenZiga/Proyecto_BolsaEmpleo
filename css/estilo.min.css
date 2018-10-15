@@ -152,33 +152,37 @@ a:active,a:focus,a:hover{
   background-color: #F68B1F !important;
 }
 
-.bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto{
+.bg-inicio, .bg-empleador, .bg-oferente, .bg_vistaPuestos, .bg-inicio-sesion, .bg-registro-puesto, .bg-ayuda{
   background-position: center;
   background-repeat: no-repeat; 
   padding: 80px;
 }
 
 .bg-inicio{
-  background-image: url("../img/top1.jpeg");
+  background-image: url("../img/tops/top1.jpeg");
 }
 .bg-empleador{
-  background-image: url("../img/puestos.jpeg");
+  background-image: url("../img/tops/puestos.jpeg");
 }
 
 .bg-oferente{
-  background-image: url("../img/top5.jpg");
+  background-image: url("../img/tops/top5.jpg");
 }
 
 .bg_vistaPuestos{
-  background-image: url("../img/top2.jpg");
+  background-image: url("../img/tops/top2.jpg");
 }
 
 .bg-inicio-sesion{
-  background-image: url("../img/top9.jpg");
+  background-image: url("../img/tops/top10.jpg");
 }
 
 .bg-registro-puesto{
-  background-image: url("../img/puestos.jpeg");
+  background-image: url("../img/tops/puestos.jpeg");
+}
+
+.bg-ayuda{
+  background-image: url("../img/tops/top11.jpg");
 }
 
 .img-cuc{
@@ -186,7 +190,7 @@ a:active,a:focus,a:hover{
   height: 300px;
   margin: 0 auto;
   background-position: center;
-  background-image: url("../img/logo_cuc_blan_peq.png");
+  background-image: url("../img/Logos/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   padding-bottom: 20px;
 }
@@ -261,7 +265,6 @@ a:active,a:focus,a:hover{
     font-size:1.75em
   }
 
-
 }
 
 @media (min-width:770px){
@@ -294,10 +297,12 @@ a:active,a:focus,a:hover{
 @media screen and (max-width:580px){
  #registerOne{
     width:100%;
+    padding: 5%;
   }
 
   #registerTwo{
     width:100%;
+    padding: 5%;
   }
 
  #register a{
@@ -305,7 +310,19 @@ a:active,a:focus,a:hover{
     font-size: 1em;
   }
 
+  #btn_plazas, #btn_ayuda{
+    font-size: 1em;
+  }
+
 }
+
+@media (max-width:1260px){
+  #empresas{
+    display: none;
+  }
+
+}
+  
 
 @media screen and (max-width:895px){
 
@@ -315,36 +332,44 @@ a:active,a:focus,a:hover{
   }
 
   .bg-inicio{
-    background-image: url("../img/top1.jpeg");
+    background-image: url("../img/tops/top1.jpeg");
   }
 
   .bg-empleador{
-    background-image: url("../img/puestos.jpeg");
+    background-image: url("../img/tops/puestos.jpeg");
   }
 
   .bg-oferente{
-    background-image: url("../img/top5.jpg");
+    background-image: url("../img/tops/top5.jpg");
   }
 
   .bg_vistaPuestos{
-    background-image: url("../img/top2.jpg");
+    background-image: url("../img/tops/top2.jpg");
   }
 
   .bg-inicio-sesion{
-    background-image: url("../img/top9.jpg");
+    background-image: url("../img/tops/top10.jpg");
   }
 
   .bg-registro-puesto{
-    background-image: url("../img/puestos.jpeg");
+    background-image: url("../img/tops/puestos.jpeg");
+  }
+
+  .bg-ayuda{
+    background-image: url("../img/tops/top11.jpg");
   }
 
   .img-cuc{
     width: 300px;
     height: 300px;
-    background-image: url("../img/logo-cuc-blan-md.png");
+    background-image: url("../img/Logos/logo-cuc-blan-md.png");
     background-position: center;
     background-repeat: no-repeat;
     padding-bottom: 20px;
+  }
+
+  #btn_plazas, #btn_ayuda{
+    font-size: 1em;
   }
 
 }
