@@ -1082,15 +1082,34 @@ section{
 }
 
 #accordion-style-1 .card-header .btn .fa.main{
-    background: #F68B1F;
-    padding: 13px 11px;
-    color: #ffffff;
-    width: 35px;
-    height: 41px;
-    position: absolute;
-    left: -1px;
-    top: 10px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+  background: #F68B1F;
+  padding: 13px 11px;
+  color: #ffffff;
+  width: 35px;
+  height: 41px;
+  position: absolute;
+  left: -1px;
+  top: 10px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   display:block;
 }
+
+.principal .principal-item .principal-item-caption{
+  -webkit-transition:all ease .5s;
+  transition:all ease .5s;  
+  opacity:0;
+  background-color:rgba(246,139,31,.8);
+}
+
+  .principal .principal-item .principal-item-caption:hover{
+    opacity:1
+  }
+
+  .h-442{
+    height: 442px!important;
+  }
+
+  .w-400{
+    width: 400px!important;
+  }
