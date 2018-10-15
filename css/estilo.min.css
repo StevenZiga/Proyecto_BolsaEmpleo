@@ -182,6 +182,10 @@ a:active,a:focus,a:hover{
   background-image: url("../img/tops/top5.jpg");
 }
 
+.bg-editar{
+  background-image: url("../img/tops/top13.jpeg");
+}
+
 .bg_vistaPuestos{
   background-image: url("../img/tops/top2.jpg");
 }
