@@ -117,144 +117,56 @@
         <h2 class="text-center text-uppercase text-white">Puestos</h2>
         <hr class="star-dark">
         <div class="row">
-          <div class="col-md-6 col-lg-4">
-              <a class="principal-item d-block mx-auto" href="#principal-modal-1">
-                <div class="principal-item-caption d-flex position-absolute h-442 w-400">
-                  <div class="principal-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-3x"></i>
-                  </div>
-                </div>
-                   <table id="table-puestos">
-                      <tr>
-                        <th id="head-puestos" height="75">Nombre del puesto: Contador</th>
-                      </tr>
-                      <tbody id="body-puestos">
-                        <tr>
-                          <td height="50">Duración: Completo</td>
-                        </tr>
-                        <tr>
-                         <td height="50">Ubicación: Cartago</td>
-                        </tr>
-                      </tbody>
-                    <tfoot id="foot-puestos">
-                      <tr>
-                        <td height="100">Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-              </a>
-            </div>
+          <?php 
+            /////Conexión con la data//////////
+            $hostname = "sql203.epizy.com";
+            $database = "epiz_22952208_BD_BolsaEmpleo";
+            $username = "epiz_22952208";
+            $password = "progra";
+            $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
 
-            <div class="col-md-3 col-lg-4"></div>
+            mysql_select_db($database, $con);
+            $sql = "SELECT puesto, duracion, ubicacion, descripcion FROM Puestos";
+            $rspubli = mysql_query($sql, $con) or die(mysql_error());
+            $i = 1;
 
-            <!--------------------------------------------------------------->
-            <div class="col-md-6 col-lg-4">
-              <a class="principal-item d-block mx-auto" href="#principal-modal-2">
-                <div class="principal-item-caption d-flex position-absolute h-442 w-400">
-                  <div class="principal-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-3x"></i>
-                  </div>
-                </div>
-                   <table id="table-puestos">
-                      <tr>
-                        <th id="head-puestos" height="75">Nombre del puesto: Administrador de Empresas</th>
-                      </tr>
-                      <tbody id="body-puestos">
-                        <tr>
-                          <td height="50">Duración: Parcial</td>
-                        </tr>
-                        <tr>
-                         <td height="50">Ubicación: Puntarenas</td>
-                        </tr>
-                      </tbody>
-                    <tfoot id="foot-puestos">
-                      <tr>
-                        <td height="100">Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-              </a>
-            </div> 
+              while($row = mysql_fetch_assoc($rspubli)) {
 
-
-            <!----------------------------------------------------------------------->
-            <div class="col-md-6 col-lg-4">
-              <a class="principal-item d-block mx-auto" href="#principal-modal-3">
-                <div class="principal-item-caption d-flex position-absolute h-442 w-400">
-                  <div class="principal-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-3x"></i>
-                  </div>
-                </div>
-                   <table id="table-puestos">
-                      <tr>
-                        <th id="head-puestos" height="75">Nombre del puesto: Asistente Administrativo</th>
-                      </tr>
-                      <tbody id="body-puestos">
-                        <tr>
-                          <td height="50">Duración: Parcial</td>
-                        </tr>
-                        <tr>
-                         <td height="50">Ubicación: Heredia</td>
-                        </tr>
-                      </tbody>
-                    <tfoot id="foot-puestos">
-                      <tr>
-                        <td height="100">Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-              </a>
-            </div> 
-
-            <div class="col-md-3 col-lg-4"></div>
-
-            <!---------------------------------------------------------------------------------->
-            <div class="col-md-6 col-lg-4">
-              <a class="principal-item d-block mx-auto" href="#principal-modal-4">
-                <div class="principal-item-caption d-flex position-absolute h-442 w-400">
-                  <div class="principal-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-3x"></i>
-                  </div>
-                </div>
-                   <table id="table-puestos">
-                      <tr>
-                        <th id="head-puestos" height="75">Nombre del puesto: Programador en C++</th>
-                      </tr>
-                      <tbody id="body-puestos">
-                        <tr>
-                          <td height="50">Duración: Completo</td>
-                        </tr>
-                        <tr>
-                         <td height="50">Ubicación: Alajuela</td>
-                        </tr>
-                      </tbody>
-                    <tfoot id="foot-puestos">
-                      <tr>
-                        <td height="100">Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-              </a>
-            </div> 
-
-            <div class="col-md-3 col-lg-3"></div>
-
-            <!------------------------------------------------------------------------------>
+                echo "<div class='col-md-6 col-lg-4'>
+                      <a class='principal-item d-block mx-auto' href='#principal-modal-".$i."'>
+                        <div class='principal-item-caption d-flex position-absolute h-442 w-400'>
+                          <div class='principal-item-caption-content my-auto w-100 text-center text-white'>
+                            <i class='fas fa-search-plus fa-3x'></i>
+                          </div>
+                        </div>
+                           <table id='table-puestos'>
+                              <tr>
+                                <th id='head-puestos' height='75'>Nombre del puesto: ".$row["puesto"]." </th>
+                              </tr>
+                              <tbody id='body-puestos'>
+                                <tr>
+                                  <td height='50'>Duración: ".$row["duracion"]."</td>
+                                </tr>
+                                <tr>
+                                 <td height='50'>Ubicación: ".$row["ubicacion"]."</td>
+                                </tr>
+                              </tbody>
+                            <tfoot id='foot-puestos'>
+                              <tr>
+                                <td height='100'>Descripción: ".$row["descripcion"]."</td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                      </a>
+                    </div>
+                    <div class='col-md-3 col-lg-4'></div>";
+                    $i++;
+          }
+        ?>
           </div>           
         </div>    
       </div>
+
     </section>
 
     <!--PUESTO 1-->

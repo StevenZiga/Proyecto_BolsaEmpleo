@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <?php include 'php/login.php';?>
 
     <title>Inicio de Sesión - CUC</title>
 
@@ -52,20 +54,19 @@
       <div class="testbox">
         <h1 class="log-in">Acceso</h1>
 
-        <form action="/">
-          <hr>
+        <form action="inicio_sesion.php" method="post">
           <div class="accounttype">
             <input type="radio" value="None" id="radioOne" name="account" checked/>
             <label for="radioOne" class="radio" chec>Empleador</label>
             <input type="radio" value="None" id="radioTwo" name="account" />
             <label for="radioTwo" class="radio">Oferente</label>
           </div>
-          <hr>
-            <label class="log-in" id="icon" for="name"><img src="img/otras/sobre.png"></label>
-            <input class="log-in" type="text" name="name" id="name" placeholder="Email" required/>
-            <label class="log-in" id="icon" for="name"><img src="img/otras/escudo.png"></label>
-            <input class="log-in" type="password" name="name" id="name" placeholder="Contraseña" required/>
-          <a href="#" class="button">Acceder</a>
+            <label class="log-in" id="icon" for="username"><img src="img/otras/sobre.png"></label>
+            <input class="log-in" type="text" name="username" placeholder="Email" required/>
+            <label class="log-in" id="icon" for="pass"><img src="img/otras/escudo.png"></label>
+            <input class="log-in" type="password" name="password" placeholder="Contraseña" required/>
+         <a href="#" class="button" name="save">Acceder</a>
+          <button type="submit" class="button" name="save">Acceder</button>
         </form>
       </div>
     </section>  

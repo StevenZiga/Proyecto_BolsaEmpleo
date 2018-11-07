@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <?php include 'php/empresa.php'?>
 
     <title>Registro Empresa - CUC</title>
 
@@ -44,7 +45,7 @@
     <!-- Datos iniciales -->
     <section class="empresa" id="empresa">
 
-      
+    <form action="registro_empresa.php" method="post">
     <div class="container contenedor-registro">
       <h2 class="text-center text-uppercase text-secondary mb-0">Datos de la Empresa</h2><br><br>
       <center><img class="reg" src="img/otras/equipo.png"></center>
@@ -66,50 +67,51 @@
         <!-- Lista de campos -->
             <!-- text -->
           <div class="fila">
-            <input class="registro-oferente" type="ced" id="cedula" name="cedula" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <input class="registro-oferente" type="ced" name="cedula" maxlength="9" size="11" pattern="[0-9]{9}" />
             <label for="cedula" class="propiedad">Cédula Jurídica</label>
           </div> 
           <div class="fila">
-            <input class="registro-oferente" type="ced" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+            <input class="registro-oferente" type="nombre" name="empresa" maxlength="30" size="30" required="required" autofocus="autofocus" />
             <label for="nombre" class="propiedad">Nombre Empresa</label>            
             <!--hidden -->
             <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
           </div>
           <!-- password -->
           <div class="fila">
-            <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
+            <input class="registro-oferente" type="password" name="password" size="30" required="required" />
             <label for="password" class="propiedad">Contraseña</label>
           </div>
           <!-- email -->
           <div class="fila">
-            <input class="registro-oferente" type="email" id="email" name="email" maxlength="30" size="30" />
+            <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" />
             <label for="email" class="propiedad">Email del contacto</label>
           </div>
           <!-- tel -->
           <div class="fila">
-            <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
             <label for="telefono" class="propiedad">Teléfono del contacto</label>
           </div>  
           <!-- select combo -->
           <div class="fila">
             <select id="estudios" name="studies" required="required">
               <option value="">- Seleccione -</option>
-              <option value="eso">Primaria</option>
-              <option value="bachillerato">Secundaria</option>
-              <option value="cfgm">Diplomado</option>
-              <option value="cfgs">Bachillerato</option>
-              <option value="grado">Licenciatura</option>
-              <option value="master">Master</option>
+              <option value="Primaria">Primaria</option>
+              <option value="Secundaria">Secundaria</option>
+              <option value="Diplomado">Diplomado</option>
+              <option value="Bachillerato">Bachillerato</option>
+              <option value="Licenciatura">Licenciatura</option>
+              <option value="Master">Master</option>
             </select>
             <label for="estudios" class="propiedad">Nivel mínimo de estudios por buscar</label>
           </div>
           <!-- select multiple -->
           <div class="fila">
             <select id="idiomas" name="languages" size="4" multiple="multiple" required="required" >
-              <option value="spanish">Español</option>
-              <option value="english">Inglés</option>
-              <option value="french">Francés</option>
-              <option value="german">Alemán</option>
+              <option value="">- Seleccione</option>
+              <option value="Español">Español</option>
+              <option value="Ingles">Inglés</option>
+              <option value="Frances">Francés</option>
+              <option value="Aleman">Alemán</option>
             </select>
             <label for="idiomas" class="propiedad">Idiomas necesarios</label>
           </div>
@@ -124,7 +126,7 @@
             <div class="card-header" role="tab" id="headingTwo">
               <h5 class="mb-0">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <h3 class="text-center text-uppercase text-secondary mb-0">Ubicacion</h3><br><br>
+                  <h3 class="text-center text-uppercase text-secondary mb-0">Ubicación</h3><br><br>
                 </a>
               </h5>
             </div>
@@ -132,26 +134,26 @@
               <div class="card-block">         
                           <!-- select combo -->
                   <div class="fila">
-                    <select id="estudios" name="studies" required="required">
+                    <select id="provincia" name="provincia" required="required">
                       <option value="">- Seleccione -</option>
-                      <option value="1">Cartago</option>
-                      <option value="2">San Jose</option>
-                      <option value="3">Alajuela</option>
-                      <option value="4">Heredia</option>
-                      <option value="5">Limón</option>
-                      <option value="6">Guanacaste</option>
-                      <option value="7">Puntarenas</option>
+                      <option value="Cartago">Cartago</option>
+                      <option value="San Jose">San Jose</option>
+                      <option value="Alajuela">Alajuela</option>
+                      <option value="Heredia">Heredia</option>
+                      <option value="Limon">Limón</option>
+                      <option value="Guanacaste">Guanacaste</option>
+                      <option value="Puntarenas">Puntarenas</option>
                     </select>
-                    <label for="estudios" class="propiedad">Provincia</label>
+                    <label for="provincia" class="propiedad">Provincia</label>
                   </div>
                   <!-- canton -->
                   <div class="fila">
-                    <input class="registro-oferente" type="ced" id="nombre" name="canton" size="11" />
+                    <input class="registro-oferente" type="nombre" name="canton" size="11" />
                     <label for="canton" class="propiedad">Cantón</label>
                   </div>  
                   <!-- distrito -->
                   <div class="fila">
-                    <input class="registro-oferente" type="ced" id="nombre" name="distrito" size="11" />
+                    <input class="registro-oferente" type="nombre" name="distrito" size="11" />
                     <label for="distrito" class="propiedad">Distrito</label>
                   </div>                 
               </div>
@@ -160,9 +162,11 @@
       </div>  
 
       <div class="fila botonera">
-        <button class="registro-oferente" type="submit">Registrarse</button>
+        <button class="registro-oferente" type="submit" name="register">Registrarse</button>
         <button class="registro-oferente" type="reset">Borrar Campos</button>  
       </div>
+    </div>
+    </form>
     </section>    
 
 
