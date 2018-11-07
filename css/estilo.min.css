@@ -524,7 +524,6 @@ div.float-div{
 }
 
 form{  
-  float: left;
   font-family:Montserrat;
 }
 
@@ -781,6 +780,19 @@ textarea:hover{
   width: 100%;
   height: 50%;
   padding: 15px; 
+}
+
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    -webkit-box-shadow: 0 3px 15px 0 black;
+    -moz-box-shadow: 0 3px 15px 0 black;
+    -ms-box-shadow: 0 3px 15px 0 black;
+    -o-box-shadow: 0 3px 15px 0 black;
+    box-shadow: 0 3px 15px 0 black;
 }
 
 /* ---------------------- >>> PARTE NUEVA (Inicio Sesion) <<< - By: Steven ---------------------- */
@@ -2294,15 +2306,10 @@ a { text-decoration: none; }
 .menu-container {
   margin: 0 auto;
   width: 90%;
-    -webkit-box-shadow: 0 3px 15px 0 black;
-  -moz-box-shadow: 0 3px 15px 0 black;
-  -ms-box-shadow: 0 3px 15px 0 black;
-  -o-box-shadow: 0 3px 15px 0 black;
-    box-shadow: 0 3px 15px 0 black;
 }
 
 .nav-fostrap {
-  width: 90%;
+  width: 200%;
   display: block;
   margin-bottom: 15px 0;
   background: #04538A;
