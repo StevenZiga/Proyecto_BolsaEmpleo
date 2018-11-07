@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include 'php/empresa.php'?>
+    <?php include 'php/empresa.php';?>
 
     <title>Registro Empresa - CUC</title>
 
@@ -169,8 +169,6 @@
     </form>
     </section>    
 
-
-<!-------------------------------------------------------->
 
     <div id="foot"></div>
 

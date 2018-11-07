@@ -3,7 +3,7 @@
 
   <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -249,7 +249,26 @@
           </div>           
         </div>    
       </div>
+
+       <?php
+      /////Conexión con la data//////////
+      $hostname = "sql201.epizy.com";
+      $database = "epiz_22956998_bolsaempleo";
+      $username = "epiz_22956998";
+      $password = "8iKZBKUjonFn";
+      $con = mysqli_connect($hostname, $username, $password, $database);
+      $con -> set_charset("utf8"); 
+      
+      $sql = "select duracion, ubicacion, descripcion from Puestos";
+      $result = mysqli_query($con, $sql);
+
+        while($row = mysqli_fetch_row($result)) {
+          echo "Duracion: ".$row[0]." - Ubicacion: ".$row[1]." - Descripcion".$row[2]."<br>";
+        }
+      ?>
     </section>
+
+
 
     <!--PUESTO 1-->
     <div class="principal-modal mfp-hide" id="principal-modal-1">
