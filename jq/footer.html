@@ -8,16 +8,44 @@
           <div class="col-md-4">
             <h4 class="text-uppercase mb-4">Grupo 02</h4>
             <p class="lead mb-0">Jose Manuel Altamirano<br>Brayan Brenes<br>Steven Zúñiga</p>
-          </div>
+          </div><br><br>
           <div class="col-md-4">
-            <img class="img-fluid" src="img/logo_cuc_footer.png" alt="">
+            <img class="img-fluid" src="img/logos/logo_cuc_footer.png" alt="">
           </div>
         </div>
       </div>
     </footer>
+
+    <button onclick="topFunction()" id="btn_arriba" title="Ir Arriba" class="fa fa-arrow-up"></button>
+
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("btn_arriba").style.display = "block";
+          } else {
+              document.getElementById("btn_arriba").style.display = "none";
+          }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+          document.body.scrollTop = 0, "slow";
+          document.documentElement.scrollTop = 0, "slow";
+      }
+    </script>
     
     <div class="copyright py-4 text-center text-white">
       <div class="container">
         <small>Copyright &copy; JBS 2018</small>
       </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
     </div>
