@@ -129,7 +129,6 @@
             $sql = "SELECT puesto, duracion, ubicacion, descripcion FROM Puestos";
             $rspubli = mysql_query($sql, $con) or die(mysql_error());
             $i = 1;
-
               while($row = mysql_fetch_assoc($rspubli)) {
 
                 echo "<div class='col-md-6 col-lg-4'>
