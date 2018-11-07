@@ -30,7 +30,50 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <div id="sticky"></div>
+      <nav class="navbar navbar-expand-lg bg-secondary fixed-menu text-uppercase" id="mainNav">
+        <div id="menu">
+          <div class="menu-container">
+            <nav>
+              <div class="nav-fostrap">
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="vista_puestos.php">Ver puestos</a></li>
+                  <li><a href="ayuda.html">Ayuda</a></li>
+                  <li><a href="#">Registro<span class="arrow-down"></span></a>
+                    <ul class="dropdown">
+                      <li><a href="registro_empresa.php">Empleadores</a></li>
+                      <li><a href="registro_oferente.php">Oferentes</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Mi Cuenta<span class="arrow-down"></span></a>
+                    <ul class="dropdown">
+                      <li><a href="editar_perfil.html">Editar Perfil</a></li>
+                      <li><a  href="#">Salir</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="inicio_sesion.php">Ingresar</a></li>
+                </ul>
+              </div>
+              <div class="nav-bg-fostrap">
+                <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
+                <a href="" class="title-mobile">Bolsa de Empleo</a>
+              </div>
+            </nav>
+            <div class='content'>
+            </div>
+        </div>
+        </div>
+      </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+        $('.navbar-fostrap').click(function(){
+          $('.nav-fostrap').toggleClass('visible');
+          $('body').toggleClass('cover-bg');
+        });
+      });
+    </script>
+
     
     <!-- Header -->
     <header class="masthead bg_vistaPuestos text-orange text-center">
