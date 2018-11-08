@@ -793,7 +793,12 @@ textarea:hover{
     -ms-box-shadow: 0 3px 15px 0 black;
     -o-box-shadow: 0 3px 15px 0 black;
     box-shadow: 0 3px 15px 0 black;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row-reverse;
+    padding-right: 3rem;
 }
+
 
 /* ---------------------- >>> PARTE NUEVA (Inicio Sesion) <<< - By: Steven ---------------------- */
 
