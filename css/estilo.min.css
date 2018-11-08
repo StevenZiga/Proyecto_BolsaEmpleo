@@ -1373,7 +1373,7 @@ a:active,a:focus,a:hover{
 }
 
 #registerOne, #registerTwo{
-  height: 200px;
+  height: 300px;
 }
 
 #principal{
@@ -1535,6 +1535,7 @@ a:active,a:focus,a:hover{
 
 @media screen and (max-width:580px){
   #registerOne, #registerTwo{
+    padding: 5%;
     width:95%;
     margin: 2.5%;
   }
@@ -1582,6 +1583,7 @@ a:active,a:focus,a:hover{
   }
 
    #registerOne, #registerTwo{
+    padding: 5%;
     margin: 1%;
   }
 
