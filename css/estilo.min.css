@@ -41,19 +41,6 @@ section h2{
   font-size:1.25rem
 
 }
-.scroll-to-top{
-  z-index:1042;
-  right:1rem;
-  bottom:1rem;
-  display:none
-
-}
-.scroll-to-top a{
-  width:3.5rem;
-  height:3.5rem;
-  background-color:rgba(33,37,41,.5);
-  line-height:3.1rem
-}
 
 form .row:first-child .floating-label-form-group{
   border-top:1px solid #e9ecef
@@ -1273,20 +1260,6 @@ section h2{
 .btn-xl{
   margin-bottom:10px;
   font-size:1em;
-}
-
-.scroll-to-top{
-  z-index:1042;
-  right:1rem;
-  bottom:1rem;
-  display:none
-
-}
-.scroll-to-top a{
-  width:3.5rem;
-  height:3.5rem;
-  background-color:rgba(33,37,41,.5);
-  line-height:3.1rem
 }
 
 form .row:first-child .floating-label-form-group{
