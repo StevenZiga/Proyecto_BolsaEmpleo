@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include 'php/login.php';?>
-
+    <?php include 'php/login.php'?>
     <title>Inicio de Sesión - CUC</title>
 
     <!-- Bootstrap core CSS -->
@@ -25,7 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/estilo.min.css" rel="stylesheet">
-
+    <link rel="icon" href="img/logos/logo-cuc-title.ico">
   </head>
 
   <body id="page-top">
@@ -65,8 +63,7 @@
             <input class="log-in" type="text" name="username" placeholder="Email" required/>
             <label class="log-in" id="icon" for="pass"><img src="img/otras/escudo.png"></label>
             <input class="log-in" type="password" name="password" placeholder="Contraseña" required/>
-         <a href="#" class="button" name="save">Acceder</a>
-          <button type="submit" class="button" name="save">Acceder</button>
+          <button type="submit" class="registro-oferente" name="acceder">Acceder</button>
         </form>
       </div>
     </section>  

@@ -22,6 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/estilo.min.css" rel="stylesheet">
+    <link rel="icon" href="img/logos/logo-cuc-title.ico">
 
   </head>
 
