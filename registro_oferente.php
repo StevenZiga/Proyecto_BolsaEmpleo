@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include 'php/oferente.php'?>
+    <?php include 'php/oferente.php';?>
 
     <title>Registro Oferente - CUC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,7 +39,7 @@
         
       </div></center>
         <h1 class="text-uppercase mb-0">Registro de Oferente</h1>
-        <h2 class="font-weight-light mb-0">Estas a un paso de empezar con la busqueda de empleo</h2><br><p>Por favor completa la información que se le solicita a continuación</p>
+        <h2 class="font-weight-light mb-0">Estás a un paso de empezar con la búsqueda de empleo</h2><br><p>Por favor completa la información que se le solicita a continuación</p>
       </div>
     </header>
 
