@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include 'php/oferente.php';?>
 
     <title>Registro Oferente - CUC</title>
 
@@ -43,6 +42,7 @@
       </div>
     </header>
 
+    <?php include 'php/oferente.php';?> 
     <!-- principal Grid Section -->
     <section class="principal" id="principal">
 
@@ -81,12 +81,12 @@
             </div>
             <!-- email -->
             <div class="fila">
-              <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" />
+              <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" required="required" />
               <label for="email" class="propiedad">Email</label>
             </div>
             <!-- tel -->
             <div class="fila">
-              <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
+              <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{8}" required="required" />
               <label for="telefono" class="propiedad">Teléfono</label>
             </div>
             <!-- date -->
@@ -309,7 +309,7 @@
         </div>
       </form>
       </div>          
-    </section>    
+    </section>   
 
     <div id="foot"></div>
 

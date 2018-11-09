@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-<!--     <?php //include 'php/empresa.php';?> -->
 
     <title>Registro Empresa - CUC</title>
 
@@ -45,6 +44,7 @@
       </div>
     </header>
 
+    <?php include 'php/empresa.php';?>
     <!-- Datos iniciales -->
     <section class="empresa" id="empresa">
 
@@ -86,12 +86,12 @@
           </div>
           <!-- email -->
           <div class="fila">
-            <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" />
+            <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" required="required" />
             <label for="email" class="propiedad">Email del contacto</label>
           </div>
           <!-- tel -->
           <div class="fila">
-            <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
+            <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{8}" required="required" />
             <label for="telefono" class="propiedad">Teléfono del contacto</label>
           </div>  
           <!-- select combo -->
@@ -171,50 +171,6 @@
     </div>
     </form>
     </section>
-    <?php 
-    /////Conexión con la data//////////
-    $hostname = "sql203.epizy.com";
-    $database = "epiz_22952208_BD_BolsaEmpleo";
-    $username = "epiz_22952208";
-    $password = "progra";
-    $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
-    
-    if(isset($_POST['register'])){
-      $cedula = $_POST['cedula'];
-      $empresa = $_POST['empresa'];
-      $password = $_POST['password'];
-      $email = $_POST['email'];
-      $phonenumber = $_POST['phonenumber'];
-      $studies = $_POST['studies'];
-      $languages = $_POST['languages'];
-      $provincia = $_POST['provincia'];
-      $canton = $_POST['canton'];
-      $distrito = $_POST['distrito'];
-
-      if($cedula!="" && $empresa!="" && $password!="" && $email!="" && $phonenumber!="" && $studies!="" && $languages!="" && $provincia!="" && $canton!="" && $distrito!=""){
-
-        mysql_select_db($database, $con);
-        $sql = "INSERT INTO RegistroEmpresa (cedula, empresa, password, email, phonenumber, studies, languages, provincia, canton, distrito) VALUES ('$cedula','$empresa', '$password','$email', '$phonenumber','$studies', '$languages','$provincia', '$canton','$distrito')";
-        $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";
-        $rspubli = mysql_query($sql, $con) or die(mysql_error());
-        $result = mysqli_query($con,$sql);
-
-        $rspubliuser = mysql_query($sqluser, $con) or die(mysql_error());
-        $resultuser = mysqli_query($con,$sqluser);      
-
-        $message = 'Empresa registrada correctamente!';
-
-        echo " <div class='alert alert-success'>
-                  <strong>Registro completado!</strong><p>Empresa registrada correctamente!</p>
-                </div>";
-      }else{
-        echo "<div class='alert alert-danger'>
-                <strong>Error en el registro!</strong> <p>Verifique que todos los campos esten completados!</p>
-              </div>";
-      }
-      }
-    ?>
-      
 
     <div id="foot"></div>
 

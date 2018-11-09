@@ -18,17 +18,24 @@
       $canton = $_POST['canton'];
       $distrito = $_POST['distrito'];
 
-      mysql_select_db($database, $con);
-      $sql = "INSERT INTO RegistroEmpresa (cedula, empresa, password, email, phonenumber, studies, languages, provincia, canton, distrito) VALUES ('$cedula','$empresa', '$password','$email', '$phonenumber','$studies', '$languages','$provincia', '$canton','$distrito')";
-      $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";
-      $rspubli = mysql_query($sql, $con) or die(mysql_error());
-      $result = mysqli_query($con,$sql);
+      if($cedula!="" && $empresa!="" && $password!="" && $email!="" && $phonenumber!="" && $studies!="" && $languages!="" && $provincia!="" && $canton!="" && $distrito!=""){
 
-      $rspubliuser = mysql_query($sqluser, $con) or die(mysql_error());
-      $resultuser = mysqli_query($con,$sqluser);      
+        mysql_select_db($database, $con);
+        $sql = "INSERT INTO RegistroEmpresa (cedula, empresa, password, email, phonenumber, studies, languages, provincia, canton, distrito) VALUES ('$cedula','$empresa', '$password','$email', '$phonenumber','$studies', '$languages','$provincia', '$canton','$distrito')";
+        $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";
+        $rspubli = mysql_query($sql, $con) or die(mysql_error());
+        $result = mysqli_query($con,$sql);
 
-      $message = 'Empresa registrada correctamente!';
+        $rspubliuser = mysql_query($sqluser, $con) or die(mysql_error());
+        $resultuser = mysqli_query($con,$sqluser);      
 
-      echo "<SCRIPT> alert('$message'); </SCRIPT>";
-    }
-  ?>
+        echo "<div class='alert alert-success'>
+                <strong>Registro completado!</strong><p>Empresa registrada correctamente!</p>
+              </div>";
+      }else{
+        echo "<div class='alert alert-danger'>
+                <strong>Error en el registro!</strong> <p>Verifique que todos los campos esten completados!</p>
+              </div>";
+      }
+      }
+    ?>
