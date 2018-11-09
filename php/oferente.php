@@ -29,8 +29,12 @@
       $curriculum = $_POST['curriculum'];
       mysql_select_db($database, $con);
       $sql = "INSERT INTO RegistroOferente (fullname, password, email, phonenumber, birthdate, nationality, age, placelive, genero, studies, estudia, languages, herramienta, nivelcono, licencia, vehiculo, horario, earnings,discapacidad, curriculum) VALUES ('$fullname','$password', '$email','$phonenumber', '$birthdate','$nationality', '$age','$placelive', '$genero','$studies', '$estudia','$languages', '$herramienta','$nivelcono', '$licencia','$vehiculo', '$horario','$earnings','$discapacidad','$curriculum')";
+      $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";
       $rspubli = mysql_query($sql, $con) or die(mysql_error());
       $result = mysqli_query($con,$sql);
+
+      $rspubliuser = mysql_query($sqluser, $con) or die(mysql_error());
+      $resultuser = mysqli_query($con,$sqluser);  
 
       $message = 'Oferente agregado correctamente!';
 
