@@ -20,8 +20,12 @@
 
       mysql_select_db($database, $con);
       $sql = "INSERT INTO RegistroEmpresa (cedula, empresa, password, email, phonenumber, studies, languages, provincia, canton, distrito) VALUES ('$cedula','$empresa', '$password','$email', '$phonenumber','$studies', '$languages','$provincia', '$canton','$distrito')";
+      $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";
       $rspubli = mysql_query($sql, $con) or die(mysql_error());
       $result = mysqli_query($con,$sql);
+
+      $rspubliuser = mysql_query($sqluser, $con) or die(mysql_error());
+      $resultuser = mysqli_query($con,$sqluser);      
 
       $message = 'Empresa registrada correctamente!';
 
