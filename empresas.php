@@ -113,8 +113,8 @@
       <center><div class="img-cuc" id="imagen-cuc">
         
       </div></center>
-        <h1 class="text-uppercase mb-0">Vista de puestos</h1>
-        <h2 class="font-weight-light mb-0">Busca el puesto que más te guste.</h2>
+        <h1 class="text-uppercase mb-0">Empresas</h1>
+        <h2 class="font-weight-light mb-0">Listado de las empresas registradas.</h2>
       </div>
     </header>
 
