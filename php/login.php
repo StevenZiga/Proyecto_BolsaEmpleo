@@ -19,17 +19,21 @@
 
       if($count == 0){
           echo "<div class='alert alert-danger'>
-            <strong>¡Error!</strong> <p>El usuario o la contraseña son incorrectas.</p>
-          </div>";
-      }else{
+                  <strong>¡Error!</strong> <p>El usuario o la contraseña son incorrectas.</p>
 
+                </div>";
+      }else{
+       // session_start();
         while($row = mysql_fetch_array($sql)) {
           $name = $row['username'];
           $p= $row['pass'];
+       //   $_SESSION["user"]=$row['username'];
         }
+       // $_SESSION['loggedin'] = 1;
         echo "<div class='alert alert-success'>
-          <strong>¡Bienvenido! </strong><p>$name</p>
+          <strong>¡Bienvenido! </strong><p>".$name."</p>
         </div>";
+      //  print_r($_SESSION);
       }
   }
 ?>

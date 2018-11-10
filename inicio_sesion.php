@@ -81,7 +81,7 @@
 
 <script>
 $(document).ready(function(){
-    $("#sticky").load("jq/sticky_menu.html");
+    $("#sticky").load("jq/sticky_menu.php");
     ;
     $("#foot").load("jq/footer.html");
     ;

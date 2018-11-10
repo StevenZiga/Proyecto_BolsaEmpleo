@@ -108,7 +108,6 @@
       </div>
     </section>
 
-<!------------------------------------------------------------------------------------->
     <section class="principal bg-terciary text-white mb-0" id="principal puestos-disponibles">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Puestos</h2>
@@ -228,7 +227,7 @@
 
 <script>
 $(document).ready(function(){
-    $("#sticky").load("jq/sticky_menu.html");
+    $("#sticky").load("jq/sticky_menu.php");
     ;
     $("#foot").load("jq/footer.html");
     ;

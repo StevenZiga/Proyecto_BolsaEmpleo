@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Registro Oferente - CUC</title>
+    <title>Actualización de Oferente - CUC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,6 @@
     <!-- Custom styles for this template -->
     <link href="css/estilo.min.css" rel="stylesheet">
     <link rel="icon" href="img/logos/logo-cuc-title.ico">
-
   </head>
 
   <body id="page-top">
@@ -32,17 +31,16 @@
     <div id="sticky"></div>
     
     <!-- Header -->
-    <header class="masthead bg-oferente text-orange text-center">
+    <header class="masthead bg-editar text-orange text-center">
       <div class="container">
       <center><div class="img-cuc" id="imagen-cuc">
         
       </div></center>
-        <h1 class="text-uppercase mb-0">Registro de Oferente</h1>
-        <h2 class="font-weight-light mb-0">Estás a un paso de empezar con la búsqueda de empleo</h2><br><p>Por favor completa la información que se le solicita a continuación</p>
+        <h1 class="text-uppercase mb-0 text-primary">Actualizar Oferente</h1>
+        <h2 class="font-weight-light mb-0 text-white">Verifica o cambia tu información</h2><br>
       </div>
     </header>
 
-    <?php include 'php/oferente.php';?> 
     <!-- principal Grid Section -->
     <section class="principal" id="principal">
 
@@ -50,8 +48,6 @@
       <h2 class="text-center text-uppercase text-secondary mb-0">Datos del Usuario</h2><br><br>
       <center><img class="reg" src="img/otras/equipo.png"></center>
       <div id="accordion" role="tablist" aria-multiselectable="true">
-
-        <form action="registro_oferente.php" method="post">
 
                                     <!-- PARTE DESPLEGABLE 1-->                            
         <div class="card">
@@ -61,43 +57,44 @@
                 <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
               </a>
             </h5>
-          </div>      
-          
+          </div>
+      
+          <!--<form class="registro-oferente" method="POST" id="formulario">-->
           <!-- Lista de campos -->
           <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
             
             <div class="fila">
               <!-- text -->
-              <input class="registro-oferente" type="text" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
+              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
               <label for="nombre" class="propiedad">Nombre Completo</label>
             <!--hidden -->
             <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
             </div>
             <!-- password -->
             <div class="fila">
-              <input class="registro-oferente" type="password" name="password" size="30" required="required" />
+              <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
               <label for="password" class="propiedad">Contraseña</label>
             </div>
             <!-- email -->
             <div class="fila">
-              <input class="registro-oferente" type="email" name="email" maxlength="30" size="30" required="required" />
+              <input class="registro-oferente" type="email" id="email" name="email" maxlength="30" size="30" />
               <label for="email" class="propiedad">Email</label>
             </div>
             <!-- tel -->
             <div class="fila">
-              <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{8}" required="required" />
+              <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
               <label for="telefono" class="propiedad">Teléfono</label>
             </div>
             <!-- date -->
             <div class="fila">
-              <input class="registro-oferente" type="date" name="birthdate" />
+              <input class="registro-oferente" type="date" id="fecha" name="birthdate" />
               <label for="fecha" class="propiedad">Fecha de nacimiento</label>
             </div>
 
             <div class="fila">
               <!-- nacionalidad -->
-              <input class="registro-oferente" type="text" name="nationality" maxlength="30" size="30" required="required" autofocus="autofocus" />
+              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
               <label for="nombre" class="propiedad">Nacionalidad</label>
               <!--hidden -->
               <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
@@ -105,13 +102,13 @@
 
             <!-- readonly disabled -->
             <div class="fila">
-              <input class="registro-oferente" type="number" name="age" class="small" required="required"/>
+              <input class="registro-oferente" type="number" id="edad" name="age" class="small" />
               <label for="edad" class="propiedad">Edad</label>
             </div>
             
             <div class="fila">
               <!-- Residencia -->
-              <input class="registro-oferente" type="text" name="placelive" maxlength="30" size="30" required="required" autofocus="autofocus" />
+              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
               <label for="nombre" class="propiedad">Lugar de residencia</label>
               <!--hidden -->
               <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
@@ -120,9 +117,9 @@
             <!-- radio -->
             <div class="fila">
               <div class="accounttype">
-                <input type="radio" value="Hombre" id="radioOne" name="genero" checked/>
+                <input type="radio" value="None" id="radioOne" name="account" checked/>
                 <label for="radioOne" class="radio" chec>Hombre</label>
-                <input type="radio" value="Mujer" id="radioTwo" name="genero" />
+                <input type="radio" value="None" id="radioTwo" name="account" />
                 <label for="radioTwo" class="radio">Mujer</label>
               </div>
               <label for="genero" class="propiedad">Género</label>
@@ -149,12 +146,12 @@
           <div class="fila">
             <select id="estudios" name="studies" required="required">
               <option value="">- Seleccione -</option>
-              <option value="Primaria">Primaria</option>
-              <option value="Secundaria">Secundaria</option>
-              <option value="Diplomado">Diplomado</option>
-              <option value="Bachillerato">Bachillerato</option>
-              <option value="Licenciatura">Licenciatura</option>
-              <option value="Master">Master</option>
+              <option value="eso">Primaria</option>
+              <option value="bachillerato">Secundaria</option>
+              <option value="cfgm">Diplomado</option>
+              <option value="cfgs">Bachillerato</option>
+              <option value="grado">Licenciatura</option>
+              <option value="master">Master</option>
             </select>
             <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
           </div>
@@ -162,9 +159,9 @@
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="Si" id="estOne" name="estudia" checked/>
+              <input type="radio" value="None" id="estOne" name="estOne" checked/>
               <label for="estOne" class="radio" chec>Sí</label>
-              <input type="radio" value="No" id="estTwo" name="estudia" />
+              <input type="radio" value="None" id="estTwo" name="estOne" />
               <label for="estTwo" class="radio">No</label>
             </div>
             <label for="estudio" class="propiedad">Estudia actualmente</label>
@@ -174,10 +171,10 @@
           <div class="fila">
             <select id="idiomas" name="languages" required="required" >
               <option value="">- Seleccione</option>
-              <option value="Español">Español</option>
-              <option value="Ingles">Inglés</option>
-              <option value="Frances">Francés</option>
-              <option value="Aleman">Alemán</option>
+              <option value="spanish">Español</option>
+              <option value="english">Inglés</option>
+              <option value="french">Francés</option>
+              <option value="german">Alemán</option>
             </select>
             <label for="idiomas" class="propiedad">Idiomas</label>
           </div> 
@@ -185,9 +182,9 @@
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="Si" id="infoOne" name="herramienta" checked/>
+              <input type="radio" value="None" id="infoOne" name="infoOne" checked/>
               <label for="infoOne" class="radio" chec>Sí</label>
-              <input type="radio" value="No" id="infoTwo" name="herramienta" />
+              <input type="radio" value="None" id="infoTwo" name="infoOne" />
               <label for="infoTwo" class="radio">No</label>
             </div>
             <label for="herramienta" class="propiedad">Maneja herramientas informáticas</label>
@@ -195,21 +192,21 @@
 
           <!-- range -->
           <div class="fila">
-            <input type="range" id="conoc" name="nivelcono" min="0" max="100" step="10" value="50" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
-            <label for="conoc" class="propiedad">Nivel de conocimiento</label>
+            <input type="range" id="salario" name="earnings" min="0" max="100" step="10" value="50" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
+            <label for="salario" class="propiedad">Nivel de conocimiento</label>
             <p>%</p>
-            <output for="conoc" id="cono-output">50</output>
+            <output for="salario" id="cono-output">50</output>
             <datalist id="valores-cono">         
-              <option value="10%">10</option>
-              <option value="20%">20</option>
-              <option value="30%">30</option>
-              <option value="40%">40</option>
-              <option value="50%">50</option>
-              <option value="60%">60</option>
-              <option value="70%">70</option>
-              <option value="80%">80</option>
-              <option value="90%">90</option>
-              <option value="100%">100</option>
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+              <option>60</option>
+              <option>70</option>
+              <option>80</option>
+              <option>90</option>
+              <option>100</option>
             </datalist>
           </div>  
               </div>
@@ -232,9 +229,9 @@
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="Si" id="licOne" name="licencia" checked/>
+              <input type="radio" value="None" id="licOne" name="licOne" checked/>
               <label for="licOne" class="radio" chec>Sí</label>
-              <input type="radio" value="No" id="licTwo" name="licencia" />
+              <input type="radio" value="None" id="licTwo" name="licOne" />
               <label for="licTwo" class="radio">No</label>
             </div>
             <label for="licencia" class="propiedad">Posee licencia</label>
@@ -243,9 +240,9 @@
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="Si" id="vehOne" name="vehiculo" checked/>
+              <input type="radio" value="None" id="vehOne" name="vehOne" checked/>
               <label for="vehOne" class="radio" chec>Sí</label>
-              <input type="radio" value="No" id="vehTwo" name="vehiculo" />
+              <input type="radio" value="None" id="vehTwo" name="vehOne" />
               <label for="vehTwo" class="radio">No</label>
             </div>
             <label for="vehiculo" class="propiedad">Posee vehículo</label>
@@ -253,13 +250,13 @@
 
           <!-- select multiple -->
           <div class="fila">
-            <select id="idiomas" name="horario" required="required" >
+            <select id="idiomas" name="languages" required="required" >
               <option value="">- Seleccione</option>
-              <option value="Diurno">Diurno</option>
-              <option value="Nocturno">Nocturno</option>
-              <option value="Completo">Completo</option>
-              <option value="Parcial">Parcial</option>
-              <option value="Todos">Todos</option>
+              <option value="diurno">Diurno</option>
+              <option value="nocturno">Nocturno</option>
+              <option value="ambos">Completo</option>
+              <option value="ambos">Parcial</option>
+              <option value="ambos">Todos</option>
             </select>
             <label for="idiomas" class="propiedad">Horario preferido</label>
           </div> 
@@ -271,24 +268,24 @@
             <p>₡</p>
             <output for="salario" id="salario-output">500000</output>
             <datalist id="valores-salario">
-              <option value="200000">₡200.000</option>
-              <option value="300000">₡300.000</option>
-              <option value="400000">₡400.000</option>
-              <option value="500000">₡500.000</option>
-              <option value="600000">₡600.000</option>
-              <option value="700000">₡700.000</option>
-              <option value="800000">₡800.000</option>
-              <option value="900000">₡900.000</option>
-              <option value="1000000">₡1.000.000</option>
+              <option>₡200.000</option>
+              <option>₡300.000</option>
+              <option>₡400.000</option>
+              <option>₡500.000</option>
+              <option>₡600.000</option>
+              <option>₡700.000</option>
+              <option>₡800.000</option>
+              <option>₡900.000</option>
+              <option>₡1.000.000</option>
             </datalist>
           </div>    
 
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
-              <input type="radio" value="Si" id="disOne" name="discapacidad" checked/>
+              <input type="radio" value="None" id="disOne" name="disOne" checked/>
               <label for="disOne" class="radio" chec>Sí</label>
-              <input type="radio" value="No" id="disTwo" name="discapacidad" />
+              <input type="radio" value="None" id="disTwo" name="disOne" />
               <label for="disTwo" class="radio">No</label>
             </div>
             <label for="discapacidad" class="propiedad">Posee alguna discapacidad</label>
@@ -299,17 +296,17 @@
           </div>   
         <br><br>
         <div class="fila botonera">
-          <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
+          <label class="registro-oferente" for="curriculum">Cambiar el curriculum</label>     
           <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
         </div>
 
-        <div class="fila botonera">
-            <button class="registro-oferente" type="submit" name="register">Registrarse</button>
-            <button class="registro-oferente" type="reset">Borrar Campos</button>  
         </div>
-      </form>
-      </div>          
-    </section>   
+          <div class="fila botonera">
+            <button class="registro-oferente" type="submit">Actualizar</button>
+            <button class="registro-oferente" type="reset">Descartar</button>  
+          </div>
+    </div>
+    </section>    
 
     <div id="foot"></div>
 
