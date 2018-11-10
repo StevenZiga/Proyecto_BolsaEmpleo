@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include 'php/login.php';?>
     <title>Inicio de Sesión - CUC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,30 +41,25 @@
         <h2 class="font-weight-light mb-0">¡Bienvenido de nuevo!</h2><br>
       </div>
     </header>
-
     <!-- principal Grid Section -->
     <section class="principal" id="principal">
       <div>
         <h2 class="text-center text-uppercase text-secondary mb-0">Credenciales</h2>
         <hr class="star-dark mb-5">
+        <?php include 'php/login.php';?>
         <center><img src="img/otras/id.png"></center><br>
       </div>
 
       <div class="testbox">
         <h1 class="log-in">Acceso</h1>
 
-        <form action="login.php" method="post">
-          <div class="accounttype">
-            <input type="radio" value="None" id="radioOne" name="account" checked/>
-            <label for="radioOne" class="radio" chec>Empleador</label>
-            <input type="radio" value="None" id="radioTwo" name="account" />
-            <label for="radioTwo" class="radio">Oferente</label>
-          </div>
+         <form action="inicio_sesion.php" method="post">
             <label class="log-in" id="icon" for="us"><img src="img/otras/sobre.png"></label>
             <input class="log-in" type="text" name="username" placeholder="Email" id="username" required/>
             <label class="log-in" id="icon" for="pas"><img src="img/otras/escudo.png"></label>
             <input class="log-in" type="password" name="password" id="password" placeholder="Contraseña" required/>
-          <button type="submit" class="registro-oferente" name="acceder" id="acceder">Acceder</button>
+            <button type="submit" class="registro-oferente" name="acceder" id="acceder">Acceder</button>
+            <p>¿No te has registrado aún? <a href="http://bjbprueba.epizy.com/prueba/index.html#btn_ayuda">Registrate</a></p>
         </form>
       </div>
     </section>  

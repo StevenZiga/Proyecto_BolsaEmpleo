@@ -1,29 +1,48 @@
 <?php 
+  $cookie_name = "loggedin";
   /////Conexión con la data//////////
   $hostname = "sql203.epizy.com";
   $database = "epiz_22952208_BD_BolsaEmpleo";
   $username = "epiz_22952208";
-  $password = "progra";
-  $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);  
+  $password = "progra"; 
+
+  $con = mysql_connect($hostname, $username, $password, $database);
 
   if(isset($_POST['acceder'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    $username = mysqli_real_escape_string($con,$_POST['username']); 
-    $password = mysqli_real_escape_string($con,$_POST['password']); 
+      $user = $_POST['username'];
+      $passw = $_POST['password'];
 
-    mysql_select_db($database, $con);
-    $sql = "SELECT username FROM users WHERE username = '$username' and pass = '$password'";
-    $result = mysql_query($con,$sql);
+      echo $user;
+      echo "<br>";
+      echo $passw;
 
-    $row = mysql_fetch_array($result);
-
-    if($row['username']==$username && $row['pass']==$password){
-      echo "<p>BIENVENIDO ".$row['username']."!</p>";
-    }else{
-      echo "ERROR AL INICIAR SESION!";
-    }
+      $sql = "SELECT * FROM users WHERE username = '$user' AND pass = '$passw'";
+      
+      $result = mysql_query($con, $sql);
+      $count = mysql_num_rows($result); 
+      echo $result;
+      echo $sql;
+      echo "<br>";
+      echo $count;
+      if($count == 1){
+        echo $user;
+      echo "<br>";
+      echo $passw;
+          while($row = mysql_fetch_array($result)) {
+              $name = $row['username'];
+              $p= $row['pass'];
+            }
+            echo $name;
+            echo $p;
+       echo "<div class='alert alert-success'>
+        <strong>¡Bienvenido! </strong><p>$name</p>
+       </div>";
+      }else{
+          echo "<div class='alert alert-danger'>
+            <strong>¡Error!</strong> <p>El usuario o la contraseña son incorrectas.</p>
+          </div>";
+      }
   }
 ?>
 
