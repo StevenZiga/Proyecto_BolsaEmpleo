@@ -3,29 +3,30 @@
       $database = "epiz_22952208_BD_BolsaEmpleo";
       $username = "epiz_22952208";
       $password = "progra";
-      
-      mysql_connect($hostname, $username, $password) or die("Error al conectarse");;
-
-      mysql_select_db($database, $con) or die("Error al conectarse a la BD");;
+   
+      mysql_connect($hostname, $username, $password);
+      mysql_select_db($database);
+      $output = '';
       
       if(isset($_POST['search'])){
         $searchq = $_POST['search'];
-        $searchq =  preg_replace("#[0-9a-z]#i","",$searchq);
-        $query = mysql_query("SELECT * RegistroEmpresa WHERE empresa LIKE '%$searchq%", $con) or die(mysql_error());
+        $searchq =  preg_replace("#[^0-9a-z]#i","",$searchq);
+
+        $query = mysql_query("SELECT * FROM RegistroEmpresa WHERE empresa LIKE '%$searchq%'") or die(mysql_error());
         $count = mysql_num_rows($query);
 
           if($count == 0){
-            $output = 'No se ha encontrado ningun resultado'
+              $output = 'No se ha encontrado ningun resultado';
           }else{
-            while($row = mysql_fetch_assoc($query)) {
+             
+              while($row = mysql_fetch_array($query)) {
               $name = $row['empresa'];
 
-              $output .= '<div>'.$name. '<div>';
+              $output.='<div>'.$name.'</div>';
             }
         }
     }
 
-     
   ?>   
 
 
@@ -62,49 +63,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg bg-secondary fixed-menu text-uppercase" id="mainNav">
-        <div id="menu">
-          <div class="menu-container">
-            <nav>
-              <div class="nav-fostrap">
-                <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="vista_puestos.php">Empresas</a></li>
-                  <li><a href="ayuda.html">Ayuda</a></li>
-                  <li><a href="#">Registro<span class="arrow-down"></span></a>
-                    <ul class="dropdown">
-                      <li><a href="registro_empresa.php">Empleadores</a></li>
-                      <li><a href="registro_oferente.php">Oferentes</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Mi Cuenta<span class="arrow-down"></span></a>
-                    <ul class="dropdown">
-                      <li><a href="editar_perfil.html">Editar Perfil</a></li>
-                      <li><a  href="#">Salir</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="inicio_sesion.php">Ingresar</a></li>
-                </ul>
-              </div>
-              <div class="nav-bg-fostrap">
-                <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
-                <a href="" class="title-mobile">Bolsa de Empleo</a>
-              </div>
-            </nav>
-            <div class='content'>
-            </div>
-        </div>
-        </div>
-      </nav>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-        $('.navbar-fostrap').click(function(){
-          $('.nav-fostrap').toggleClass('visible');
-          $('body').toggleClass('cover-bg');
-        });
-      });
-    </script>
+    <div id="sticky"></div>
 
     
     <!-- Header -->
@@ -119,9 +78,9 @@
     </header>
 
     
-    <form action="index.php" method="post">
+    <form action="empresas.php" method="post">
       <input type="text" name="search" placeholder="Palabra Clave...">
-      <input type="submit" value=">>">
+      <input type="submit" value=">>" name="buscar">
     </form>
 
 
