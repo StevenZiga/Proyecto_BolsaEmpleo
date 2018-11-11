@@ -95,7 +95,7 @@
             </div>
             <!-- tel -->
             <div class="fila">
-              <input class="registro-oferente" type="tel" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{8}" required="required" />
+              <input class="registro-oferente" type="tel" name="phonenumber" maxlength="8" size="11" pattern="[0-9]{8}" required="required" />
               <label for="telefono" class="propiedad">Teléfono</label>
             </div>
             <!-- date -->
@@ -317,7 +317,8 @@
             <button class="registro-oferente" type="reset">Borrar Campos</button>  
         </div>
       </form>
-      </div>          
+      </div> 
+      </div>         
     </section>   
 
     <div id="foot"></div>

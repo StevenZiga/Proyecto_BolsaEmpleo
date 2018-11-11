@@ -29,6 +29,28 @@
   <body id="page-top">
 
     <div id="sticky"></div>
+
+<?php
+  session_start();
+
+  $varuser = $_SESSION["user"];
+
+  $hostname = "sql203.epizy.com";
+  $database = "epiz_22952208_BD_BolsaEmpleo";
+  $username = "epiz_22952208";
+  $password = "progra"; 
+
+  $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
+  mysql_set_charset ("utf8", $con); 
+
+  mysql_select_db($database, $con);
+  $sql = "SELECT * FROM RegistroOferente WHERE email ='$varuser'";
+  $result = mysql_query($sql, $con) or die(mysql_error());
+  $row = mysql_fetch_assoc($result);
+  $rowsarray = mysql_fetch_array($result);
+  
+  //while($row = mysql_fetch_assoc($result)) {  }
+?>
     
     <!-- Header -->
     <header class="masthead bg-editar text-orange text-center">
@@ -42,7 +64,7 @@
     </header>
 
     <!-- principal Grid Section -->
-    <?php include 'php/session.php';?>
+    <?php include 'php/actualizar_perfil.php';?>
     <section class="principal" id="principal">
 
     <div class="container contenedor-registro">
@@ -50,94 +72,91 @@
       <center><img class="reg" src="img/otras/equipo.png"></center>
       <div id="accordion" role="tablist" aria-multiselectable="true">
 
-                                    <!-- PARTE DESPLEGABLE 1-->                            
-        <div class="card">
-          <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
-              </a>
-            </h5>
-          </div>
+        <form action="editar_perfil.php" method="post" enctype="multipart/form-data">
+              <!-- PARTE DESPLEGABLE 1-->                            
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
+                </a>
+              </h5>
+            </div>
       
-          <!--<form class="registro-oferente" method="POST" id="formulario">-->
-          <!-- Lista de campos -->
-          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-            <div class="card-block">
-            
-            <div class="fila">
-              <!-- text -->
-              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
-              <label for="nombre" class="propiedad">Nombre Completo</label>
-            <!--hidden -->
-            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-            </div>
+            <!-- Lista de campos -->
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-block">
+                
+                <div class="fila">
+                  <!-- text -->
+                  <input class="registro-oferente" type="text" id="nombre" name="fullname" value="<?php echo utf8_encode($row['fullname']); ?>" maxlength="30" size="30" required="required" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Nombre Completo</label>
+                  <!--hidden -->
+                  <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+                </div>
 
-            <div class="fila">
-            <!-- cedula -->
-            <input class="registro-oferente" type="text" name="idoferente" maxlength="15" size="30" required="required" autofocus="autofocus" />
-            <label for="idoferente" class="propiedad">Cédula</label>
-            <!--hidden -->
-            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-            </div>
+                <div class="fila">
+                  <!-- cedula -->
+                  <input class="registro-oferente" type="text" name="idoferente" value="<?php echo utf8_encode($row['cedula']); ?>" maxlength="15" size="30" required="required" autofocus="autofocus" />
+                  <label for="idoferente" class="propiedad">Cédula</label>
+                  <!--hidden -->
+                  <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+                </div>
 
-            <!-- password -->
-            <div class="fila">
-              <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
-              <label for="password" class="propiedad">Contraseña</label>
-            </div>
-            <!-- email -->
-            <div class="fila">
-              <input class="registro-oferente" type="email" id="email" name="email" maxlength="30" size="30" />
-              <label for="email" class="propiedad">Email</label>
-            </div>
-            <!-- tel -->
-            <div class="fila">
-              <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" maxlength="9" size="11" pattern="[0-9]{9}" />
-              <label for="telefono" class="propiedad">Teléfono</label>
-            </div>
-            <!-- date -->
-            <div class="fila">
-              <input class="registro-oferente" type="date" id="fecha" name="birthdate" />
-              <label for="fecha" class="propiedad">Fecha de nacimiento</label>
-            </div>
+                <!-- email -->
+                <div class="fila">
+                  <input class="registro-oferente" type="email" id="email"  name="email" value="<?php echo utf8_encode($row['email']); ?>" maxlength="30" size="30" />
+                  <label for="email" class="propiedad">Email</label>
+                </div>
+                
+                <!-- tel -->
+                <div class="fila">
+                  <input class="registro-oferente" type="tel" id="telefono" name="phonenumber" value="<?php echo utf8_encode($row['phonenumber']); ?>" maxlength="8" size="11" pattern="[0-9]{8}" />
+                  <label for="telefono" class="propiedad">Teléfono</label>
+                </div>
+                
+                <!-- date -->
+                <div class="fila">
+                  <input class="registro-oferente" type="date" id="fecha" name="birthdate" value="<?php echo utf8_encode($row['birthdate']); ?>" />
+                  <label for="fecha" class="propiedad">Fecha de nacimiento</label>
+                </div>
 
-            <div class="fila">
-              <!-- nacionalidad -->
-              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
-              <label for="nombre" class="propiedad">Nacionalidad</label>
-              <!--hidden -->
-              <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-            </div>
+                <div class="fila">
+                  <!-- nacionalidad -->
+                  <input class="registro-oferente" type="text" id="nombre" name="nationality" value="<?php echo utf8_encode($row['nationality']); ?>" maxlength="30" size="30" required="required" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Nacionalidad</label>
+                  <!--hidden -->
+                  <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+                </div>
 
-            <!-- readonly disabled -->
-            <div class="fila">
-              <input class="registro-oferente" type="number" id="edad" name="age" class="small" />
-              <label for="edad" class="propiedad">Edad</label>
-            </div>
-            
-            <div class="fila">
-              <!-- Residencia -->
-              <input class="registro-oferente" type="text" id="nombre" name="fullname" maxlength="30" size="30" required="required" autofocus="autofocus" />
-              <label for="nombre" class="propiedad">Lugar de residencia</label>
-              <!--hidden -->
-              <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-            </div>
+                <!-- edad -->
+                <div class="fila">
+                  <input class="registro-oferente" type="number" id="edad" name="age" class="small" value="<?php echo utf8_encode($row['age']); ?>" />
+                  <label for="edad" class="propiedad">Edad</label>
+                </div>
+                
+                <div class="fila">
+                  <!-- Residencia -->
+                  <input class="registro-oferente" type="text" id="nombre" name="placelive" value="<?php echo utf8_encode($row['placelive']); ?>" maxlength="30" size="30" required="required" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Lugar de residencia</label>
+                  <!--hidden -->
+                  <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+                </div>
 
-            <!-- radio -->
-            <div class="fila">
-              <div class="accounttype">
-                <input type="radio" value="None" id="radioOne" name="account" checked/>
-                <label for="radioOne" class="radio" chec>Hombre</label>
-                <input type="radio" value="None" id="radioTwo" name="account" />
-                <label for="radioTwo" class="radio">Mujer</label>
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Hombre" id="radioOne" name="genero" <?php echo ($row['genero']=='Hombre')?'checked':'' ?>>
+                    <label for="radioOne" class="radio" chec>Hombre</label>
+                    <input type="radio" value="Mujer" id="radioTwo" name="genero" <?php echo ($row['genero']=='Mujer')?'checked':'' ?>>
+                    <label for="radioTwo" class="radio">Mujer</label>
+                  </div>
+                  <label for="genero" class="propiedad">Género</label>
+                </div> 
+
               </div>
-              <label for="genero" class="propiedad">Género</label>
-            </div> 
-
-          </div>
-        </div>
-        </div>         
+            </div>
+          </div>         
 
                                         <!-- PARTE DESPLEGABLE 2-->
         <br>
@@ -149,76 +168,76 @@
                 </a>
               </h5>
             </div>
+
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="card-block">         
+                <!-- select combo -->
+                <div class="fila">
+                  <select id="estudios" name="studies" required="required">
+                    <option value="">- Seleccione -</option>
+                    <option value="Primaria" <?php if($row['studies']=='Primaria'){ echo "selected"; } ?>>Primaria</option>
+                    <option value="Secundaria" <?php if($row['studies']=='Secundaria'){ echo "selected"; } ?>>Secundaria</option>
+                    <option value="Diplomado" <?php if($row['studies']=='Diplomado'){ echo "selected"; } ?>>Diplomado</option>
+                    <option value="Bachillerato" <?php if($row['studies']=='Bachillerato'){ echo "selected"; } ?>>Bachillerato</option>
+                    <option value="Licenciatura" <?php if($row['studies']=='Licenciatura'){ echo "selected"; } ?>>Licenciatura</option>
+                    <option value="Master" <?php if($row['studies']=='Master'){ echo "selected"; } ?>>Master</option>
+                  </select>
+                  <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
+                </div>
 
-          <!-- select combo -->
-          <div class="fila">
-            <select id="estudios" name="studies" required="required">
-              <option value="">- Seleccione -</option>
-              <option value="eso">Primaria</option>
-              <option value="bachillerato">Secundaria</option>
-              <option value="cfgm">Diplomado</option>
-              <option value="cfgs">Bachillerato</option>
-              <option value="grado">Licenciatura</option>
-              <option value="master">Master</option>
-            </select>
-            <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
-          </div>
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Si" id="estOne" name="estudia" <?php echo ($row['estudia']=='Si')?'checked':'' ?>>
+                    <label for="estOne" class="radio" chec>Sí</label>
+                    <input type="radio" value="No" id="estTwo" name="estudia" <?php echo ($row['estudia']=='No')?'checked':'' ?>>
+                    <label for="estTwo" class="radio">No</label>
+                  </div>
+                  <label for="estudio" class="propiedad">Estudia actualmente</label>
+                </div>   
 
-          <!-- radio -->
-          <div class="fila">
-            <div class="accounttype">
-              <input type="radio" value="None" id="estOne" name="estOne" checked/>
-              <label for="estOne" class="radio" chec>Sí</label>
-              <input type="radio" value="None" id="estTwo" name="estOne" />
-              <label for="estTwo" class="radio">No</label>
-            </div>
-            <label for="estudio" class="propiedad">Estudia actualmente</label>
-          </div>   
+                <!-- select multiple -->
+                <div class="fila">
+                  <select id="idiomas" name="languages" required="required" >
+                    <option value="">- Seleccione</option>
+                    <option value="Español" <?php if($row['languages']!='Ingles' && $row['languages']!='Frances' && $row['languages']!='Aleman'){ echo "selected"; } ?>>Español</option>
+                    <option value="Ingles" <?php if($row['languages']=='Ingles'){ echo "selected"; } ?>>Inglés</option>
+                    <option value="Frances" <?php if($row['languages']=='Frances'){ echo "selected"; } ?>>Francés</option>
+                    <option value="Aleman" <?php if($row['languages']=='Aleman'){ echo "selected"; } ?>>Alemán</option>
+                  </select>
+                  <label for="idiomas" class="propiedad">Idiomas</label>
+                </div> 
 
-          <!-- select multiple -->
-          <div class="fila">
-            <select id="idiomas" name="languages" required="required" >
-              <option value="">- Seleccione</option>
-              <option value="spanish">Español</option>
-              <option value="english">Inglés</option>
-              <option value="french">Francés</option>
-              <option value="german">Alemán</option>
-            </select>
-            <label for="idiomas" class="propiedad">Idiomas</label>
-          </div> 
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Si" id="infoOne" name="herramienta" <?php echo ($row['herramienta']=='Si')?'checked':'' ?>>
+                    <label for="infoOne" class="radio" chec>Sí</label>
+                    <input type="radio" value="No" id="infoTwo" name="herramienta" <?php echo ($row['herramienta']=='No')?'checked':'' ?>>
+                    <label for="infoTwo" class="radio">No</label>
+                  </div>
+                  <label for="herramienta" class="propiedad">Maneja herramientas informáticas</label>
+                </div> 
 
-          <!-- radio -->
-          <div class="fila">
-            <div class="accounttype">
-              <input type="radio" value="None" id="infoOne" name="infoOne" checked/>
-              <label for="infoOne" class="radio" chec>Sí</label>
-              <input type="radio" value="None" id="infoTwo" name="infoOne" />
-              <label for="infoTwo" class="radio">No</label>
-            </div>
-            <label for="herramienta" class="propiedad">Maneja herramientas informáticas</label>
-          </div> 
-
-          <!-- range -->
-          <div class="fila">
-            <input type="range" id="salario" name="earnings" min="0" max="100" step="10" value="50" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
-            <label for="salario" class="propiedad">Nivel de conocimiento</label>
-            <p>%</p>
-            <output for="salario" id="cono-output">50</output>
-            <datalist id="valores-cono">         
-              <option>10</option>
-              <option>20</option>
-              <option>30</option>
-              <option>40</option>
-              <option>50</option>
-              <option>60</option>
-              <option>70</option>
-              <option>80</option>
-              <option>90</option>
-              <option>100</option>
-            </datalist>
-          </div>  
+                <!-- range -->
+                <div class="fila">
+                  <input type="range" id="conoc" name="nivelcono" min="0" max="100" step="10" value="<?php echo utf8_encode($row['nivelcono']); ?>" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
+                  <label for="conoc" class="propiedad">Nivel de conocimiento</label>
+                  <p>%</p>
+                  <output for="conoc" id="cono-output"><?php echo utf8_encode($row['nivelcono']); ?></output>
+                  <datalist id="valores-cono">         
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>40</option>
+                    <option>50</option>
+                    <option>60</option>
+                    <option>70</option>
+                    <option>80</option>
+                    <option>90</option>
+                    <option>100</option>
+                  </datalist>
+                </div>  
               </div>
             </div>
           </div>
@@ -233,88 +252,91 @@
                 </a>
               </h5>
             </div>
+
             <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="card-block">                                        
 
-          <!-- radio -->
-          <div class="fila">
-            <div class="accounttype">
-              <input type="radio" value="None" id="licOne" name="licOne" checked/>
-              <label for="licOne" class="radio" chec>Sí</label>
-              <input type="radio" value="None" id="licTwo" name="licOne" />
-              <label for="licTwo" class="radio">No</label>
-            </div>
-            <label for="licencia" class="propiedad">Posee licencia</label>
-          </div>   
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Si" id="licOne" name="licencia" <?php echo ($row['licencia']=='Si')?'checked':'' ?>>
+                    <label for="licOne" class="radio" chec>Sí</label>
+                    <input type="radio" value="No" id="licTwo" name="licencia" <?php echo ($row['licencia']=='No')?'checked':'' ?>>
+                    <label for="licTwo" class="radio">No</label>
+                  </div>
+                  <label for="licencia" class="propiedad">Posee licencia</label>
+                </div>   
 
-          <!-- radio -->
-          <div class="fila">
-            <div class="accounttype">
-              <input type="radio" value="None" id="vehOne" name="vehOne" checked/>
-              <label for="vehOne" class="radio" chec>Sí</label>
-              <input type="radio" value="None" id="vehTwo" name="vehOne" />
-              <label for="vehTwo" class="radio">No</label>
-            </div>
-            <label for="vehiculo" class="propiedad">Posee vehículo</label>
-          </div>  
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Si" id="vehOne" name="vehiculo" <?php echo ($row['vehiculo']=='Si')?'checked':'' ?>>
+                    <label for="vehOne" class="radio" chec>Sí</label>
+                    <input type="radio" value="No" id="vehTwo" name="vehiculo" <?php echo ($row['vehiculo']=='No')?'checked':'' ?>>
+                    <label for="vehTwo" class="radio">No</label>
+                  </div>
+                  <label for="vehiculo" class="propiedad">Posee vehículo</label>
+                </div>  
 
-          <!-- select multiple -->
-          <div class="fila">
-            <select id="idiomas" name="languages" required="required" >
-              <option value="">- Seleccione</option>
-              <option value="diurno">Diurno</option>
-              <option value="nocturno">Nocturno</option>
-              <option value="ambos">Completo</option>
-              <option value="ambos">Parcial</option>
-              <option value="ambos">Todos</option>
-            </select>
-            <label for="idiomas" class="propiedad">Horario preferido</label>
-          </div> 
+                <!-- select multiple -->
+                <div class="fila">
+                  <select id="idiomas" name="horario" required="required" >
+                    <option value="">- Seleccione</option>
+                    <option value="Diurno" <?php if($row['horario']=='Diurno'){ echo "selected"; } ?>>Diurno</option>
+                    <option value="Nocturno" <?php if($row['horario']=='Nocturno'){ echo "selected"; } ?>>Nocturno</option>
+                    <option value="Completo" <?php if($row['horario']=='Completo'){ echo "selected"; } ?>>Completo</option>
+                    <option value="Parcial" <?php if($row['horario']=='Parcial'){ echo "selected"; } ?>>Parcial</option>
+                    <option value="Todos" <?php if($row['horario']=='Todos'){ echo "selected"; } ?>>Todos</option>
+                  </select>
+                  <label for="horario" class="propiedad">Horario preferido</label>
+                </div> 
 
-          <!-- range -->
-          <div class="fila">
-            <input type="range" id="salario" name="earnings" min="200000" max="1000000" step="100000" value="1000" list="valores-salario" onchange="document.querySelector('#salario-output').value = value;">
-            <label for="salario" class="propiedad">Salario deseado</label>
-            <p>₡</p>
-            <output for="salario" id="salario-output">500000</output>
-            <datalist id="valores-salario">
-              <option>₡200.000</option>
-              <option>₡300.000</option>
-              <option>₡400.000</option>
-              <option>₡500.000</option>
-              <option>₡600.000</option>
-              <option>₡700.000</option>
-              <option>₡800.000</option>
-              <option>₡900.000</option>
-              <option>₡1.000.000</option>
-            </datalist>
-          </div>    
+                <!-- range -->
+                <div class="fila">
+                  <input type="range" id="salario" name="earnings" min="200000" max="1000000" step="100000" value="<?php echo utf8_encode($row['earnings']); ?>" list="valores-salario" onchange="document.querySelector('#salario-output').value = value;">
+                  <label for="salario" class="propiedad">Salario deseado</label>
+                  <p>₡</p>
+                  <output for="salario" id="salario-output"><?php echo utf8_encode($row['earnings']); ?></output>
+                  <datalist id="valores-salario">
+                    <option>₡200.000</option>
+                    <option>₡300.000</option>
+                    <option>₡400.000</option>
+                    <option>₡500.000</option>
+                    <option>₡600.000</option>
+                    <option>₡700.000</option>
+                    <option>₡800.000</option>
+                    <option>₡900.000</option>
+                    <option>₡1.000.000</option>
+                  </datalist>
+                </div>    
 
-          <!-- radio -->
-          <div class="fila">
-            <div class="accounttype">
-              <input type="radio" value="None" id="disOne" name="disOne" checked/>
-              <label for="disOne" class="radio" chec>Sí</label>
-              <input type="radio" value="None" id="disTwo" name="disOne" />
-              <label for="disTwo" class="radio">No</label>
-            </div>
-            <label for="discapacidad" class="propiedad">Posee alguna discapacidad</label>
-          </div>  
+                <!-- radio -->
+                <div class="fila">
+                  <div class="accounttype">
+                    <input type="radio" value="Si" id="disOne" name="discapacidad" <?php echo ($row['discapacidad']=='Si')?'checked':'' ?>>
+                    <label for="disOne" class="radio" chec>Sí</label>
+                    <input type="radio" value="No" id="disTwo" name="discapacidad" <?php echo ($row['discapacidad']=='No')?'checked':'' ?>>
+                    <label for="disTwo" class="radio">No</label>
+                  </div>
+                  <label for="discapacidad" class="propiedad">Posee alguna discapacidad</label>
+                </div>  
 
               </div>
             </div>
           </div>   
-        <br><br>
-        <div class="fila botonera">
-          <label class="registro-oferente" for="curriculum">Cambiar el curriculum</label>     
-          <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
-        </div>
-
-        </div>
+              <br><br>
           <div class="fila botonera">
-            <button class="registro-oferente" type="submit">Actualizar</button>
+            <label class="registro-oferente" for="curriculum">Cambiar el curriculum</label>     
+            <input class="registro-oferente" value="<?php echo utf8_encode($row['curriculum']); ?>" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
+          </div>
+
+          <div class="fila botonera">
+            <button class="registro-oferente" type="submit" name="actualizar">Actualizar</button>
             <button class="registro-oferente" type="reset">Descartar</button>  
           </div>
+        </form>
+      </div>
+        
     </div>
     </section>    
 
