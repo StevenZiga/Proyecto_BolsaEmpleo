@@ -42,7 +42,7 @@
       </div>
     </header>
 
-    <?php include 'php/oferente.php';?> 
+    <?php include 'php/oferente.php';?>
     <!-- principal Grid Section -->
     <section class="principal" id="principal">
 
@@ -57,7 +57,7 @@
         <div class="card">
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
               </a>
             </h5>
@@ -74,6 +74,15 @@
             <!--hidden -->
             <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
             </div>
+
+            <div class="fila">
+            <!-- cedula -->
+            <input class="registro-oferente" type="text" name="idoferente" maxlength="15" size="30" required="required" autofocus="autofocus" />
+            <label for="idoferente" class="propiedad">Cédula</label>
+            <!--hidden -->
+            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+            </div>    
+
             <!-- password -->
             <div class="fila">
               <input class="registro-oferente" type="password" name="password" size="30" required="required" />
@@ -253,7 +262,7 @@
 
           <!-- select multiple -->
           <div class="fila">
-            <select id="idiomas" name="horario" required="required" >
+            <select id="horario" name="horario" required="required" >
               <option value="">- Seleccione</option>
               <option value="Diurno">Diurno</option>
               <option value="Nocturno">Nocturno</option>
@@ -261,7 +270,7 @@
               <option value="Parcial">Parcial</option>
               <option value="Todos">Todos</option>
             </select>
-            <label for="idiomas" class="propiedad">Horario preferido</label>
+            <label for="horario" class="propiedad">Horario preferido</label>
           </div> 
 
           <!-- range -->

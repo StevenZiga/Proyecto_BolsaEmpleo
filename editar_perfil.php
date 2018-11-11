@@ -42,6 +42,7 @@
     </header>
 
     <!-- principal Grid Section -->
+    <?php include 'php/session.php';?>
     <section class="principal" id="principal">
 
     <div class="container contenedor-registro">
@@ -71,6 +72,15 @@
             <!--hidden -->
             <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
             </div>
+
+            <div class="fila">
+            <!-- cedula -->
+            <input class="registro-oferente" type="text" name="idoferente" maxlength="15" size="30" required="required" autofocus="autofocus" />
+            <label for="idoferente" class="propiedad">Cédula</label>
+            <!--hidden -->
+            <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
+            </div>
+
             <!-- password -->
             <div class="fila">
               <input class="registro-oferente" type="password" id="password" name="password" size="30" required="required" />
