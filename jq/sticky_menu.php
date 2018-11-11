@@ -49,7 +49,15 @@
     </nav>
 
 -->
-<?php include 'php/session.php';?>
+
+<?php
+  session_start();
+  //error_reporting(0);
+  $varsesion = "";
+  $varsesion = $_SESSION['user'];
+
+
+?>
   <nav class="navbar navbar-expand-lg bg-secondary fixed-menu text-uppercase" id="mainNav">
     <div class="bolsaempleo">
         <h4>Bolsa de Empleo</h4>
@@ -67,18 +75,19 @@
                   <li><a href="registro_empresa.php">Empleadores</a></li>
                   <li><a href="registro_oferente.php">Oferentes</a></li>
                 </ul>
-              </li>
-              <?php if(isset($_SESSION['loggedin'])){   
-                echo "<li><a href='#'>Mi Cuenta<span class='arrow-down'></span></a>
-                        <ul class='dropdown'>
-                          <li><a href='editar_perfil.php'>Editar Perfil</a></li>
-                          <li><a href='inicio_sesion.php?logout='1''>Salir</a></li>
-                        </ul>
-                      </li>";
-              }else{
-                echo "<li><a href='inicio_sesion.php'>Ingresar</a></li>"; 
-              }            
-              ?>
+              </li> 
+              <?php if($varsesion == null || $varsesion == ''): ?>
+                  <li><a href="inicio_sesion.php">Ingresar</a></li>
+              <? endif ?>
+              <?php if($varsesion != null || $varsesion != ''): ?>
+                  <li><a href="#">Mi Cuenta<span class="arrow-down"></span></a>
+                    <ul class="dropdown">
+                      <li><a href="editar_perfil.php">Editar Perfil</a></li>
+                      <li><a href="cerrar_sesion.php">Salir</a></li>
+                    </ul>
+                  </li>
+              <?php endif ?>      
+             
             </ul>
           </div>
           <div class="nav-bg-fostrap">

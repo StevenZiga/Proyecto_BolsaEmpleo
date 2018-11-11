@@ -23,17 +23,17 @@
 
                 </div>";
       }else{
-       // session_start();
+        session_start();
         while($row = mysql_fetch_array($sql)) {
           $name = $row['username'];
           $p= $row['pass'];
-       //   $_SESSION["user"]=$row['username'];
+          $_SESSION["user"]=$row['username'];
         }
-       // $_SESSION['loggedin'] = 1;
+        $_SESSION['loggedin'] = "activa";
         echo "<div class='alert alert-success'>
           <strong>¡Bienvenido! </strong><p>".$name."</p>
         </div>";
-      //  print_r($_SESSION);
+        print_r($_SESSION);
       }
   }
 ?>

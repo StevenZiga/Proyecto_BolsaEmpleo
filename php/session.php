@@ -2,19 +2,13 @@
    session_start();
 
   if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])) {
-    // echo "<div class='alert alert-info'>
-    //         <strong>¡Perfil!</strong><p>Este es el perfil de:".$_SESSION["user"]."</p>
-    //       </div>";
+     echo "<div class='alert alert-info'>
+             <strong>¡Perfil!</strong><p>Este es el perfil de:".$_SESSION["user"]."</p>
+           </div>";
     print_r($_SESSION);
     return true;
   }else {
     return false;
-  }
-
-  if(isset($_GET['logout'])){
-    session_destroy();
-    unset($_SESSION['loggedin']);
-    header("location:inicio_sesion.php");
   }
 
    // include('config.php');
