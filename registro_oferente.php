@@ -54,21 +54,17 @@
         <form action="registro_oferente.php" method="post">
 
                                     <!-- PARTE DESPLEGABLE 1-->                            
-        <br>
           <div class="card">
-            <div class="card-header" role="tab" id="headingOne">
-              <h5 class="mb-0">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
-                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
-                </a>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-              <div class="card-block">       
-          
-          <!-- Lista de campos -->
-          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-            <div class="card-block">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h3 class="text-center text-uppercase text-secondary mb-0">Datos Generales</h3><br><br>
+              </a>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-block">
             
             <div class="fila">
               <!-- text -->
