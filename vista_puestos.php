@@ -1,4 +1,76 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+  /////Conexión con la data//////////
+  $hostname = "sql203.epizy.com";
+  $database = "epiz_22952208_BD_BolsaEmpleo";
+  $username = "epiz_22952208";
+  $password = "progra";
+  $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
+  mysql_set_charset ("utf8", $con); 
+
+  mysql_select_db($database, $con);
+  $sql = "SELECT * FROM Puestos";
+  $rspubli = mysql_query($sql, $con) or die(mysql_error());
+  $i = 1;
+    while($row = mysql_fetch_assoc($rspubli)) {
+
+      $cuadros.= '<div class="col-md-6 col-lg-4">
+            <a class="principal-item d-block mx-auto" href="#" data-toggle="modal" data-target="#puesto'.$i.'">
+              <div class="principal-item-caption d-flex position-absolute h-442 w-400">
+                <div class="principal-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+                 <table id="table-puestos">
+                    <tr>
+                      <th id="head-puestos" height="75">Nombre del puesto: '.$row["puesto"].'</th>
+                    </tr>
+                    <tbody id="body-puestos">
+                      <tr>
+                        <td height="50">Duración: '.$row["duracion"].'</td>
+                      </tr>
+                      <tr>
+                       <td height="50">Ubicación: '.$row["ubicacion"].'</td>
+                      </tr>
+                    </tbody>
+                  <tfoot id="foot-puestos">
+                    <tr>
+                      <td height="100">Descripción: '.$row["descripcion"].'</td>
+                    </tr>
+                  </tfoot>
+                </table>
+            </a>
+          </div>
+          <div class="col-md-3 col-lg-4"></div>';
+
+    $modal.='<div class="modal fade" id="puesto'.$i.'" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                   <form id="aplicar" action="php/aplicar.php" method="POST">
+                     <div class="modal-header">                     
+                        <strong><h3 class="text-secondary text-orange mb-0" name="puesto">'.$row["puesto"].'</h3></strong>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body tips">
+                        <center><img class="img-fluid img-margin mb-5" src='.$row["imagen"].' alt="">
+                        <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
+                        <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
+                        <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
+                        <p class="mb-5" name="empresa"><b>Empresa:</b> '.$row["empresa"].'</p></center>
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" type="submit" name="save" id="save">Aplicar</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>';
+
+          $i++;          
+    }
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -25,7 +97,6 @@
     <!-- Custom styles for this template -->
     <link href="css/estilo.min.css" rel="stylesheet">
     <link rel="icon" href="img/logos/logo-cuc-title.ico">
-
   </head>
 
   <body id="page-top">
@@ -35,9 +106,8 @@
   //error_reporting(0);
   $varsesion = "";
   $varsesion = $_SESSION['user'];
-
-
 ?>
+
   <nav class="navbar navbar-expand-lg bg-secondary fixed-menu text-uppercase" id="mainNav">
     <div class="bolsaempleo">
         <h4>Bolsa de Empleo</h4>
@@ -103,119 +173,63 @@
     </header>
 
     <!-- Búsqueda de puesto -->
+    <form action="puestos.php" method="post">
     <section class="select-puesto" id="empresa">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Filtrar busqueda</h2>
         <hr class="star-dark mb-5">
         <center>
           <div class="container-vista-puesto">
-                <span class="icon-vista-puesto"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="Buscar..." />
-          </div>
-          <div class="puesto">
-              <h5 for="genero" class="propiedad">Tiempo:</h5>
-              <input type="radio" value="None" id="radioOne" name="account" checked/>
-              <label for="radioOne" class="radio" chec>Completo</label>
-              <input type="radio" value="None" id="radioTwo" name="account" />
-              <label for="radioTwo" class="radio">Parcial</label>            
+            <p>Ingrese el nombre del puesto a buscar.</p>
+            <input type="text" name="searchcampo" id="searchcampo" placeholder="Buscar..."><br>
+            <input type="submit" class="btn btn-primary" value="Buscar" name="buscar">
+            <input type="submit" class="btn btn-primary" value="Todos" name="todos">           
           </div>
         </center>
       </div>
     </section>
+  </form>
+
+  <?php include 'php/aplicar.php';?>
 
     <section class="principal bg-terciary text-white mb-0" id="principal puestos-disponibles">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Puestos</h2>
         <hr class="star-dark">
-        <div class="row">
-          <?php 
-            /////Conexión con la data//////////
-            $hostname = "sql203.epizy.com";
-            $database = "epiz_22952208_BD_BolsaEmpleo";
-            $username = "epiz_22952208";
-            $password = "progra";
-            $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
-            mysql_set_charset ("utf8", $con); 
-
-            mysql_select_db($database, $con);
-            $sql = "SELECT puesto, duracion, ubicacion, descripcion FROM Puestos";
-            $rspubli = mysql_query($sql, $con) or die(mysql_error());
-            $i = 1;
-              while($row = mysql_fetch_assoc($rspubli)) {
-
-                echo "<div class='col-md-6 col-lg-4'>
-                      <a class='principal-item d-block mx-auto' href='#principal-modal-".$i."'>
-                        <div class='principal-item-caption d-flex position-absolute h-442 w-400'>
-                          <div class='principal-item-caption-content my-auto w-100 text-center text-white'>
-                            <i class='fas fa-search-plus fa-3x'></i>
-                          </div>
-                        </div>
-                           <table id='table-puestos'>
-                              <tr>
-                                <th id='head-puestos' height='75'>Nombre del puesto: ".$row["puesto"]." </th>
-                              </tr>
-                              <tbody id='body-puestos'>
-                                <tr>
-                                  <td height='50'>Duración: ".$row["duracion"]."</td>
-                                </tr>
-                                <tr>
-                                 <td height='50'>Ubicación: ".$row["ubicacion"]."</td>
-                                </tr>
-                              </tbody>
-                            <tfoot id='foot-puestos'>
-                              <tr>
-                                <td height='100'>Descripción: ".$row["descripcion"]."</td>
-                              </tr>
-                            </tfoot>
-                          </table>
-                      </a>
-                    </div>
-                    <div class='col-md-3 col-lg-4'></div>";
-                    $i++;
-          }
-        ?>
+          <div class="row">
+            <?php print ("$cuadros");?> 
           </div>           
         </div>    
+      </div>      
+    </section>  
+
+     <?php print ("$modal");?> 
+
+<!--     <form action="php/aplicar.php" method="post">
+      <div class="modal fade" id="puesto?echo $i?>" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+             <div class="modal-header">
+                <strong><h3 class="text-secondary text-orange mb-0" name="puesto">echo $row['puesto']?></h3></strong>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body tips">
+                <center><img class="img-fluid img-margin mb-5" src="echo $row['imagen']?>" alt="">
+                <p class="mb-5"><b>Descripción:</b>?echo $row['descripcion']?></p>
+                <p class="mb-5"><b>Duración:</b>?echo $row['duracion']?></p>
+                <p class="mb-5"><b>Ubicación:</b>?echo $row['ubicacion']?></p>
+                <p class="mb-5" name="empresa"><b>Empresa:</b>?echo $row['empresa']?></p></center>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" type="submit" name="save">Aplicar</button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </section>    
-
-    <?php 
-            /////Conexión con la data//////////
-            $hostname = "sql203.epizy.com";
-            $database = "epiz_22952208_BD_BolsaEmpleo";
-            $username = "epiz_22952208";
-            $password = "progra";
-            $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
-
-            mysql_select_db($database, $con);
-            $sql = "SELECT puesto, duracion, ubicacion, descripcion, imagen FROM Puestos";
-            $rspubli = mysql_query($sql, $con) or die(mysql_error());
-            $i = 1;
-              while($row = mysql_fetch_assoc($rspubli)) {
-
-                echo "<div class='principal-modal mfp-hide' id='principal-modal-".$i."'>
-                      <div class='principal-modal-dialog bg-white'>
-                        <a class='close-button d-none d-md-block principal-modal-dismiss' href='#'>
-                          <i class='fa fa-3x fa-times'></i>
-                        </a>
-                        <div class='container text-center'>
-                          <div class='row'>
-                            <div class='col-lg-8 mx-auto'>
-                              <h2 class='text-secondary text-uppercase mb-0'>".$row["puesto"]."</h2>
-                              <img class='img-fluid img-margin mb-5' src=".$row["imagen"]." alt=''>
-                              <p class='mb-5'>".$row["descripcion"]."</p>
-                              <a class='btn btn-primary btn-lg rounded-pill principal-modal-dismiss img-margin' href='#'>
-                                <i class='fa fa-close'></i>
-                                Cerrar Puesto</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>";
-                    $i++;
-              }
-        ?>   
+    </form>  -->
 
     <div id="foot"></div>
 
