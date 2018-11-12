@@ -194,10 +194,9 @@ a:active,a:focus,a:hover{
 }
 
 .img-cuc{
-  width: 300px;
+  width: 180px;
   height: 300px;
   margin: 0 auto;
-  background-position: center;
   background-image: url("../img/logos/logo_cuc_blan_peq.png");
   background-repeat: no-repeat;
   padding-bottom: 20px;
@@ -712,6 +711,14 @@ input.registro-oferente:hover, progress, meter{
 }
 
 /*--------------------Formato de seccion de Visualizacion de PUESTOS del sitio-------------------*/
+
+.campos-puestos{
+  border: 0px;
+  text-decoration: none;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
 .mb-5{
   font-size: 1.2em;
 }
@@ -737,6 +744,7 @@ input.registro-oferente:hover, progress, meter{
   color: #fff;
   margin-bottom: 50px;
 }
+
 
 .container-vista-puesto input#search{
   width: 110px;
@@ -1192,10 +1200,39 @@ hr{
   opacity: 0.3;
 }
 
-input.log-in[type=text] {
+input.log-in[type=text], input.log-in[type=password] {
   background-color: white;
   border: solid 1px black;
 }
+
+.registrologin-in{
+  margin-top: 30px;
+  clear: both;
+  width: 80%;
+  height: 10%;
+}
+
+.registrologin-in p{
+  font-size: 18px;
+}
+
+.registrologin-in a:link, .registrologin-in a:visited {
+  font-size: 18px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.registrologin-in a:hover {
+  color: #04538A;
+}
+
+
+:invalid:not(form) {
+  background-color: #FFEDED;
+  border: 1px solid red;
+  outline: none;
+}
+
 
 input.log-in:hover {
   background-color: #fff;
@@ -1339,12 +1376,6 @@ input[type="number"].registro-oferente{
   text-align: right;
 }
 
-:invalid:not(form) {
-  background-color: #FFEDED;
-  border: 1px solid red;
-  outline: none;
-}
-
 :invalid:focus {
   box-shadow: 0 0 5px red;
   outline: none;
@@ -1473,6 +1504,15 @@ input.registro-oferente:hover, progress, meter{
   :invalid ~ .propiedad:after {
     left: 0;  
   }
+
+  .bg-terciary table {
+    width: 330px;
+  }
+
+  header.masthead h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 /* ---------------------- >>> PARTE NUEVA (Vista de Puestos) <<< - By: Steven ---------------------- */
@@ -1545,20 +1585,20 @@ section{
 
 #accordion-style-1 h1,
 #accordion-style-1 a{
-    color:#F68B1F;
+  color:#F68B1F;
 }
 #accordion-style-1 .btn-link {
-    font-weight: 400;
-    color: #F68B1F;
-    background-color: transparent;
-    text-decoration: none !important;
-    font-size: 16px;
-    font-weight: bold;
+  font-weight: 400;
+  color: #F68B1F;
+  background-color: transparent;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: bold;
   padding-left: 25px;
 }
 
 #accordion-style-1 .card-body {
-    border-top: 2px solid #F68B1F;
+  border-top: 2px solid #F68B1F;
 }
 
 #accordion-style-1 .card-header .btn.collapsed .fa.main{
@@ -1586,28 +1626,38 @@ section{
   background-color:rgba(246,139,31,.8);
 }
 
-  .principal .principal-item .principal-item-caption:hover{
-    opacity:1
+.principal .principal-item .principal-item-caption:hover{
+  opacity:1
+}
+
+.h-442{
+  height: 346px!important;
+}
+
+.w-400{
+  width: 400px!important;
+}
+
+img.img-margin{
+  margin-top: 15px;
+}
+
+a.img-margin{
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 420px) { 
+
+  .w-400 {
+    width: 340px!important;
   }
 
-  .h-442{
-    height: 346px!important;
-  }
-
-  .w-400{
-    width: 400px!important;
-  }
-
-  img.img-margin{
-    margin-top: 15px;
-  }
-  a.img-margin{
-    margin-bottom: 20px;
-  }
-
+}
   /*---------------------------Menu responsivo------------------------*/
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none; 
+}
 
 
 .fixed-menu {
@@ -1672,7 +1722,9 @@ a { text-decoration: none; }
   font-family:Montserrat
 }
 
-.nav-fostrap li:hover ul.dropdown { display: block; }
+.nav-fostrap li:hover ul.dropdown { 
+  display: block; 
+}
 
 .nav-fostrap li ul.dropdown {
   position: absolute;
@@ -1743,7 +1795,8 @@ a { text-decoration: none; }
 .title-mobile {
   display: none;
 }
-   @media only screen and (max-width:1070px) {
+
+@media only screen and (max-width:1070px) {
 
   .nav-fostrap {
     background: #fff;
@@ -1768,12 +1821,12 @@ a { text-decoration: none; }
   .title-mobile {
     position: fixed;
     display: block;
-      top: 10px;
-      font-size: 20px;
-      left: 100px;
-      right: 100px;
-      text-align: center;
-      color: #FFF;
+    top: 10px;
+    font-size: 16px;
+    left: 115px;
+    right: 100px;
+    text-align: center;
+    color: #FFF;
   }
   .nav-fostrap.visible {
     left: 0px;
@@ -1822,13 +1875,21 @@ a { text-decoration: none; }
     width: 20px;
   }
 
-  .navbar-fostrap span:nth-child(2) { width: 20px; }
+  .navbar-fostrap span:nth-child(2) { 
+    width: 20px; 
+  }
 
-  .navbar-fostrap span:nth-child(3) { width: 20px; }
+  .navbar-fostrap span:nth-child(3) { 
+    width: 20px; 
+  }
 
-  .nav-fostrap ul { padding-top: 50px; }
+  .nav-fostrap ul { 
+    padding-top: 50px; 
+  }
 
-  .nav-fostrap li { display: block; }
+  .nav-fostrap li { 
+    display: block; 
+  }
 
   .nav-fostrap li a {
     display: block;
@@ -1836,9 +1897,13 @@ a { text-decoration: none; }
     font-weight: 600;
   }
 
-  .nav-fostrap li:first-child:hover a { border-radius: 0; }
+  .nav-fostrap li:first-child:hover a { 
+    border-radius: 0; 
+  }
 
-  .nav-fostrap li ul.dropdown { position: relative; }
+  .nav-fostrap li ul.dropdown { 
+    position: relative; 
+  }
 
   .nav-fostrap li ul.dropdown li a {
     background: #04538A !important;
@@ -1856,9 +1921,13 @@ a { text-decoration: none; }
     color: #fff !important;
   }
 
-  .nav-fostrap li ul.dropdown li a { padding: 10px 10px 10px 30px; }
+  .nav-fostrap li ul.dropdown li a { 
+    padding: 10px 10px 10px 30px; 
+  }
 
-  .nav-fostrap li:hover .arrow-down { border-top: 5px solid #fff; }
+  .nav-fostrap li:hover .arrow-down { 
+    border-top: 5px solid #fff; 
+  }
 
   .arrow-down {
     border-top: 5px solid #505050;
@@ -1875,14 +1944,17 @@ a { text-decoration: none; }
     left: 0;
     right: 0;
     }
+
     .bolsaempleo{
       display: none;
     }
   }
 
- @media only screen and (max-width:1199px) {
+@media only screen and (max-width:1199px) {
 
-.menu-container { width: 96%; }
+  .menu-container { 
+    width: 96%; 
+  }
 }
 
 /*-------------------Boton IR ARRIBA------------------*/

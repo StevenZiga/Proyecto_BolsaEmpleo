@@ -49,7 +49,6 @@
   $row = mysql_fetch_assoc($result);
   $rowsarray = mysql_fetch_array($result);
   
-  //while($row = mysql_fetch_assoc($result)) {  }
 ?>
     
     <!-- Header -->

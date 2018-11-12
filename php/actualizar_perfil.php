@@ -39,15 +39,24 @@
         $rspubli = mysql_query($sql, $con) or die(mysql_error());
         $result = mysqli_query($con,$sql);
 
+
+        $mensaje='¡Actualización de perfil completada!';
+        echo "<SCRIPT> alert('$mensaje'); </SCRIPT>";
+
+        header("Refresh:0");
+
         echo "<div class='alert alert-success'>
                 <strong>¡Actualización de perfil completada!</strong><p>Su información ha sido actualizada exitosamente.</p>
               </div>";
-        //header("Location: http://bjbprueba.epizy.com/prueba/editar_perfil.php");
       }else{
-        echo "<div class='alert alert-danger'>
-                <strong>¡Hubo un error con la actualización de sus datos!</strong><p>Verifique que todos los campos estén completados.</p>
-              </div>";
+        //echo "<div class='alert alert-danger'>
+        //        <strong>¡Hubo un error con la actualización de sus datos!</strong><p>Verifique que todos los campos estén completados.</p>
+        //      </div>";
         //header("Location: http://bjbprueba.epizy.com/prueba/editar_perfil.php");
+        header("Refresh:0");
+
+        $mensaje='¡Hubo un error con la actualización de sus datos!';
+        echo "<SCRIPT> alert('$mensaje'); </SCRIPT>";
       }
       }
   ?>

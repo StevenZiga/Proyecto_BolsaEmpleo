@@ -92,7 +92,7 @@
           </div>
           <div class="nav-bg-fostrap">
             <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
-            <a href="" class="title-mobile">Bolsa de Empleo</a>
+            <a href="#" class="title-mobile">Bolsa de Empleo</a>
           </div>
         </nav>
         <div class='content'>
