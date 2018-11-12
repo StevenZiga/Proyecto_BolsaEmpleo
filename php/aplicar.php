@@ -12,19 +12,25 @@
   mysql_set_charset ("utf8", $con); 
   mysql_select_db($database, $con);
 
-  if(isset($_POST['save'])){
-    $puesto = $_POST['puesto'];
-    $empresa = $_POST['empresa'];
-    $sql = "INSERT INTO Solicitudes (correoOferente, nomEmpresa, puesto) VALUES ('$varuser','$empresa','$puesto')";        
-    $rspubli = mysql_query($sql, $con) or die(mysql_error());
-    $result = mysqli_query($con,$sql);
+  if (isset($_POST["save"])){
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+      $puesto = $_POST['puesto'];
+      $empresa = $_POST['empresa'];
+      $sql = "INSERT INTO Solicitudes (correoOferente, nomEmpresa, puesto) VALUES ('$varuser','$empresa','$puesto')";        
+      $rspubli = mysql_query($sql, $con) or die(mysql_error());
+      $result = mysqli_query($con,$sql);
 
-    echo "<div class='alert alert-success'>
-                <strong>Se aplico al puesto correctamente!</strong><p>Su información ha sido guardada exitosamente!</p>
-          </div>";
+      echo "<div class='alert alert-success'>
+              <strong>Se aplico al puesto correctamente!</strong><p>Su información ha sido guardada exitosamente!</p>
+            </div>";
+    }else{
+      echo "<div class='alert alert-danger'>
+              <strong>Error al aplicar!</strong> <p>Asegurese de haber iniciado sesión!</p>
+            </div>";
+    }
   }else{
-    echo "<div class='alert alert-danger'>
-                <strong>Error al aplicar!</strong> <p>Verifique que todos los campos estén completados!</p>
+    echo "<div class='alert alert-info'>
+            <strong>Aplica!</strong> <p>Dale click al puesto al deseas aplicar y presiona el boton 'Aplicar'!</p>
           </div>";
   }
 ?>

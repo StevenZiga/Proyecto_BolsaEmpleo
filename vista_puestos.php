@@ -10,6 +10,7 @@
   mysql_select_db($database, $con);
   $sql = "SELECT * FROM Puestos";
   $rspubli = mysql_query($sql, $con) or die(mysql_error());
+
   $i = 1;
     while($row = mysql_fetch_assoc($rspubli)) {
 
@@ -45,9 +46,10 @@
     $modal.='<div class="modal fade" id="puesto'.$i.'" role="dialog">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
-                   <form id="aplicar" action="php/aplicar.php" method="POST">
+                   <form action="vista_puestos.php" method="POST">
                      <div class="modal-header">                     
-                        <strong><h3 class="text-secondary text-orange mb-0" name="puesto">'.$row["puesto"].'</h3></strong>
+                        <strong><h3 class="text-secondary text-orange mb-0">'.$row["puesto"].'</h3></strong>
+                        <input type="hidden" readonly="true" name="puesto" value="'.$row["puesto"].'">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body tips">
@@ -55,19 +57,19 @@
                         <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
                         <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
                         <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
-                        <p class="mb-5" name="empresa"><b>Empresa:</b> '.$row["empresa"].'</p></center>
+                        <p class="mb-5" name="empresa"><b>Empresa:</b> '.$row["empresa"].'</p></center></center>
+                        <input readonly="true" type="hidden" name="empresa" value="'.$row["empresa"].'">
                       </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" type="submit" name="save" id="save">Aplicar</button>
+                      <button class="btn btn-primary" type="submit" name="save" id="save">Aplicar</button>
                       <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                     </div>
                     </form>
                   </div>
                 </div>
               </div>';
-
-          $i++;          
-    }
+        $i++; 
+      }       
 ?>
 
 <!DOCTYPE html>
@@ -203,33 +205,7 @@
       </div>      
     </section>  
 
-     <?php print ("$modal");?> 
-
-<!--     <form action="php/aplicar.php" method="post">
-      <div class="modal fade" id="puesto?echo $i?>" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-             <div class="modal-header">
-                <strong><h3 class="text-secondary text-orange mb-0" name="puesto">echo $row['puesto']?></h3></strong>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body tips">
-                <center><img class="img-fluid img-margin mb-5" src="echo $row['imagen']?>" alt="">
-                <p class="mb-5"><b>Descripción:</b>?echo $row['descripcion']?></p>
-                <p class="mb-5"><b>Duración:</b>?echo $row['duracion']?></p>
-                <p class="mb-5"><b>Ubicación:</b>?echo $row['ubicacion']?></p>
-                <p class="mb-5" name="empresa"><b>Empresa:</b>?echo $row['empresa']?></p></center>
-              </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" type="submit" name="save">Aplicar</button>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>  -->
+  <?php print ("$modal");?>
 
     <div id="foot"></div>
 

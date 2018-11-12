@@ -52,36 +52,39 @@
                     </div>
                     <div class="col-md-3 col-lg-4"></div>';
 
-              $modal .='<div class="modal fade" id="puesto'.$i.'" role="dialog">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                               <div class="modal-header">
-                                  <strong><h3 class="text-secondary text-orange mb-0">'.$row["puesto"].'</h3></strong>
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body tips">
-                                  <center><img class="img-fluid img-margin mb-5" src='.$row["imagen"].' alt="">
-                                  <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
-                                  <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
-                                  <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
-                                  <p class="mb-5"><b>Empresa:</b> '.$row["empresa"].'</p></center>
-                                </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>';
-
-              $i++;          
-
-            }
+              $modal.='<div class="modal fade" id="puesto'.$i.'" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                   <form action="puestos.php" method="POST">
+                     <div class="modal-header">                     
+                        <strong><h3 class="text-secondary text-orange mb-0">'.$row["puesto"].'</h3></strong>
+                        <input type="hidden" readonly="true" name="puesto" value="'.$row["puesto"].'">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body tips">
+                        <center><img class="img-fluid img-margin mb-5" src='.$row["imagen"].' alt="">
+                        <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
+                        <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
+                        <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
+                        <p class="mb-5" name="empresa"><b>Empresa:</b> '.$row["empresa"].'</p></center>
+                        <input readonly="true" type="hidden" name="empresa" value="'.$row["empresa"].'">
+                      </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit" name="save" id="save">Aplicar</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>';
+              $i++;  
+          }
         }
     }
 
 
     if(isset($_POST['todos'])){
-      header("Location: http://bjbprueba.epizy.com/prueba/vista_puestos.php");
+      header("Location: vista_puestos.php");
     }
 
   ?>  
@@ -152,8 +155,9 @@
       </section> 
     </form>
 
+    <?php include 'php/aplicar.php';?>
 
-       <section class="principal bg-terciary text-white mb-0" id="principal puestos-disponibles">
+   <section class="principal bg-terciary text-white mb-0" id="principal puestos-disponibles">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Puestos</h2>
         <hr class="star-dark">
