@@ -74,13 +74,13 @@
         <form action="editar_perfil.php" method="post" enctype="multipart/form-data">
               <!-- PARTE DESPLEGABLE 1-->                            
           <div class="card">
-            <div class="card-header" role="tab" id="headingOne">
-              <h5 class="mb-0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
-                </a>
-              </h5>
-            </div>
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h3 class="text-center text-uppercase text-secondary mb-0">Datos Generales</h3><br><br>
+              </a>
+            </h5>
+          </div>
       
             <!-- Lista de campos -->
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
