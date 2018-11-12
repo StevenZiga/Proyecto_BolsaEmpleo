@@ -5,25 +5,26 @@
       $password = "progra";
    
       $con=mysql_connect($hostname, $username, $password);
-      mysql_select_db($database);
-      $output = '';
+      mysql_set_charset ("utf8", $con);
+      $cuadros = '';
+      $modal = '';
       
-      if(isset($_POST['search'])){
-        $searchq = $_POST['search'];
+      if(isset($_POST['searchcampo'])){
+        $searchq = $_POST['searchcampo'];
         $searchq =  preg_replace("#[^0-9a-z]#i","",$searchq);
 
+        mysql_select_db($database,$con);
         $query = mysql_query("SELECT * FROM Puestos WHERE puesto LIKE '%$searchq%'") or die(mysql_error());
-        mysql_set_charset ("utf8", $con);
         $count = mysql_num_rows($query);
         $i = 1;
           if($count == 0){
-              $output = 'No se ha encontrado ningun resultado';
+              $cuadros = 'No se ha encontrado ningun resultado';
           }else{
              
               while($row = mysql_fetch_array($query)) {
 
-              $output.= '<div class="col-md-6 col-lg-4">
-                      <a class="principal-item d-block mx-auto" href="#principal-modal-'.$i.'">
+              $cuadros.= '<div class="col-md-6 col-lg-4">
+                      <a class="principal-item d-block mx-auto" href="#" data-toggle="modal" data-target="#puesto'.$i.'">
                         <div class="principal-item-caption d-flex position-absolute h-442 w-400">
                           <div class="principal-item-caption-content my-auto w-100 text-center text-white">
                             <i class="fas fa-search-plus fa-3x"></i>
@@ -50,7 +51,30 @@
                       </a>
                     </div>
                     <div class="col-md-3 col-lg-4"></div>';
-                    $i++;
+
+              $modal .='<div class="modal fade" id="puesto'.$i.'" role="dialog">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                               <div class="modal-header">
+                                  <strong><h3 class="text-secondary text-orange mb-0">'.$row["puesto"].'</h3></strong>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body tips">
+                                  <center><img class="img-fluid img-margin mb-5" src='.$row["imagen"].' alt="">
+                                  <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
+                                  <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
+                                  <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
+                                  <p class="mb-5"><b>Empresa:</b> '.$row["empresa"].'</p></center>
+                                </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>';
+
+              $i++;          
+
             }
         }
     }
@@ -73,7 +97,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Empresas</title>
+    <title>Ver puestos disponibles</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -105,8 +129,8 @@
       <center><div class="img-cuc" id="imagen-cuc">
         
       </div></center>
-        <h1 class="text-uppercase mb-0">Empresas</h1>
-        <h2 class="font-weight-light mb-0">Listado de las empresas registradas.</h2>
+        <h1 class="text-uppercase mb-0">Vista de puestos</h1>
+        <h2 class="font-weight-light mb-0">Busca el puesto que más te guste.</h2>
       </div>
     </header>
 
@@ -119,9 +143,9 @@
           <center>
             <div class="container-vista-puesto">
                   <p>Ingrese el nombre del puesto a buscar.</p>
-                  <input type="text" name="search" placeholder="Palabra Clave...">
-                  <input type="submit" value="Buscar" name="buscar">
-                  <input type="submit" value="Todos" name="todos">
+                  <input type="text" name="searchcampo" id="searchcampo" placeholder="Buscar..."><br>
+                  <input type="submit" class="btn btn-primary" value="Buscar" name="buscar">
+                  <input type="submit" class="btn btn-primary" value="Todos" name="todos">
             </div>
           </center>
         </div>
@@ -134,10 +158,13 @@
         <h2 class="text-center text-uppercase text-white">Puestos</h2>
         <hr class="star-dark">
         <div class="row">
-    <?php print ("$output");?>           
+        <?php print ("$cuadros");?> 
+
         </div>    
       </div>
     </section>
+
+    <?php print ("$modal");?> 
 
     <div id="foot"></div>
 
