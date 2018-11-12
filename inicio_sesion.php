@@ -61,7 +61,7 @@
             <button type="submit" class="registro-oferente" name="acceder">Acceder</button>
             <div class="registrologin-in">
                 <p>¿No te has registrado aún?</p>
-                <a href="http://bjbprueba.epizy.com/prueba/index.html#btn_ayuda">Registrate</a>
+                <a href="http://jbs-bolsaempleo.epizy.com/BolsaEmpleo/index.html#btn_ayuda">Registrate</a>
             </div>
         </form>
       </div>
