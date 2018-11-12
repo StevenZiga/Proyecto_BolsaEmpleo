@@ -33,7 +33,6 @@
         echo "<div class='alert alert-success'>
           <strong>¡Bienvenido! </strong><p>".$name."</p>
         </div>";
-        print_r($_SESSION);
       }
   }
 ?>
