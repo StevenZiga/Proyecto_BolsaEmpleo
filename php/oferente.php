@@ -5,6 +5,7 @@
     $username = "epiz_22952208";
     $password = "progra";
     $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
+    mysql_set_charset ("utf8", $con);
     
     if(isset($_POST['register'])){
       $fullname = $_POST['fullname'];
