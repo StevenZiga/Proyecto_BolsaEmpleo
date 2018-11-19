@@ -32,13 +32,13 @@
     <div id="sticky"></div>
     
     <!-- Header -->
-    <header class="masthead bg-oferente text-orange text-center">
+   <header class="masthead bg-oferente text-orange text-center">
       <div class="container">
       <center><div class="img-cuc" id="imagen-cuc">
         
       </div></center>
         <h1 class="text-uppercase mb-0">Registro de Oferente</h1>
-        <h2 class="font-weight-light mb-0">Estás a un paso de empezar con la búsqueda de empleo</h2><br><p>Por favor completa la información que se le solicita a continuación</p>
+        <h2 class="font-weight-light mb-0 text-white">Estás a un paso de empezar con la búsqueda de empleo.<br>Por favor completa la información que se le solicita a continuación.</h2>
       </div>
     </header>
 
@@ -109,12 +109,6 @@
               <label for="nombre" class="propiedad">Nacionalidad</label>
               <!--hidden -->
               <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-            </div>
-
-            <!-- readonly disabled -->
-            <div class="fila">
-              <input class="registro-oferente" type="number" name="age" class="small" required="required"/>
-              <label for="edad" class="propiedad">Edad</label>
             </div>
             
             <div class="fila">
@@ -243,13 +237,22 @@
           </div>   
 
           <!-- select multiple -->
-          <div class="fila">
-            <input type="checkbox" id="languages" name="languages[]" value="Español">Español<br/>
-            <input type="checkbox" id="languages" name="languages[]" value="Inglés">Inglés<br/>
-            <input type="checkbox" id="languages" name="languages[]" value="Francés">Francés<br/>
-            <input type="checkbox" id="languages" name="languages[]" value="Alemán">Alemán<br/>
-            <input type="checkbox" id="languages" name="languages[]" value="Italiano">Italiano<br/>
+           <div>
             <label for="idiomas" class="propiedad">Idiomas</label>
+            <div class="accounttype" align="center">
+              <input type="checkbox" id="languagesOne" name="languages[]" value="Espanol">
+              <label for="languagesOne" class="radio">Español</label>
+              <input type="checkbox" id="languagesTwo" name="languages[]" value="Ingles">
+              <label for="languagesTwo" class="radio">Inglés</label>
+              <input type="checkbox" id="languagesThree" name="languages[]" value="Frances">
+              <label for="languagesThree" class="radio">Francés</label>
+              <input type="checkbox" id="languagesFour" name="languages[]" value="Aleman">
+              <label for="languagesFour" class="radio">Alemán</label>
+              <input type="checkbox" id="languagesFive" name="languages[]" value="Italiano">
+              <label for="languagesFive" class="radio">Italiano</label>
+              <input type="checkbox" id="languagesSix" name="languages[]" value="Mandarin">
+              <label for="languagesSix" class="radio">Mandarin</label>
+            </div>
           </div> 
 
           <!-- radio -->
@@ -266,7 +269,7 @@
           <!-- range -->
           <div class="fila">
             <input type="range" id="conoc" name="nivelcono" min="0" max="100" step="10" value="50" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
-            <label for="conoc" class="propiedad">Nivel de conocimiento</label>
+            <label for="conoc" class="propiedad">Nivel de conocimiento informática</label>
             <p>%</p>
             <output for="conoc" id="cono-output">50</output>
             <datalist id="valores-cono">         

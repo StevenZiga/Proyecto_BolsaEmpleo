@@ -74,19 +74,16 @@
         <form action="editar_perfil.php" method="post" enctype="multipart/form-data">
               <!-- PARTE DESPLEGABLE 1-->                            
           <div class="card">
-         <div class="card">
-          <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h3 class="text-center text-uppercase text-secondary mb-0">Datos Generales</h3><br><br>
-              </a>
-            </h5>
-          </div>
+            <div class="card-header" role="tab" id="headingOne">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h3 class="text-center text-uppercase text-secondary mb-0">Datos Personales</h3><br><br>
+                </a>
+              </h5>
+            </div>
       
             <!-- Lista de campos -->
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-
-          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
               <div class="card-block">
                 
                 <div class="fila">
@@ -129,12 +126,6 @@
                   <label for="nombre" class="propiedad">Nacionalidad</label>
                   <!--hidden -->
                   <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
-                </div>
-
-                <!-- edad -->
-                <div class="fila">
-                  <input class="registro-oferente" type="number" id="edad" name="age" class="small" value="<?php echo utf8_encode($row['age']); ?>" />
-                  <label for="edad" class="propiedad">Edad</label>
                 </div>
                 
                 <div class="fila">
@@ -199,16 +190,83 @@
                 </div>   
 
                 <!-- select multiple -->
-                <div class="fila">
+                <!-- <div class="fila">
                   <select id="idiomas" name="languages" required="required" >
                     <option value="">- Seleccione</option>
-                    <option value="Español" <?php if($row['languages']!='Ingles' && $row['languages']!='Frances' && $row['languages']!='Aleman'){ echo "selected"; } ?>>Español</option>
-                    <option value="Ingles" <?php if($row['languages']=='Ingles'){ echo "selected"; } ?>>Inglés</option>
-                    <option value="Frances" <?php if($row['languages']=='Frances'){ echo "selected"; } ?>>Francés</option>
-                    <option value="Aleman" <?php if($row['languages']=='Aleman'){ echo "selected"; } ?>>Alemán</option>
+                    <option value="Español" <?php //if($row['languages']!='Ingles' && $row['languages']!='Frances' && $row['languages']!='Aleman'){ echo "selected"; } ?>>Español</option>
+                    <option value="Ingles" <?php //if($row['languages']=='Ingles'){ echo "selected"; } ?>>Inglés</option>
+                    <option value="Frances" <?php //if($row['languages']=='Frances'){ echo "selected"; } ?>>Francés</option>
+                    <option value="Aleman" <?php //if($row['languages']=='Aleman'){ echo "selected"; } ?>>Alemán</option>
                   </select>
                   <label for="idiomas" class="propiedad">Idiomas</label>
+                </div>  -->
+
+
+                <div>
+                  <label for="idiomas" class="propiedad">Idiomas</label>
+                  <div class="accounttype" align="center">
+                  <?php
+                    $lan=explode(",",$row['languages']);
+                    $i=0;
+                    $cont = count($lan);
+                    while($i!=6){
+                    
+                      if($lan[$i]=='Espanol'){
+                      ?>
+                        <input type="checkbox" id="languagesOne" checked name="languages[]" value="Espanol">
+                        <label for="languagesOne" class="radio">Español</label>
+                      <?php } 
+                      if($i==0 && $lan[$i]!='Espanol'){  ?>
+                        <input type="checkbox" id="languagesOne" name="languages[]" value="Espanol">
+                        <label for="languagesOne" class="radio">Español</label>
+                      <?php } 
+                      if($lan[$i]=='Ingles'){  ?>
+                        <input type="checkbox" id="languagesTwo" checked name="languages[]" value="Ingles">
+                        <label for="languagesTwo" class="radio">Inglés</label>
+                      <?php } 
+                      if($i==1 && $lan[$i]!='Ingles'){  ?>
+                        <input type="checkbox" id="languagesTwo" name="languages[]" value="Ingles">
+                        <label for="languagesTwo" class="radio">Inglés</label>
+                      <?php } 
+                      if($lan[$i]=='Frances'){  ?>
+                        <input type="checkbox" id="languagesThree" checked name="languages[]" value="Frances">
+                        <label for="languagesThree" class="radio">Francés</label>
+                      <?php } 
+                      if($i==2 && $lan[$i]!='Frances'){  ?>
+                        <input type="checkbox" id="languagesThree" name="languages[]" value="Frances">
+                        <label for="languagesThree" class="radio">Francés</label>
+                      <?php } 
+                      if($lan[$i]=='Aleman'){  ?>
+                        <input type="checkbox" id="languagesFour" checked name="languages[]" value="Aleman">
+                        <label for="languagesFour" class="radio">Alemán</label>
+                      <?php } 
+                      if($i==3 && $lan[$i]!='Aleman'){  ?>
+                        <input type="checkbox" id="languagesFour" name="languages[]" value="Aleman">
+                        <label for="languagesFour" class="radio">Alemán</label>
+                      <?php } 
+                      if($lan[$i]=='Italiano'){  ?>
+                        <input type="checkbox" id="languagesFive" checked name="languages[]" value="Italiano">
+                        <label for="languagesFive" class="radio">Italiano</label>
+                      <?php } 
+                      if($i==4 && $lan[$i]!='Italiano'){  ?>
+                        <input type="checkbox" id="languagesFive" name="languages[]" value="Italiano">
+                        <label for="languagesFive" class="radio">Italiano</label>
+                      <?php } 
+                      if($lan[$i]=='Mandarin'){  ?>
+                        <input type="checkbox" id="languagesSix" checked name="languages[]" value="Mandarin">
+                        <label for="languagesSix" class="radio">Mandarin</label>
+                      <?php } 
+                      if($i==5 && $lan[$i]!='Mandarin'){  ?>
+                        <input type="checkbox" id="languagesSix" name="languages[]" value="Mandarin">
+                        <label for="languagesSix" class="radio">Mandarin</label>
+                      <?php
+                            } 
+                      $i++;
+                    } 
+                  ?>
+                  </div>
                 </div> 
+
 
                 <!-- radio -->
                 <div class="fila">
@@ -224,7 +282,7 @@
                 <!-- range -->
                 <div class="fila">
                   <input type="range" id="conoc" name="nivelcono" min="0" max="100" step="10" value="<?php echo utf8_encode($row['nivelcono']); ?>" list="valores-cono" onchange="document.querySelector('#cono-output').value = value;">
-                  <label for="conoc" class="propiedad">Nivel de conocimiento</label>
+                  <label for="conoc" class="propiedad">Nivel de conocimiento informática</label>
                   <p>%</p>
                   <output for="conoc" id="cono-output"><?php echo utf8_encode($row['nivelcono']); ?></output>
                   <datalist id="valores-cono">         
