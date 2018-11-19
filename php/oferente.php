@@ -15,7 +15,7 @@
       $phonenumber = $_POST['phonenumber'];
       $birthdate = $_POST['birthdate'];
       $nationality = $_POST['nationality'];
-      $age = $_POST['age'];
+      //$age = $_POST['age'];
       $placelive = $_POST['placelive'];
       $genero = $_POST['genero'];
       $studies = $_POST['studies'];
@@ -31,7 +31,12 @@
       $discapacidad = $_POST['discapacidad'];
       $curriculum = $_POST['curriculum'];
 
-      if($fullname!="" && $cedofe!="" && $password!="" && $email!="" && $phonenumber!="" && $birthdate!="" && $nationality!="" && $age!="" && $placelive!="" && $genero!="" && $studies!="" && $estudia!="" && $herramienta!="" && $nivelcono!="" && $licencia!="" && $vehiculo!="" && $horario!="" && $earnings!="" && $discapacidad!="" && $curriculum!=""){
+      $dob = new DateTime($birthdate);
+      $now = new DateTime();
+      $difference = $now->diff($dob);
+      $age=$difference->y;
+
+      if($fullname!="" && $cedofe!="" && $password!="" && $email!="" && $phonenumber!="" && $birthdate!="" && $nationality!="" && $placelive!="" && $genero!="" && $studies!="" && $estudia!="" && $herramienta!="" && $nivelcono!="" && $licencia!="" && $vehiculo!="" && $horario!="" && $earnings!="" && $discapacidad!="" && $curriculum!=""){
         mysql_select_db($database, $con);
         $sql = "INSERT INTO RegistroOferente (fullname,cedula ,password, email, phonenumber, birthdate, nationality, age, placelive, genero, studies, estudia, languages, herramienta, nivelcono, licencia, vehiculo, horario, earnings,discapacidad, curriculum) VALUES ('$fullname','$cedofe' ,'$password', '$email','$phonenumber', '$birthdate','$nationality', '$age','$placelive', '$genero','$studies', '$estudia', '$lan', '$herramienta','$nivelcono', '$licencia','$vehiculo', '$horario','$earnings','$discapacidad','$curriculum')";
         $sqluser = "INSERT INTO users(username, pass) VALUES ('$email','$password')";

@@ -8,8 +8,8 @@
     $database = "epiz_22952208_BD_BolsaEmpleo";
     $username = "epiz_22952208";
     $password = "progra";
-    $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
-    mysql_set_charset ("utf8", $con);
+    $con = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);
+    mysql_set_charset ("utf8", $con); 
     
     if(isset($_POST['actualizar'])){
       $fullname = $_POST['fullname'];
@@ -18,12 +18,12 @@
       $phonenumber = $_POST['phonenumber'];
       $birthdate = $_POST['birthdate'];
       $nationality = $_POST['nationality'];
-      $age = $_POST['age'];
       $placelive = $_POST['placelive'];
       $genero = $_POST['genero'];
       $studies = $_POST['studies'];
       $estudia = $_POST['estudia'];
       $languages = $_POST['languages'];
+      $lan=implode(",", $languages);
       $herramienta = $_POST['herramienta'];
       $nivelcono = $_POST['nivelcono'];
       $licencia = $_POST['licencia'];
@@ -33,9 +33,14 @@
       $discapacidad = $_POST['discapacidad'];
       //$curriculum = $_POST['curriculum'];
 
-      if($fullname!="" && $cedofe!="" && $email!="" && $phonenumber!="" && $birthdate!="" && $nationality!="" && $age!="" && $placelive!="" && $genero!="" && $studies!="" && $estudia!="" && $languages!="" && $herramienta!="" && $nivelcono!="" && $licencia!="" && $vehiculo!="" && $horario!="" && $earnings!="" && $discapacidad!=""){
+      $dob = new DateTime($birthdate);
+      $now = new DateTime();
+      $difference = $now->diff($dob);
+      $age=$difference->y;
+
+      if($fullname!="" && $cedofe!="" && $email!="" && $phonenumber!="" && $birthdate!="" && $nationality!="" && $placelive!="" && $genero!="" && $studies!="" && $estudia!="" && $herramienta!="" && $nivelcono!="" && $licencia!="" && $vehiculo!="" && $horario!="" && $earnings!="" && $discapacidad!=""){
         mysql_select_db($database, $con);
-        $sql = "UPDATE RegistroOferente SET fullname='$fullname' ,cedula='$cedofe' ,email='$email', phonenumber='$phonenumber' ,birthdate='$birthdate' , nationality='$nationality' ,age='$age' ,placelive='$placelive' ,genero='$genero' ,studies='$studies' ,estudia='$estudia' ,languages='$languages' ,herramienta='$herramienta' ,nivelcono='$nivelcono' ,licencia='$licencia' ,vehiculo='$vehiculo' ,horario='$horario' ,earnings='$earnings' ,discapacidad='$discapacidad' WHERE email='$varusuario'";
+        $sql = "UPDATE RegistroOferente SET fullname='$fullname' ,cedula='$cedofe' ,email='$email', phonenumber='$phonenumber' ,birthdate='$birthdate' , nationality='$nationality' ,age='$age' ,placelive='$placelive' ,genero='$genero' ,studies='$studies' ,estudia='$estudia' ,languages='$lan' ,herramienta='$herramienta' ,nivelcono='$nivelcono' ,licencia='$licencia' ,vehiculo='$vehiculo' ,horario='$horario' ,earnings='$earnings' ,discapacidad='$discapacidad' WHERE email='$varusuario'";
 
         $rspubli = mysql_query($sql, $con) or die(mysql_error());
         $result = mysqli_query($con,$sql);
