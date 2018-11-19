@@ -244,13 +244,11 @@
 
           <!-- select multiple -->
           <div class="fila">
-            <select id="idiomas" name="languages" required="required" >
-              <option value="">- Seleccione</option>
-              <option value="Español">Español</option>
-              <option value="Ingles">Inglés</option>
-              <option value="Frances">Francés</option>
-              <option value="Aleman">Alemán</option>
-            </select>
+            <input type="checkbox" id="languages" name="languages[]" value="Español">Español<br/>
+            <input type="checkbox" id="languages" name="languages[]" value="Inglés">Inglés<br/>
+            <input type="checkbox" id="languages" name="languages[]" value="Francés">Francés<br/>
+            <input type="checkbox" id="languages" name="languages[]" value="Alemán">Alemán<br/>
+            <input type="checkbox" id="languages" name="languages[]" value="Italiano">Italiano<br/>
             <label for="idiomas" class="propiedad">Idiomas</label>
           </div> 
 
