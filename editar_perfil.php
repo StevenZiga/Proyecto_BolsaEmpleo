@@ -73,11 +73,8 @@
 
         <form action="editar_perfil.php" method="post" enctype="multipart/form-data">
               <!-- PARTE DESPLEGABLE 1-->                            
-<<<<<<< HEAD
           <div class="card">
-=======
          <div class="card">
->>>>>>> 8fd7525b942f2298636e7b4364e72efc832f178d
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -85,14 +82,11 @@
               </a>
             </h5>
           </div>
-<<<<<<< HEAD
       
             <!-- Lista de campos -->
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-=======
 
           <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
->>>>>>> 8fd7525b942f2298636e7b4364e72efc832f178d
               <div class="card-block">
                 
                 <div class="fila">

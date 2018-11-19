@@ -306,6 +306,8 @@
             </div>
           </div>   
         <br><br>
+
+        
         <div class="fila botonera">
           <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
           <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
@@ -313,7 +315,7 @@
 
         <div class="fila botonera">
             <button class="registro-oferente" type="submit" name="register">Registrarse</button>
-            <button class="registro-oferente" type="reset">Borrar Campos</button>  
+            <button class="registro-oferente" type="reset">Borrar</button>  
         </div>
       </form>
       </div> 
