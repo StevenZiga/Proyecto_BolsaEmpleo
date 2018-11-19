@@ -353,12 +353,14 @@ header.masthead h1{
   font-size:3rem;
   line-height:3rem;
   background-color: rgba(4,83,138,0.70);
+  padding: 1%;
 }
 
 header.masthead h2{
   font-size:1.3rem;
   font-family:Lato;
   background-color: rgba(4,83,138,0.70);
+  padding: 1%;
 }
 
 
