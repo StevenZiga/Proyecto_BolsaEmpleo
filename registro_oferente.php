@@ -168,30 +168,33 @@
           </div>
 
           <!-- grid -->
-          <div align="center" style="padding-top: 5%;">
-              <table id="table" cellspacing="10" cellpadding="5" class="conte">
+          <div align="center" style="padding-top: 5%; padding-bottom: 5%;">
+            <div align="center" style="padding-top: 5.5%; padding-left: 3%;">    
+              <div class="ccc">
+                <label for="year" class="propiedad">Año</label>
+                <input class="registro-oferente" type="text" name="year" id="year" autofocus="autofocus" />           
+              </div>
+              <div class="ccc">
+                <label for="titulo" class="propiedad">Titulo</label>
+                <input class="registro-oferente" type="text" name="titulo" id="titulo" autofocus="autofocus" />
+              </div>
+              <div class="ccc">
+                <label for="insti" class="propiedad">Institución</label>
+                <input class="registro-oferente" type="text" name="insti" id="insti" autofocus="autofocus" /> 
+              </div>          
+            </div>
+
+            <div align="center" style="padding-top: 3%; padding-left: 5%; padding-bottom: 3%">
+              <button class="registro-oferente" name="add" onclick="addHtmlTableRow();">Agregar</button>
+            </div>
+
+            <table id="table" cellspacing="10" cellpadding="5" class="conte">
                   <tr>
                       <th><h1>Año</h1></th>
                       <th><h1>Titulo</h1></th>
                       <th><h1>Institución</h1></th>
                   </tr>
               </table>
-
-            <div class="fila" aling="center" style="padding-top: 5%; padding-left: 3%;">    
-                <div>
-                  <input class="registro-oferente" type="text" name="year" id="year" autofocus="autofocus" />
-                  <label for="nombre" class="propiedad">Año</label>
-                </div>
-                <div>
-                  <input class="registro-oferente" type="text" name="titulo" id="titulo" autofocus="autofocus" />
-                  <label for="nombre" class="propiedad">Titulo</label>
-                </div>
-                <div>
-                  <input class="registro-oferente" type="text" name="insti" id="insti" autofocus="autofocus" />
-                  <label for="nombre" class="propiedad">Institución</label>
-                </div>
-                <button class="registro-oferente" name="add" onclick="addHtmlTableRow();">Agregar</button>
-            </div>
           </div>
 
           <script>
@@ -377,7 +380,7 @@
 
         <div class="fila botonera">
             <button class="registro-oferente" type="submit" name="register">Registrarse</button>
-            <button class="registro-oferente" type="reset">Borrar</button>  
+            <button class="registro-oferente" type="reset">Borrar Campos</button>  
         </div>
       </form>
       </div> 

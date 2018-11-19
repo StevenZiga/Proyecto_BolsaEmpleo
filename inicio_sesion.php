@@ -59,6 +59,7 @@
             <label class="log-in" id="icon" for="pas"><img src="img/otras/escudo.png"></label>
             <input class="log-in" type="password" name="password" placeholder="Contraseña" required/>
             <button type="submit" class="registro-oferente" name="acceder">Acceder</button>
+
             <div class="registrologin-in">
                 <p>¿No te has registrado aún?</p>
                 <a href="http://jbs-bolsaempleo.epizy.com/BolsaEmpleo/index.html#btn_ayuda">Registrate</a>
