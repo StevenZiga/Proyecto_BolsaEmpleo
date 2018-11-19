@@ -167,6 +167,70 @@
             <label for="estudios" class="propiedad">Nivel máximo de estudios</label>
           </div>
 
+          <!-- grid -->
+          <div align="center" style="padding-top: 5%;">
+              <table id="table" cellspacing="10" cellpadding="5" class="conte">
+                  <tr>
+                      <th><h1>Año</h1></th>
+                      <th><h1>Titulo</h1></th>
+                      <th><h1>Institución</h1></th>
+                  </tr>
+              </table>
+
+            <div class="fila" aling="center" style="padding-top: 5%; padding-left: 3%;">    
+                <div>
+                  <input class="registro-oferente" type="text" name="year" id="year" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Año</label>
+                </div>
+                <div>
+                  <input class="registro-oferente" type="text" name="titulo" id="titulo" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Titulo</label>
+                </div>
+                <div>
+                  <input class="registro-oferente" type="text" name="insti" id="insti" autofocus="autofocus" />
+                  <label for="nombre" class="propiedad">Institución</label>
+                </div>
+                <button class="registro-oferente" name="add" onclick="addHtmlTableRow();">Agregar</button>
+            </div>
+          </div>
+
+          <script>
+            var rIndex,
+            table = document.getElementById("table");
+
+            function addHtmlTableRow(){
+              //if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                cell1 = newRow.insertCell(0),
+                cell2 = newRow.insertCell(1),
+                cell3 = newRow.insertCell(2),
+                year = document.getElementById("year").value,
+                title = document.getElementById("titulo").value,
+                institution = document.getElementById("insti").value;
+            
+                cell1.innerHTML = year;
+                cell2.innerHTML = title;
+                cell3.innerHTML = institution;
+
+                selectedRowToInput();
+              //}
+            }
+
+           // display selected row data into input text
+            function selectedRowToInput(){                
+                for(var i = 1; i < table.rows.length; i++){
+                    table.rows[i].onclick = function(){
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("year").value = this.cells[0].innerHTML;
+                      document.getElementById("titulo").value = this.cells[1].innerHTML;
+                      document.getElementById("insti").value = this.cells[2].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+          </script>
+
           <!-- radio -->
           <div class="fila">
             <div class="accounttype">
