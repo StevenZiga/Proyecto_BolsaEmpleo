@@ -215,48 +215,42 @@
                       ?>
                         <input type="checkbox" id="languagesOne" checked name="languages[]" value="Espanol">
                         <label for="languagesOne" class="radio">Español</label>
-                      <?php } 
-                      if($i==0 && $lan[$i]!='Espanol'){  ?>
+                      <?php }else if($i==0 && $lan[$i]!='Espanol'){  ?>
                         <input type="checkbox" id="languagesOne" name="languages[]" value="Espanol">
                         <label for="languagesOne" class="radio">Español</label>
                       <?php } 
                       if($lan[$i]=='Ingles'){  ?>
                         <input type="checkbox" id="languagesTwo" checked name="languages[]" value="Ingles">
                         <label for="languagesTwo" class="radio">Inglés</label>
-                      <?php } 
-                      if($i==1 && $lan[$i]!='Ingles'){  ?>
+                      <?php }else if($i==1 && $lan[$i]!='Ingles'){  ?>
                         <input type="checkbox" id="languagesTwo" name="languages[]" value="Ingles">
                         <label for="languagesTwo" class="radio">Inglés</label>
                       <?php } 
                       if($lan[$i]=='Frances'){  ?>
                         <input type="checkbox" id="languagesThree" checked name="languages[]" value="Frances">
                         <label for="languagesThree" class="radio">Francés</label>
-                      <?php } 
-                      if($i==2 && $lan[$i]!='Frances'){  ?>
+                      <?php }else if($i==2 && $lan[$i]!='Frances'){  ?>
                         <input type="checkbox" id="languagesThree" name="languages[]" value="Frances">
                         <label for="languagesThree" class="radio">Francés</label>
                       <?php } 
                       if($lan[$i]=='Aleman'){  ?>
                         <input type="checkbox" id="languagesFour" checked name="languages[]" value="Aleman">
                         <label for="languagesFour" class="radio">Alemán</label>
-                      <?php } 
-                      if($i==3 && $lan[$i]!='Aleman'){  ?>
+                      <?php }else if($i==3 && $lan[$i]!='Aleman'){  ?>
                         <input type="checkbox" id="languagesFour" name="languages[]" value="Aleman">
                         <label for="languagesFour" class="radio">Alemán</label>
                       <?php } 
                       if($lan[$i]=='Italiano'){  ?>
                         <input type="checkbox" id="languagesFive" checked name="languages[]" value="Italiano">
                         <label for="languagesFive" class="radio">Italiano</label>
-                      <?php } 
-                      if($i==4 && $lan[$i]!='Italiano'){  ?>
+                      <?php }else if($i==4 && $lan[$i]!='Italiano'){  ?>
                         <input type="checkbox" id="languagesFive" name="languages[]" value="Italiano">
                         <label for="languagesFive" class="radio">Italiano</label>
                       <?php } 
                       if($lan[$i]=='Mandarin'){  ?>
                         <input type="checkbox" id="languagesSix" checked name="languages[]" value="Mandarin">
                         <label for="languagesSix" class="radio">Mandarin</label>
-                      <?php } 
-                      if($i==5 && $lan[$i]!='Mandarin'){  ?>
+                      <?php }else if($i==5 && $lan[$i]!='Mandarin'){  ?>
                         <input type="checkbox" id="languagesSix" name="languages[]" value="Mandarin">
                         <label for="languagesSix" class="radio">Mandarin</label>
                       <?php

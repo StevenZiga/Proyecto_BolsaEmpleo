@@ -163,6 +163,7 @@
 
           <!-- grid -->
           <div align="center" style="padding-top: 5%; padding-bottom: 5%;">
+            <label class="propiedad"> Agrega tus titulos</label>
             <div align="center" style="padding-top: 5.5%; padding-left: 3%;">    
               <div class="ccc">
                 <label for="year" class="propiedad">Año</label>
@@ -378,7 +379,7 @@
         
         <div class="fila botonera">
           <label class="registro-oferente" for="curriculum">Subir curriculum</label>     
-          <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept="doc/doc, doc/pdf"/>
+          <input class="registro-oferente" type="file" id="curriculum" name="curriculum" accept=".doc, .pdf, .txt"/>
         </div>
 
         <div class="fila botonera">
