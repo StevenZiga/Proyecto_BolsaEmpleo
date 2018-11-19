@@ -40,8 +40,7 @@
                   </tfoot>
                 </table>
             </a>
-          </div>
-          <div class="col-md-3 col-lg-4"></div>';
+          </div>';
 
     $modal.='<div class="modal fade" id="puesto'.$i.'" role="dialog">
                 <div class="modal-dialog modal-lg">
@@ -68,6 +67,32 @@
                   </div>
                 </div>
               </div>';
+
+
+    $modalcancel.='<div class="modal fade" id="puesto'.$i.'" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                 <form action="vista_puestos.php" method="POST">
+                   <div class="modal-header">                     
+                      <strong><h3 class="text-secondary text-orange mb-0">'.$row["puesto"].'</h3></strong>
+                      <input type="hidden" readonly="true" name="puesto" value="'.$row["puesto"].'">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body tips">
+                      <center><img class="img-fluid img-margin mb-5" src='.$row["imagen"].' alt="">
+                      <p class="mb-5"><b>Descripción:</b> '.$row["descripcion"].'</p>
+                      <p class="mb-5"><b>Duración:</b> '.$row["duracion"].'</p>
+                      <p class="mb-5"><b>Ubicación:</b> '.$row["ubicacion"].'</p>
+                      <p class="mb-5" name="empresa"><b>Empresa:</b> '.$row["empresa"].'</p></center></center>
+                      <input readonly="true" type="hidden" name="empresa" value="'.$row["empresa"].'">
+                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>';
         $i++; 
       }       
 ?>
@@ -144,7 +169,7 @@
           </div>
           <div class="nav-bg-fostrap">
             <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
-            <a href="" class="title-mobile">Bolsa de Empleo</a>
+            <a href="#" class="title-mobile">Bolsa de Empleo</a>
           </div>
         </nav>
         <div class='content'>
@@ -170,7 +195,7 @@
         
       </div></center>
         <h1 class="text-uppercase mb-0">Vista de puestos</h1>
-        <h2 class="font-weight-light mb-0">Busca el puesto que más te guste.</h2>
+        <h2 class="font-weight-light mb-0 text-white">Busca el puesto que más te guste.</h2>
       </div>
     </header>
 
@@ -205,7 +230,12 @@
       </div>      
     </section>  
 
-  <?php print ("$modal");?>
+  <?php if($varsesion == null || $varsesion == ''){
+          print ("$modalcancel");
+        }else if($varsesion != null || $varsesion != ''){
+          print ("$modal");
+        } 
+  ?>
 
     <div id="foot"></div>
 

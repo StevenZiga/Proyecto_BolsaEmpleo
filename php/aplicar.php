@@ -21,16 +21,22 @@
       $result = mysqli_query($con,$sql);
 
       echo "<div class='alert alert-success'>
-              <strong>Se aplico al puesto correctamente!</strong><p>Su información ha sido guardada exitosamente!</p>
+              <strong>¡Se aplico al puesto correctamente!</strong><p>Su información ha sido guardada exitosamente.</p>
             </div>";
     }else{
       echo "<div class='alert alert-danger'>
-              <strong>Error al aplicar!</strong> <p>Asegurese de haber iniciado sesión!</p>
+              <strong>¡Error al aplicar!</strong><p>Asegúrese de haber iniciado sesión.</p>
             </div>";
     }
   }else{
-    echo "<div class='alert alert-info'>
-            <strong>Aplica!</strong> <p>Dale click al puesto al deseas aplicar y presiona el boton 'Aplicar'!</p>
-          </div>";
+    if($varuser == null || $varuser == ''){
+      echo "<div class='alert alert-info'>
+              <strong>¿Te interesa algún puestos?</strong><p><a href='inicio_sesion.php'>Inicia sesión</a> y aplica al puesto que te guste.</p>
+            </div>";
+    }else if($varuser != null || $varuser != ''){
+      echo "<div class='alert alert-info'>
+              <strong>¡Aplica algún puesto!</strong><p>Dale click al puesto al deseas aplicar y presiona el boton 'Aplicar'.</p>
+            </div>";
+    }
   }
 ?>
