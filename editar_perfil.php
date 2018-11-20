@@ -88,7 +88,7 @@
                 
                 <div class="fila">
                   <!-- text -->
-                  <input class="registro-oferente" type="text" id="nombre" name="fullname" value="<?php echo utf8_encode($row['fullname']); ?>" maxlength="30" size="30" required="required" autofocus="autofocus" />
+                  <input class="registro-oferente" type="text" id="nombre" name="fullname" value="<?php echo $row['fullname']; ?>" maxlength="30" size="30" required="required" autofocus="autofocus" />
                   <label for="nombre" class="propiedad">Nombre Completo</label>
                   <!--hidden -->
                   <input class="registro-oferente" type="hidden" id="codigo" name="code" value="25" />
@@ -188,19 +188,6 @@
                   </div>
                   <label for="estudio" class="propiedad">Estudia actualmente</label>
                 </div>   
-
-                <!-- select multiple -->
-                <!-- <div class="fila">
-                  <select id="idiomas" name="languages" required="required" >
-                    <option value="">- Seleccione</option>
-                    <option value="Español" <?php //if($row['languages']!='Ingles' && $row['languages']!='Frances' && $row['languages']!='Aleman'){ echo "selected"; } ?>>Español</option>
-                    <option value="Ingles" <?php //if($row['languages']=='Ingles'){ echo "selected"; } ?>>Inglés</option>
-                    <option value="Frances" <?php //if($row['languages']=='Frances'){ echo "selected"; } ?>>Francés</option>
-                    <option value="Aleman" <?php //if($row['languages']=='Aleman'){ echo "selected"; } ?>>Alemán</option>
-                  </select>
-                  <label for="idiomas" class="propiedad">Idiomas</label>
-                </div>  -->
-
 
                 <div>
                   <label for="idiomas" class="propiedad">Idiomas</label>
